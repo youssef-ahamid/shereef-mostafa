@@ -7,31 +7,31 @@
 @tailwind utilities;
 
 @layer base {
-    /* typography */
-    h1 {
-        @apply font-cursive capitalize text-2xl md:text-4xl;
-    }
-    h2 {
-        @apply font-bold uppercase tracking-[.5em] text-lg md:text-2xl;
-    }
-    h3 {
-        @apply font-bold capitalize text-lg md:text-2xl;
-    }
-    h4 {
-        @apply font-mono text-xs md:text-sm;
-    }
-    h5 {
-        @apply font-yes font-light text-xs md:text-sm;
-    }
-    p {
-        @apply text-sm md:font-bold md:text-2xl;
-    }
-    label {
-        @apply text-xs md:text-lg;
-    }
+  /* typography */
+  h1 {
+    @apply font-cursive capitalize text-2xl md:text-4xl;
+  }
+  h2 {
+    @apply font-bold uppercase tracking-[.5em] text-lg md:text-2xl;
+  }
+  h3 {
+    @apply font-bold capitalize text-lg md:text-2xl;
+  }
+  h4 {
+    @apply font-mono text-xs md:text-sm;
+  }
+  h5 {
+    @apply font-yes font-light text-xs md:text-sm;
+  }
+  p {
+    @apply text-sm md:font-bold md:text-2xl;
+  }
+  label {
+    @apply text-xs md:text-lg;
+  }
 
-    /* base */
-    html {
-        @apply font-body font-normal bg-secondary text-primary;
-    }
+  /* base */
+  html {
+    @apply font-body font-normal bg-secondary text-primary;
+  }
 }
