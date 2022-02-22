@@ -1,3 +1,7 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500;700&family=Homemade+Apple&family=Josefin+Slab:wght@200;400;700&family=Montagu+Slab:wght@300;700&display=swap');
+
+/* tailwind stuff */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
