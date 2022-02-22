@@ -1,35 +1,33 @@
 <script>
-  import { createEventDispatcher } from "svelte/internal";
-  const dispatch = createEventDispatcher();
+  /* props */
+  export let type = 'primary' // *, secondary
+  export let shape = 'default' // *, ghost, full,
+  export let icon = null // *, icon component
+  export let className = '' // *, custom wrapper classes
+  export let label = '' // *, button text
+  export let active = true // *, false
+  export let reverse = false // *, true
 
-  import { styleButton, styleLabel, styleIcon } from "./styles";
+  /* styles */
+  import { config, classes } from './styles'
+  config({ type, shape, active, reverse })
 
-  export let type = "primary"; // *, secondary
-  export let shape = "default"; // *, ghost, full,
-  export let icon = ""; // *, image path
-  export let label = ""; // *, button text
-  export let active = true; // *, false
-
-  $: styles = {
-    button: styleButton(type, shape, active),
-    label: styleLabel(type, shape),
-    icon: styleIcon(type),
-  };
-
-  function click() {
-    dispatch("click", label);
-  }
-
-  function dblclick() {
-    dispatch("dblclick", label);
-  }
+  /* events */
+  import { createEventDispatcher } from 'svelte/internal'
+  const dispatch = createEventDispatcher()
+  const click = () => dispatch('click')
+  const dblclick = () => dispatch('dblclick')
 </script>
 
-<button on:click={click} on:dblclick={dblclick} class={styles.button}>
-  <h3 class={styles.label}>
+<button
+  on:click={click}
+  on:dblclick={dblclick}
+  class={classes.button + className}
+>
+  <h3 class={classes.label}>
     {label}
   </h3>
-  {#if icon !== ""}
-    <img src={icon} alt={label} class={styles.icon} />
+  {#if !!icon}
+    <span class={classes.icon}><svelte:component this={icon} /></span>
   {/if}
 </button>
