@@ -13,9 +13,12 @@
   export let value = ""; // *, bound value
 
   /* data */
+  $: validation = assert(validations, value)
   let clean = true;
-  export const validate = () => {
-    clean = assert(value, validations).success;
+  let error = '';
+  const validate = () => {
+    clean = validation.success
+    error = clean ? '' : validation.failed.error
     if (clean) valid();
     else invalid();
   };
@@ -57,4 +60,5 @@
       on:blur={blur}
     />
   {/if}
+  <p class={classes.error}>{ error }</p>
 </label>

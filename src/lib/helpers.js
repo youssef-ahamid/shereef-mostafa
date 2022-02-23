@@ -7,10 +7,6 @@ export const serializeClasses = (styles, condition) => {
 
 import isValid from "$lib/validations";
 export const assert = (validations, value) => {
-  if (!validations) return { success: false };
-
-  validations.forEach((v) => {
-    if (!isValid(v.type, value)) return { success: true, validation: v };
-  });
-  return { success: false };
+  for (let i = 0; i < validations.length; i++) if (!isValid(validations[i].type, value)) return { success: false, failed: validations[i] };
+  return { success: true };
 };
