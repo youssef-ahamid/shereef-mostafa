@@ -1,4 +1,4 @@
-export default exists = value => {
-    if (!value || value == '') return false
+export default function exists (value) {
+    if (!value || value.trim() == '') return false
     return true
 }
