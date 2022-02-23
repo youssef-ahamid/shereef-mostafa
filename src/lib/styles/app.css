@@ -18,16 +18,16 @@
     @apply font-bold capitalize text-lg md:text-2xl;
   }
   h4 {
-    @apply font-mono text-xs md:text-sm;
+    @apply font-mono text-[10px] md:text-sm;
   }
   h5 {
-    @apply font-yes font-light text-xs md:text-sm;
+    @apply font-yes font-light text-xs md:text-sm whitespace-pre;
   }
   p {
     @apply text-sm md:font-bold md:text-2xl;
   }
-  label {
-    @apply text-xs md:text-lg;
+  input {
+    @apply text-sm md:text-lg;
   }
 
   /* base */

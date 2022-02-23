@@ -40,7 +40,7 @@
 </script>
 
 <label class={classes.label + className} for={label}>
-  {label}
+  <p class={classes.name}>{label}</p>
   {#if type == "text"}
     <input
       bind:value
@@ -60,5 +60,5 @@
       on:blur={blur}
     />
   {/if}
-  <p class={classes.error}>{ error }</p>
+  <h4>{ error }</h4>
 </label>
