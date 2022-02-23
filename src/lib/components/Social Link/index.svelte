@@ -4,11 +4,15 @@
   export let icon = null // *, icon component
   export let redirect = true // *, false
   export let className = '' // *, custom wrapper classes
-  
+
   /* styles */
   import { classes } from './styles'
 </script>
 
-<a href={link} class={classes.link + className} target:_blank={redirect}>
+<a
+  href={link}
+  class={classes.link + className}
+  target:_blank={redirect}
+>
   <svelte:component this={icon} />
 </a>
