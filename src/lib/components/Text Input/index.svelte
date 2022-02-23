@@ -1,47 +1,47 @@
 <script>
   /* helpers */
-  import { assert } from "$lib/helpers";
+  import { assert } from '$lib/helpers'
 
   /* props */
-  export let type = "text"; // *, text area
-  export let trim = false; // *, true
-  export let long = false; // *, true
-  export let validations = null; // *, array of validation objects
-  export let className = ""; // *, custom wrapper classes
-  export let label = ""; // *, label text
-  export let placeholder = ""; // *, placeholder text
-  export let value = ""; // *, bound value
+  export let type = 'text' // *, text area
+  export let trim = false // *, true
+  export let long = false // *, true
+  export let validations = null // *, array of validation objects
+  export let className = '' // *, custom wrapper classes
+  export let label = '' // *, label text
+  export let placeholder = '' // *, placeholder text
+  export let value = '' // *, bound value
 
   /* data */
   $: validation = assert(validations, value)
-  let clean = true;
-  let error = '';
-  const validate = () => {
+  let clean = true
+  let error = ''
+  export const validate = () => {
     clean = validation.success
     error = clean ? '' : validation.failed.error
-    if (clean) valid();
-    else invalid();
-  };
+    if (clean) valid()
+    else invalid()
+  }
 
   /* styles */
-  import { config, classes } from "./styles";
-  $: config({ type, trim, long, clean });
+  import { config } from './styles'
+  $: classes = config({ type, trim, long, clean })
 
   /* events */
-  import { createEventDispatcher } from "svelte/internal";
-  const dispatch = createEventDispatcher();
-  const valid = () => dispatch("valid", value);
-  const invalid = () => dispatch("invalid", value);
+  import { createEventDispatcher } from 'svelte/internal'
+  const dispatch = createEventDispatcher()
+  const valid = () => dispatch('valid', value)
+  const invalid = () => dispatch('invalid', value)
   const blur = () => {
-    validate();
-    dispatch("blur", value);
-  };
-  const focus = () => dispatch("focus", value);
+    validate()
+    dispatch('blur', value)
+  }
+  const focus = () => dispatch('focus', value)
 </script>
 
 <label class={classes.label + className} for={label}>
   <p class={classes.name}>{label}</p>
-  {#if type == "text"}
+  {#if type == 'text'}
     <input
       bind:value
       {placeholder}
@@ -50,7 +50,7 @@
       on:focus={focus}
       on:blur={blur}
     />
-  {:else if type == "text area"}
+  {:else if type == 'text area'}
     <textarea
       bind:value
       {placeholder}
@@ -60,5 +60,5 @@
       on:blur={blur}
     />
   {/if}
-  <h4>{ error }</h4>
+  <h4>{error}</h4>
 </label>
