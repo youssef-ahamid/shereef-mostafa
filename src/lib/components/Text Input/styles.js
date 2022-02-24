@@ -2,11 +2,16 @@ import { serializeClasses } from '$lib/helpers'
 
 const labelStyles = [
   { type: 'base', classes: 'my-3 md:my-6 block' },
-  { type: 'text', classes: 'w-1/2' },
-  { type: 'text area', classes: 'w-full' },
+  { type: 'text', classes: 'min-w-[50%]' },
+  { long: false, classes: 'max-w-[50%]' },
+  { type: 'text area', long: true, classes: 'w-full max-w-full' },
+  { clean: false, classes: 'animate-wiggle' },
 ]
 
-const nameStyles = []
+const nameStyles = [
+  { type: 'base', classes: 'transition duration-150 ease-out' },
+  { clean: false, classes: 'text-error' },
+]
 
 const inputStyles = [
   {
@@ -16,12 +21,14 @@ const inputStyles = [
   },
   {
     type: 'text area',
-    classes: 'resize-none w-full h-24 md:h-32'
+    classes: 'resize-none w-full h-24 md:h-32',
   },
   {
     type: 'text',
-    classes: 'w-4/5 h-8 md:h-12'
-  }
+    classes: 'w-4/5 h-8 md:h-12',
+  },
+  { clean: false, classes: 'bg-opacity-25' },
+  { trim: true, classes: 'lowercase' },
 ]
 
 let options
@@ -29,9 +36,9 @@ const isActiveClass = style => {
   return (
     style.type === 'base' ||
     style.type === options.type ||
-    (style.trim && options.trim) ||
-    (style.long && options.long) ||
-    (style.clean && options.clean)
+    style.trim === options.trim ||
+    style.long === options.long ||
+    style.clean === options.clean
   )
 }
 

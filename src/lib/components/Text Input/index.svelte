@@ -14,6 +14,7 @@
 
   /* data */
   $: validation = assert(validations, value)
+  $: value = trim ? value.trim() : value 
   let clean = true
   let error = ''
   export const validate = () => {
@@ -26,6 +27,9 @@
   /* styles */
   import { config } from './styles'
   $: classes = config({ type, trim, long, clean })
+
+  /* transitions */
+  import { slide } from 'svelte/transition';
 
   /* events */
   import { createEventDispatcher } from 'svelte/internal'
@@ -40,7 +44,14 @@
 </script>
 
 <label class={classes.label + className} for={label}>
-  <p class={classes.name}>{label}</p>
+  <p class={classes.name}>
+    {label}
+    {#if validations && validations
+        .map(_ => _.type)
+        .includes('required')}
+      *
+    {/if}
+  </p>
   {#if type == 'text'}
     <input
       bind:value
@@ -60,5 +71,7 @@
       on:blur={blur}
     />
   {/if}
-  <h4>{error}</h4>
+  {#if !clean }
+    <h4 transition:slide={{ duration: 300 }}>{error}</h4>
+  {/if}
 </label>
