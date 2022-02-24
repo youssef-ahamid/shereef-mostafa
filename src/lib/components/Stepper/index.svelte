@@ -4,7 +4,7 @@
   export let active = 0 // *, current step
   export let direction = 'vertical' // *, horizontal
   export let className = '' // *, custom wrapper classes
-  
+
   /* styles */
   import { config, classes } from './styles'
   config({ direction })
@@ -12,11 +12,16 @@
   /* events */
   import { createEventDispatcher } from 'svelte/internal'
   const dispatch = createEventDispatcher()
-  const click = (id) => dispatch('click', id)
+  const click = id => dispatch('click', id)
 </script>
 
 <div class={classes.stepper + className}>
   {#each [...Array(steps).keys()] as step}
-    <span class="{classes.step} {step === active? classes.active: ''}" on:click={() => {click(step)}}></span>
+    <span
+      class="{classes.step} {step === active ? classes.active : ''}"
+      on:click={() => {
+        click(step)
+      }}
+    />
   {/each}
 </div>

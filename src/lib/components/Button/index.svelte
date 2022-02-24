@@ -9,19 +9,13 @@
   export let reverse = false // *, true
 
   /* styles */
-  import { config, classes } from './styles'
-  config({ type, shape, active, reverse })
-
-  /* events */
-  import { createEventDispatcher } from 'svelte/internal'
-  const dispatch = createEventDispatcher()
-  const click = () => dispatch('click')
-  const dblclick = () => dispatch('dblclick')
+  import { config } from './styles'
+  $: classes = config({ type, shape, active, reverse })
 </script>
 
 <button
-  on:click={click}
-  on:dblclick={dblclick}
+  on:click
+  on:dblclick
   class={classes.button + className}
 >
   <h3 class={classes.label}>

@@ -7,7 +7,10 @@ const stepperStyles = [
 ]
 
 const stepStyles = [
-  { classes: 'rounded-full transition duration-300 ease-out bg-primary bg-opacity-50 m-1' },
+  {
+    classes:
+      'rounded-full transition duration-300 ease-out bg-primary bg-opacity-50 m-1',
+  },
   { direction: 'vertical', classes: 'w-1 min-h-[35px]' },
   { direction: 'horizontal', classes: 'h-1 min-w-[35px]' },
 ]
@@ -15,7 +18,8 @@ const stepStyles = [
 const activeStyles = 'grow bg-opacity-100'
 
 let options
-const isActiveClass = style => style.direction === options.direction || !style.direction
+const isActiveClass = style =>
+  style.direction === options.direction || !style.direction
 
 export let classes = {}
 const getClasses = () => {

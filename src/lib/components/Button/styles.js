@@ -65,16 +65,11 @@ const isActiveClass = style => {
   )
 }
 
-export let classes = {}
-const getClasses = () => {
-  classes = {
+export const config = props => {
+  options = props
+  return {
     button: serializeClasses(buttonStyles, isActiveClass),
     label: serializeClasses(labelStyles, isActiveClass),
     icon: serializeClasses(iconStyles, isActiveClass),
   }
-}
-
-export const config = props => {
-  options = props
-  getClasses()
 }
