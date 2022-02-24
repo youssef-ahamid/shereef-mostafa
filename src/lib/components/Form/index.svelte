@@ -23,7 +23,7 @@
     let data = inputs.map(input => {
       input.validate()
       if (input.error) error = true
-      
+
       return {
         value: input.data.value,
         key: input.data.label,

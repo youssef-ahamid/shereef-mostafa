@@ -14,7 +14,7 @@
 
   /* data */
   $: validation = assert(validations || [], value)
-  $: value = trim ? value.trim() : value 
+  $: value = trim ? value.trim() : value
   let clean = true
   let error = ''
   export const validate = () => {
@@ -29,7 +29,7 @@
   $: classes = config({ type, trim, long, clean })
 
   /* transitions */
-  import { slide } from 'svelte/transition';
+  import { slide } from 'svelte/transition'
 
   /* events */
   import { createEventDispatcher } from 'svelte/internal'
@@ -71,7 +71,7 @@
       on:blur={blur}
     />
   {/if}
-  {#if !clean }
+  {#if !clean}
     <h4 transition:slide={{ duration: 300 }}>{error}</h4>
   {/if}
 </label>

@@ -9,16 +9,9 @@
   import { classes } from './styles'
 </script>
 
-<span
-  on:click
-  on:mouseenter
-  on:mouseleave
-  class={classes.cursorWrapper}
->
+<span on:click class={classes.cursorWrapper}>
   <slot />
 </span>
 <span use:mousify class={classes.cursor}>
-  <svelte:component
-    this={icon}
-  />
+  <svelte:component this={icon} />
 </span>

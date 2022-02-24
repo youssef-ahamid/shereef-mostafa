@@ -22,11 +22,11 @@ module.exports = {
           '85%': { transform: 'translateX(-5px)' },
           '90%': { transform: 'translateX(5px)' },
           '95%': { transform: 'translateX(-5px)' },
-        }
+        },
       },
       animation: {
-        'wiggle': 'wiggle 1s linear forwards',
-      }
+        wiggle: 'wiggle 1s linear forwards',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
