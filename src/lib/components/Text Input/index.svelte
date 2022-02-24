@@ -13,7 +13,7 @@
   export let value = '' // *, bound value
 
   /* data */
-  $: validation = assert(validations, value)
+  $: validation = assert(validations || [], value)
   $: value = trim ? value.trim() : value 
   let clean = true
   let error = ''
