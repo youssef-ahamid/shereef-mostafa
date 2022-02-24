@@ -14,8 +14,7 @@
   $: error = errors.includes(true)
 
   /* styles */
-  import { config } from './styles'
-  $: classes = config({ error })
+  import { classes } from './styles'
 
   /* events */
   import { createEventDispatcher } from 'svelte/internal'

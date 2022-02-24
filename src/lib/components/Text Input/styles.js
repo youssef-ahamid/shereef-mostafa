@@ -2,8 +2,8 @@ import { serializeClasses } from '$lib/helpers'
 
 const labelStyles = [
   { type: 'base', classes: 'my-3 md:my-6 block' },
-  { type: 'text', classes: 'min-w-[50%]' },
-  { long: false, classes: 'max-w-[50%]' },
+  { type: 'text', classes: 'min-w-[45%]' },
+  { long: false, classes: 'max-w-[45%]' },
   { type: 'text area', long: true, classes: 'w-full max-w-full' },
   { clean: false, classes: 'animate-wiggle' },
 ]
@@ -25,7 +25,7 @@ const inputStyles = [
   },
   {
     type: 'text',
-    classes: 'w-4/5 h-8 md:h-12',
+    classes: 'w-full h-8 md:h-12',
   },
   { clean: false, classes: 'bg-opacity-25' },
   { trim: true, classes: 'lowercase' },

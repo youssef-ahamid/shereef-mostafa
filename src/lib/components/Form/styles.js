@@ -1,11 +1,3 @@
-import { serializeClasses } from '$lib/helpers'
+const formStyles = 'flex flex-wrap justify-between p-4 md:p-8 mx-auto'
 
-const formStyles = []
-
-let options
-const isActiveClass = style => style.error && options.error
-
-export const config = props => {
-  options = props
-  return { form: serializeClasses(formStyles, isActiveClass) }
-}
+export const classes = { form: formStyles }
