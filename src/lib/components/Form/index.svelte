@@ -20,16 +20,14 @@
   import { createEventDispatcher } from 'svelte/internal'
   const dispatch = createEventDispatcher()
   const submit = () => {
-    let data = inputs.map(input => {
+    let data = {}
+    for (let input of inputs) {
+      if (input.data.value && input.data.value.length > 0)
+        data[input.data.label] = input.data.value
+
       input.validate()
       if (input.error) error = true
-
-      return {
-        value: input.data.value,
-        key: input.data.label,
-        error: input.error,
-      }
-    })
+    }
     if (error) dispatch('error', data)
     else dispatch('submit', data)
   }
@@ -37,7 +35,7 @@
 
 <form
   on:submit|preventDefault={submit}
-  class={classes.form + className}
+  class={`${classes.form} + ${className}}`}
 >
   {#each inputs as input}
     <svelte:component
@@ -54,6 +52,6 @@
     />
   {/each}
   {#if !!button}
-    <Button {...button} />
+    <Button {...button} className={classes.button} />
   {/if}
 </form>

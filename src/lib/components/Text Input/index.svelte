@@ -43,7 +43,7 @@
   const focus = () => dispatch('focus', value)
 </script>
 
-<label class={classes.label + className} for={label}>
+<label class={`${classes.label} + ${className}`} for={label}>
   <p class={classes.name}>
     {label}
     {#if validations && validations
