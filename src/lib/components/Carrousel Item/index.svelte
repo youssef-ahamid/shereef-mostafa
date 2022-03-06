@@ -7,9 +7,9 @@
     export let title = '' // *, title text
     export let image = null // *, logo/image url
     export let selected = false // *, selection state
-    export let previewed = false // *, preview state
+    export let remaining = 0 // *, carrousel steps to reach item
     export let className = '' // *, custom wrapper classes
-
+    $: previewed = (remaining === 0)
     /* events */
     import { createEventDispatcher } from 'svelte/internal'
     const dispatch = createEventDispatcher()
@@ -28,10 +28,10 @@
     
     /* styles */
     import { config } from './styles'
-    $: classes = config({ selected, previewed })
+    $: classes = config({ selected, previewed, remaining })
 </script>
 
-<div class={`${classes.carrouselItemWrapper} ${className}`} on:click={togglePreviewed}>
+<div class={`${classes.carrouselItemWrapper} ${className}`} on:click={() => {togglePreviewed(true)}}>
     <svelte:component this={thumbnail.component} {...thumbnail.data} className={classes.thumbnail} />
     <!-- {#if !!video && selected}
         <svelte:component this={video.component} {...video.options} className={classes.video} />
