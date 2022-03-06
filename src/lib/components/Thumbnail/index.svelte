@@ -15,12 +15,8 @@
 </script>
 
 <CustomCursor icon={cursor}>
-  <div class={`${classes.thumbnailWrapper} ${className}`} on:click >
-    <div class={classes.overlay}></div>
-    <img
-      class={classes.thumbnail}
-      {src}
-      {alt}
-    />
+  <div class={`${classes.thumbnailWrapper} ${className}`} on:click>
+    <div class={classes.overlay} />
+    <img class={classes.thumbnail} {src} {alt} />
   </div>
 </CustomCursor>

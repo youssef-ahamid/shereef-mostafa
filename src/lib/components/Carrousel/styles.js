@@ -1,35 +1,35 @@
-import { resolve } from "$lib/helpers";
+import { resolve } from '$lib/helpers'
 
-export let carrouselWrapper = (options) => {
+export let carrouselWrapper = () => {
   return [
     {
-      classes: "",
+      classes: '',
     },
-  ];
-};
+  ]
+}
 
-export let carrousel = (options) => {
+export let carrousel = () => {
   return [
     {
-      classes: "flex flex-nowrap items-center overflow-x-scroll",
+      classes: 'flex flex-nowrap items-center overflow-x-scroll',
     },
-  ];
-};
+  ]
+}
 
-export let carrouselItem = (options) => {
+export let carrouselItem = () => {
   return [
     {
-      classes: "",
+      classes: '',
     },
-  ];
-};
+  ]
+}
 
-let options;
-export const config = (props) => {
-  options = props;
+let options
+export const config = props => {
+  options = props
   return {
-    carrouselItemWrapper: resolve(carrouselItemWrapper(options)),
-    infoContainer: resolve(infoContainer(options)),
-    logo: resolve(logo(options)),
-  };
-};
+    carrouselWrapper: resolve(carrouselWrapper()),
+    carrousel: resolve(carrousel()),
+    carrouselItem: resolve(carrouselItem()),
+  }
+}

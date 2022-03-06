@@ -11,37 +11,36 @@ export let carrouselItemWrapper = options => {
       classes: 'opacity-100',
     },
     {
-        on: [options.previewed, false],
-        classes: 'opacity-50',
-     },
+      on: [options.previewed, false],
+      classes: 'opacity-50',
+    },
   ]
 }
 
 export let infoContainer = options => {
-    return [
-      {
-        classes:
-          'sm:-ml-20 sm:translate-y-40 z-50 min-w-[300px] md:min-w-[500px] lg:min-w-[700px] max-w-[300px] md:max-w-[500px] lg:max-w-[700px]',
-      }
-    ]
-  }
+  return [
+    {
+      classes:
+        'sm:-translate-x-28 sm:translate-y-40 z-50 min-w-[300px] md:min-w-[500px] lg:min-w-[700px] max-w-[300px] md:max-w-[500px] lg:max-w-[700px]',
+    },
+  ]
+}
 
-  export let logo = options => {
-    return [
-      {
-        classes:
-          'min-w-[50px] md:max-w-[200px] min-h-[10px] max-w-[150px] brightness-[5000%] mb-1 -mt-3',
-      }
-    ]
-  }
-
+export let logo = options => {
+  return [
+    {
+      classes:
+        'min-w-[50px] md:max-w-[200px] min-h-[10px] max-w-[150px] brightness-[5000%] mb-1 -mt-3',
+    },
+  ]
+}
 
 let options
 export const config = props => {
   options = props
-  return { 
-      carrouselItemWrapper: resolve(carrouselItemWrapper(options)), 
-      infoContainer: resolve(infoContainer(options)), 
-      logo: resolve(logo(options)), 
-    }
+  return {
+    carrouselItemWrapper: resolve(carrouselItemWrapper(options)),
+    infoContainer: resolve(infoContainer(options)),
+    logo: resolve(logo(options)),
+  }
 }

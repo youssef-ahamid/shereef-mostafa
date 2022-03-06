@@ -47,13 +47,41 @@
   //         }
   //     },
   // ]
-  import CarrouselItem from '$lib/components/Carrousel Item/index.svelte';
-import Thumbnail from '$lib/components/Thumbnail/index.svelte'
-import Soundcloud from '$lib/icons/social/soundcloud.svelte';
-let thumbnail = { component: Thumbnail, data: { alt: "hello", cursor: Soundcloud, src: 'https://github.githubassets.com/images/modules/signup/gc_banner_light.png'}}
-  let submission
-  const submit = e => (submission = e.detail)
-  const error = e => (submission = e.detail)
+  import Carrousel from '$lib/components/Carrousel/index.svelte'
+  import Thumbnail from '$lib/components/Thumbnail/index.svelte'
+  import Soundcloud from '$lib/icons/social/soundcloud.svelte'
+  let thumbnail = {
+    component: Thumbnail,
+    data: {
+      alt: 'hello',
+      cursor: Soundcloud,
+      src: 'https://github.githubassets.com/images/modules/signup/gc_banner_light.png',
+    },
+  }
+  let items = [
+    {
+      thumbnail,
+      text: 'Ahmed Mitry is an Egyptian musician, producer, and sound designer. Born in 1998, Mitry started with learning both instruments guitar & piano at the age of 7 until he decided to take his skill to the next level by taking courses in Music Production & Sound Engineering.',
+      title: 'cairo olympics',
+      image:
+        'https://logos-download.com/wp-content/uploads/2016/05/Allianz_logo_logotype.png',
+    },
+    {
+      thumbnail,
+      text: 'Ahmed Mitry is an Egyptian musician, producer, and sound designer. Born in 1998, Mitry started with learning both instruments guitar & piano at the age of 7 until he decided to take his skill to the next level by taking courses in Music Production & Sound Engineering.',
+      title: 'cairo olympics',
+      image:
+        'https://logos-download.com/wp-content/uploads/2016/05/Allianz_logo_logotype.png',
+    },
+    {
+      thumbnail,
+      text: 'Ahmed Mitry is an Egyptian musician, producer, and sound designer. Born in 1998, Mitry started with learning both instruments guitar & piano at the age of 7 until he decided to take his skill to the next level by taking courses in Music Production & Sound Engineering.',
+      title: 'cairo olympics',
+      image:
+        'https://logos-download.com/wp-content/uploads/2016/05/Allianz_logo_logotype.png',
+    },
+  ]
+  console.log(items)
 </script>
 
 <!-- <Form 
@@ -73,9 +101,4 @@ let thumbnail = { component: Thumbnail, data: { alt: "hello", cursor: Soundcloud
   cursor={Soundcloud}
   className="shadow-inner shadow-secondary"
 /> -->
-<CarrouselItem
-thumbnail={thumbnail}
-text='Ahmed Mitry is an Egyptian musician, producer, and sound designer. Born in 1998, Mitry started with learning both instruments guitar & piano at the age of 7 until he decided to take his skill to the next level by taking courses in Music Production & Sound Engineering.'
-title='cairo olympics'
-image='https://logos-download.com/wp-content/uploads/2016/05/Allianz_logo_logotype.png'
-/>
+<Carrousel {items} />

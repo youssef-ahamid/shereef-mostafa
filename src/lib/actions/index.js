@@ -1,3 +1,3 @@
-import mousifyAction from "./mousify";
+import mousifyAction from './mousify'
 
 export const mousify = mousifyAction

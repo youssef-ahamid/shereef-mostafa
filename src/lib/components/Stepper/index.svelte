@@ -12,7 +12,7 @@
   /* events */
   import { createEventDispatcher } from 'svelte/internal'
   const dispatch = createEventDispatcher()
-  const click = id => dispatch('click', id)
+  const activate = step => (active = step)
 </script>
 
 <div class={classes.stepper + className}>
@@ -20,7 +20,7 @@
     <span
       class="{classes.step} {step === active ? classes.active : ''}"
       on:click={() => {
-        click(step)
+        activate(step)
       }}
     />
   {/each}

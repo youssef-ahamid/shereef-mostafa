@@ -1,11 +1,12 @@
 <script>
   /* props */
-  export let items = []; // *, list items
-  export let className = ""; // *, custom wrapper classes
+  export let items = [] // *, list items
+  export let className = '' // *, custom wrapper classes
+  console.log(items)
 
   /* styles */
-  import { config } from "./styles";
-  let classes = config();
+  import { config } from './styles'
+  let classes = config()
 </script>
 
 <ul class={`${classes.list} + ${className}`}>
