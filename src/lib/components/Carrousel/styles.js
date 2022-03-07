@@ -11,7 +11,7 @@ export let carrouselWrapper = () => {
 export let carrousel = () => {
   return [
     {
-      classes: 'flex flex-nowrap items-center odd:-translate-y-12 even:translate-y-12 -space-x-24 transition duration-300 ease-out',
+      classes: 'flex flex-nowrap items-center odd:translate-y-12 even:-translate-y-12 transition duration-300 ease-out',
     },
   ]
 }
@@ -27,7 +27,7 @@ export let carrouselItem = () => {
 export let controls = () => {
   return [
     {
-      classes: 'max-w-[80%] md:max-w-md flex flex-col items-end pt-12',
+      classes: 'max-w-[80%] md:max-w-md flex flex-col items-end pt-12 pr-4',
     },
   ]
 }

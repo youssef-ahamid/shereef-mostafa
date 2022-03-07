@@ -9,18 +9,20 @@ const stepperStyles = [
 const stepStyles = [
   {
     classes:
-      'rounded-full transition duration-300 ease-out bg-primary m-1',
+      'rounded-lg transition duration-300 ease-out bg-primary m-1',
   },
   {
+    direction: '',
     active: true,
     classes: 'bg-opacity-100',
   },
   {
+    direction: '',
     active: false,
     classes: 'bg-opacity-50',
   },
-  { direction: 'vertical', classes: 'w-1 min-h-[35px]' },
-  { direction: 'horizontal', classes: 'h-1 min-w-[35px]' },
+  { direction: 'vertical', classes: 'w-1 h-[40px]' },
+  { direction: 'horizontal', classes: 'h-1 w-[40px]' },
 ]
 
 const activeStyles = [
