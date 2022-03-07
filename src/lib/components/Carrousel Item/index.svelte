@@ -11,7 +11,7 @@
   export let className = '' // *, custom wrapper classes
   
   $: previewed = remaining === 0
-  let container
+  let itemWidth
   
   /* events */
   import { createEventDispatcher } from 'svelte/internal'
@@ -40,8 +40,8 @@
   on:click={() => {
     togglePreviewed(true)
   }}
-  bind:this={container}
-  style={`transform: translateX(${remaining*container.offsetWidth}px)`}
+  bind:clientWidth={itemWidth}
+  style={`transform: translateX(${remaining*itemWidth}}px)`}
 >
   <svelte:component
     this={thumbnail.component}
