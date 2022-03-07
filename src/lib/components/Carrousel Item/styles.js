@@ -4,15 +4,15 @@ export let carrouselItemWrapper = options => {
   return [
     {
       classes:
-        'flex flex-wrap sm:flex-nowrap items-start scale-75 justify-center transition duration-500 ease-out',
+        'flex flex-wrap sm:flex-nowrap items-start scale-75 justify-center transition duration-500 ease-out transition duration-300 ease-out',
     },
     {
       on: [options.previewed, true],
-      classes: 'opacity-100',
+      classes: 'opacity-100 z-50',
     },
     {
       on: [options.previewed, false],
-      classes: 'opacity-50',
+      classes: 'opacity-50 z-0',
     },
   ]
 }

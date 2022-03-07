@@ -42,17 +42,19 @@
       className={classes.carrouselItem}
     />
   </List>
-  <Stepper
-    direction="horizontal"
-    steps={items.length}
-    bind:active={currentStep}
-    className={classes.stepper}
-  />
-  <Button
-    label="next"
-    icon={Arrow}
-    shape="ghost"
-    on:click={next}
-    className={classes.button}
-  />
+  <div class={classes.controls}>
+    <Stepper
+      direction="horizontal"
+      steps={items.length}
+      bind:active={currentStep}
+      className={classes.stepper}
+    />
+    <Button
+      label="next"
+      icon={Arrow}
+      shape="ghost"
+      on:click={next}
+      className={classes.button}
+    />
+  </div>
 </div>

@@ -9,11 +9,14 @@
   export let selected = false // *, selection state
   export let remaining = 0 // *, carrousel steps to reach item
   export let className = '' // *, custom wrapper classes
+  
   $: previewed = remaining === 0
+  let container
+  
   /* events */
   import { createEventDispatcher } from 'svelte/internal'
   const dispatch = createEventDispatcher()
-
+  
   /* methods */
   export const toggleSelected = isSelected => {
     // toggle/set selected state
@@ -37,6 +40,8 @@
   on:click={() => {
     togglePreviewed(true)
   }}
+  bind:this={container}
+  style={`transform: translateX(${remaining*container.offsetWidth}px)`}
 >
   <svelte:component
     this={thumbnail.component}
