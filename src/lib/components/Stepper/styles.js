@@ -1,7 +1,7 @@
 import { serializeClasses } from '$lib/helpers'
 
 const stepperStyles = [
-  { classes: 'flex' },
+  { classes: 'flex min-w-[300px]' },
   { direction: 'vertical', classes: 'flex-col' },
   { direction: 'horizontal', classes: 'flex-row' },
 ]
