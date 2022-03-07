@@ -25,6 +25,7 @@
     if (currentStep != 0) currentStep--
   }
   export const select = (num = currentStep) => (currentStep = num)
+  let width = window.innerWidth
 
   /* styles */
   import { config } from './styles'
@@ -32,7 +33,7 @@
 </script>
 
 <div class={`${classes.carrouselWrapper} ${className}`}>
-  <List {items} let:prop={item} className={classes.carrousel}>
+  <List {items} let:prop={item} bind:clientWidth={width} className={classes.carrousel} styles={`transform: translateX(-${currentStep * width / items.length}}px)`}>
     <CarrouselItem
       {...item}
       on:preview={() => {

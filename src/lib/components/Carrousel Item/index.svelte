@@ -40,8 +40,6 @@
   on:click={() => {
     togglePreviewed(true)
   }}
-  bind:clientWidth={itemWidth}
-  style={`transform: translateX(${remaining*itemWidth}}px)`}
 >
   <svelte:component
     this={thumbnail.component}
