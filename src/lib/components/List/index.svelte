@@ -2,14 +2,14 @@
   /* props */
   export let items = [] // *, list items
   export let className = '' // *, custom wrapper classes
-  console.log(items)
+  export let styles = ''
 
   /* styles */
   import { config } from './styles'
   let classes = config()
 </script>
 
-<ul class={`${classes.list} + ${className}`}>
+<ul class={`${classes.list} + ${className}`} style={styles}>
   {#each items as item}
     <li class={classes.listItem}>
       <slot prop={item} />
