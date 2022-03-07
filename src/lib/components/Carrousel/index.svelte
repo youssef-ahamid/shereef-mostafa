@@ -25,7 +25,7 @@
     if (currentStep != 0) currentStep--
   }
   export const select = (num = currentStep) => (currentStep = num)
-  let width = window.innerWidth
+  let width
 
   /* styles */
   import { config } from './styles'
