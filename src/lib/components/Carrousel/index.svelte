@@ -26,6 +26,7 @@
   }
   export const select = (num = currentStep) => (currentStep = num)
   let width
+  $: listStyle = `transform: translateX(-${currentStep * width / items.length}}px`
 
   /* styles */
   import { config } from './styles'
@@ -33,7 +34,7 @@
 </script>
 
 <div class={`${classes.carrouselWrapper} ${className}`}>
-  <List {items} let:prop={item} bind:clientWidth={width} className={classes.carrousel} styles={`transform: translateX(-${currentStep * width / items.length}}px)`}>
+  <List {items} let:prop={item} bind:clientWidth={width} className={classes.carrousel} bind:styles={listStyle}>
     <CarrouselItem
       {...item}
       on:preview={() => {
