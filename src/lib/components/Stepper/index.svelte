@@ -6,16 +6,13 @@
   export let className = '' // *, custom wrapper classes
 
   /* styles */
-  import { config, classes } from './styles'
-  config({ direction })
+  import { config } from './styles'
+  $: classes = config({ direction })
 
-  /* events */
-  import { createEventDispatcher } from 'svelte/internal'
-  const dispatch = createEventDispatcher()
   const activate = step => (active = step)
 </script>
 
-<div class={classes.stepper + className}>
+<div class={`${classes.stepper} ${className}`}>
   {#each [...Array(steps).keys()] as step}
     <span
       class="{classes.step} {step === active ? classes.active : ''}"
