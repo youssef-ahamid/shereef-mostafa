@@ -34,16 +34,18 @@
 </script>
 
 <div class={`${classes.carrouselWrapper} ${className}`}>
-  <List {items} let:prop={item} bind:clientWidth={width} className={classes.carrousel} bind:styles={listStyle}>
-    <CarrouselItem
-      {...item}
-      on:preview={() => {
-        select(items.indexOf(item))
-      }}
-      remaining={items.indexOf(item) - currentStep}
-      className={classes.carrouselItem}
-    />
-  </List>
+  <div style={listStyle}>
+    <List {items} let:prop={item} bind:clientWidth={width} className={classes.carrousel}>
+      <CarrouselItem
+        {...item}
+        on:preview={() => {
+          select(items.indexOf(item))
+        }}
+        remaining={items.indexOf(item) - currentStep}
+        className={classes.carrouselItem}
+      />
+    </List>
+  </div>
   <div class={classes.controls}>
     <Stepper
       direction="horizontal"

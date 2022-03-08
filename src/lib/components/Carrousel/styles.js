@@ -27,7 +27,7 @@ export let carrouselItem = () => {
 export let controls = () => {
   return [
     {
-      classes: 'max-w-[80%] md:max-w-md flex flex-col items-end pt-12 pr-4',
+      classes: 'max-w-[80%] md:max-w-md items-end pt-12 pr-4',
     },
   ]
 }
