@@ -1,15 +1,15 @@
 import { resolve } from "$lib/helpers";
 
-const stepperStyles = (props) => {
-  [
+export let stepperStyles = (props) => {
+  return [
     { classes: "flex flex-nowrap" },
     { on: [options.direction, "vertical"], classes: "flex-col" },
     { on: [options.direction, "horizontal"], classes: "flex-row" },
   ];
 };
 
-const stepStyles = (props) => {
-  [
+export let stepStyles = (props) => {
+  return [
     { classes: "rounded-lg transition duration-300 ease-out bg-primary m-1" },
     { on: [active, true], classes: "bg-opacity-100" },
     { on: [active, false], classes: "bg-opacity-50" },
@@ -18,8 +18,8 @@ const stepStyles = (props) => {
   ];
 };
 
-const activeStyles = (props) => {
-  [
+export let activeStyles = (props) => {
+  return [
     { on: [options.direction, "vertical"], classes: "scale-y-[200%]" },
     { on: [options.direction, "horizontal"], classes: "scale-x-[200%]" },
   ];
