@@ -32,7 +32,7 @@ const activeStyles = [
 
 let options
 const isActiveClass = style => {
-  return (style.direction === options.direction || !style.direction || style.active === options.active)
+  return (style.direction == options.direction || !style.direction || style.active === options.active)
 }
 
 export let classes = {}
