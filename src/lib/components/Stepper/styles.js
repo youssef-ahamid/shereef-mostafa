@@ -11,8 +11,8 @@ export let stepperStyles = (props) => {
 export let stepStyles = (props) => {
   return [
     { classes: "rounded-lg transition duration-300 ease-out bg-primary m-1" },
-    { on: [active, true], classes: "bg-opacity-100" },
-    { on: [active, false], classes: "bg-opacity-50" },
+    { on: [options.active, true], classes: "bg-opacity-100" },
+    { on: [options.active, false], classes: "bg-opacity-50" },
     { on: [options.direction, "vertical"], classes: "w-1 h-[40px]" },
     { on: [options.direction, "horizontal"], classes: "h-1 w-[40px]" },
   ];
