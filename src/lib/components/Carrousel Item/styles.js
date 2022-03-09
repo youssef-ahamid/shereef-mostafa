@@ -4,7 +4,7 @@ export let carrouselItemWrapper = options => {
   return [
     {
       classes:
-        'flex flex-wrap sm:flex-nowrap items-start scale-75 justify-center transition duration-500 ease-out transition duration-300 ease-out',
+        'inline-flex py-12 flex-wrap sm:flex-nowrap items-start scale-75 justify-center transition duration-500 ease-out w-80 md:w-[500px] mx-2',
     },
     {
       on: [options.previewed, true],
@@ -20,8 +20,15 @@ export let carrouselItemWrapper = options => {
 export let infoContainer = options => {
   return [
     {
-      classes:
-        'sm:-translate-x-28 sm:translate-y-40 z-50 min-w-[300px] md:min-w-[500px] lg:min-w-[700px] max-w-[300px] md:max-w-[500px] lg:max-w-[700px]',
+      classes: 'transition duration-500 z-50 ease-out min-w-[100%] md:translate-y-32 md:-translate-x-32 pl-3'
+    },
+    {
+      on: [options.previewed, true],
+      classes: 'opacity-100',
+    },
+    {
+      on: [options.previewed, false],
+      classes: 'opacity-0',
     },
   ]
 }

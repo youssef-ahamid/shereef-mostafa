@@ -24,28 +24,36 @@
   export const prev = () => {
     if (currentStep != 0) currentStep--
   }
-  export const select = (num = currentStep) => (currentStep = num)
-  let width = 0
-  $: listStyle = `transform: translateX(-${currentStep * width / items.length}}px`
-
+  $: remainders = Array.from({length: 10}, (_, i) => i - currentStep)
+  let carrouselItems = []
+  export const select = (num) => {
+    currentStep = num
+    if (carrouselItems[currentStep])
+    console.log(remainders)
+    carrouselItems[currentStep]? carrouselItems[currentStep].scrollIntoView({ behavior: 'smooth', inline: 'center', block: num%2===0? 'end': 'start' }) : ''
+  }
+  $: select(currentStep)
+  
+  // let width = 0
+  // $: listStyle = `transform: translateX(-${currentStep * (width / items.length)}px)`
+  // $: console.log(listStyle)
   /* styles */
   import { config } from './styles'
   $: classes = config()
 </script>
 
 <div class={`${classes.carrouselWrapper} ${className}`}>
-  <div style={listStyle} bind:clientWidth={width}>
-    <List {items} let:prop={item} className={classes.carrousel}>
+  <List {items} let:prop={item} className={classes.carrousel}>
+    <div bind:this={carrouselItems[items.indexOf(item)]} class={`${classes.carrouselItem} ${items.indexOf(item)%2===0? '-': ''}mt-36`}>
       <CarrouselItem
         {...item}
         on:preview={() => {
           select(items.indexOf(item))
         }}
-        remaining={items.indexOf(item) - currentStep}
-        className={classes.carrouselItem}
+        bind:remaining={remainders[items.indexOf(item)]}
       />
-    </List>
-  </div>
+    </div>
+  </List>
   <div class={classes.controls}>
     <Stepper
       direction="horizontal"

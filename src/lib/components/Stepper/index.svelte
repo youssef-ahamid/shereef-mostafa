@@ -8,7 +8,6 @@
   /* styles */
   import { config } from './styles'
   $: classes = config({ direction })
-  $: () => active? active = active: active = 0 
 
   const activate = step => (active = step)
 </script>

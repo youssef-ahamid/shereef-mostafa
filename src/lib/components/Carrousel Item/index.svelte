@@ -1,4 +1,5 @@
 <script>
+	import { fade, slide } from 'svelte/transition';
   /* props */
   export let uid // *, used for identifying the component externally. must be unique
   export let thumbnail = {} // *, thumbnail component
@@ -9,6 +10,7 @@
   export let selected = false // *, selection state
   export let remaining = 0 // *, carrousel steps to reach item
   export let className = '' // *, custom wrapper classes
+
   
   $: previewed = remaining === 0
   let itemWidth
@@ -49,11 +51,13 @@
   <!-- {#if !!video && selected}
         <svelte:component this={video.component} {...video.options} className={classes.video} />
     {/if} -->
-  <div class={classes.infoContainer}>
-    {#if image}
+    <div class={classes.infoContainer}>
+      {#if image}
       <img src={image} alt={title} class={classes.logo} />
-    {/if}
-    <h2>{title}</h2>
-    <p>{text}</p>
-  </div>
+      {/if}
+      <!-- {#if previewed } -->
+      <h2 transition:fade={{ duration: 300 }}>{title}</h2>
+      <p transition:slide={{ duration: 400, delay: 300 }}>{text}</p>
+      <!-- {/if} -->
+    </div>
 </div>

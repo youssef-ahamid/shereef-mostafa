@@ -3,7 +3,7 @@ import { resolve } from '$lib/helpers'
 export let carrouselWrapper = () => {
   return [
     {
-      classes: 'pt-[10%] h-[90%] flex flex-col justify-center items-end',
+      classes: 'h-full',
     },
   ]
 }
@@ -11,7 +11,7 @@ export let carrouselWrapper = () => {
 export let carrousel = () => {
   return [
     {
-      classes: 'flex flex-nowrap items-center odd:translate-y-12 even:-translate-y-12 transition duration-300 ease-out overflow-x-clip',
+      classes: 'flex flex-nowrap transition duration-300 ease-out overflow-x-scroll',
     },
   ]
 }
@@ -19,7 +19,7 @@ export let carrousel = () => {
 export let carrouselItem = () => {
   return [
     {
-      classes: '',
+      classes: 'cursor-pointer mx-0 sm:mx-4 md:mx-8 first:md:pl-52',
     },
   ]
 }
@@ -27,7 +27,7 @@ export let carrouselItem = () => {
 export let controls = () => {
   return [
     {
-      classes: 'max-w-[80%] md:max-w-md items-end pt-12 pr-4',
+      classes: 'pt-12 pr-4 float-right',
     },
   ]
 }

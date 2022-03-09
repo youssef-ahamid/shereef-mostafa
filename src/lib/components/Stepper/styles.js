@@ -2,26 +2,23 @@ import { resolve } from "$lib/helpers";
 
 export let stepperStyles = (props) => {
   return [
-    { classes: "flex flex-nowrap" },
-    { on: [options.direction, "vertical"], classes: "flex-col" },
-    { on: [options.direction, "horizontal"], classes: "flex-row" },
+    { classes: "w-full" },
+    
   ];
 };
 
 export let stepStyles = (props) => {
   return [
-    { classes: "rounded-lg transition duration-300 ease-out bg-primary m-1" },
-    { on: [options.active, true], classes: "bg-opacity-100" },
-    { on: [options.active, false], classes: "bg-opacity-50" },
-    { on: [options.direction, "vertical"], classes: "w-1 h-[40px]" },
-    { on: [options.direction, "horizontal"], classes: "h-1 w-[40px]" },
+    { classes: "rounded-lg transition duration-300 ease-out bg-primary mx-1 cursor-pointer bg-opacity-50" },
+    { on: [props.direction, "vertical"], classes: "w-1 h-[40px]" },
+    { on: [props.direction, "horizontal"], classes: "h-1 w-[40px] inline-block" },
   ];
 };
 
 export let activeStyles = (props) => {
   return [
-    { on: [options.direction, "vertical"], classes: "scale-y-[200%]" },
-    { on: [options.direction, "horizontal"], classes: "scale-x-[200%]" },
+    { on: [props.direction, 'vertical'], classes: "scale-y-[150%] bg-opacity-100" },
+    { on: [props.direction, 'horizontal'], classes: "scale-x-[150%] bg-opacity-100" },
   ];
 };
 
