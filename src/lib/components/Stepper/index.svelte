@@ -7,15 +7,15 @@
 
   /* styles */
   import { config } from './styles'
-  $: classes = config({ direction })
+  $: classes = config({ direction, active })
 
   const activate = step => (active = step)
 </script>
 
 <div class={`${classes.stepper} ${className}`}>
   {#each [...Array(steps).keys()] as step}
-    <span
-      class="{classes.step} {step === active ? classes.active : ''}"
+    <button
+      class="{classes.step} {step === active ? classes.active : classes.inactive}"
       on:click={() => {
         activate(step)
       }}
