@@ -32,7 +32,9 @@
   export const select = num => {
     currentStep = num
     if (!carrouselItems[currentStep]) return
-    if (num == items.length - 1) dispatch('complete')
+    if (num == items.length - 1) setTimeout(() => {
+      dispatch('complete')
+    }, 500)
     else dispatch('rewatch')
     selected = true
     carrouselItems[currentStep].scrollIntoView({

@@ -1,7 +1,7 @@
 <script>
   /* props */
   export let indicator = true // *, false
-  export let timeout = 1500 // *, scroll timeout in ms
+  export let timeout = 1900 // *, scroll timeout in ms
   export let hijacked = true // *, false
 
   /* data */
