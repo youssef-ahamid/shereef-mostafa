@@ -137,3 +137,48 @@ export const design = [
       'https://logos-download.com/wp-content/uploads/2016/05/Allianz_logo_logotype.png',
   },
 ]
+
+import TextInput from '$lib/components/Text Input/index.svelte'
+
+export const contact = {
+  inputs: [
+    {
+      component: TextInput,
+      data: {
+        long: true,
+        label: 'name',
+        value: '',
+        validations: [
+          { type: 'required', error: 'required field :(' },
+        ],
+      },
+    },
+    {
+      component: TextInput,
+      data: {
+        label: 'university',
+        type: 'select',
+        options: ['', 'AUC', 'NYUAD', 'GUC'],
+        value: '',
+      },
+    },
+    {
+      component: TextInput,
+      data: {
+        full: true,
+        label: 'email',
+        value: '',
+        validations: [
+          { type: 'required', error: 'required field :(' },
+          { type: 'email', error: 'must be a valid email 🧐' },
+        ],
+      },
+    },
+  ],
+  button: { label: 'request', shape: 'full' },
+}
+
+export const profile = {
+  phone: '+201200525233',
+  email: 'youssef@tutoruu.com',
+}
