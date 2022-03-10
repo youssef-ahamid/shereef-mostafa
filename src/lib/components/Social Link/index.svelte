@@ -12,7 +12,7 @@
 <a
   href={link}
   class={classes.link + className}
-  target:_blank={redirect}
+  target={redirect? '_blank':'_self'}
 >
   <svelte:component this={icon} />
 </a>

@@ -10,7 +10,7 @@ export let stepperStyles = (props) => {
 
 export let stepStyles = (props) => {
   return [
-    { classes: "rounded-lg transition duration-300 ease-out bg-primary cursor-pointer ring-2 ring-secondary" },
+    { classes: "rounded-lg transition duration-300 ease-out bg-primary cursor-pointer ring-1 ring-secondary ring-opacity-50" },
     { on: [props.direction, "vertical"], classes: "w-1.5 h-[40px]" },
     { on: [props.direction, "horizontal"], classes: "h-1.5 w-[40px] inline-block" },
   ];

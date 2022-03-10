@@ -19,9 +19,7 @@
 
   /* methods */
   export const next = () => {
-    // toggle/set selected state
-    if (currentStep != items.length - 1) currentStep++
-    else dispatch('complete')
+     if (currentStep != items.length - 1) currentStep ++
   }
   export const prev = () => {
     if (currentStep != 0) currentStep--
@@ -32,6 +30,8 @@
   export const select = (num) => {
     currentStep = num
     if (!carrouselItems[currentStep]) return
+    if (num == items.length - 1) dispatch('complete')
+    else dispatch('rewatch')
     selected = true;
     carrouselItems[currentStep].scrollIntoView({ behavior: 'smooth', inline: 'center', block: num%2===0? 'end': 'start' })
     setTimeout(() => {
@@ -46,6 +46,7 @@
   $: width = carrouselItems.reduce(getWidth, 0)
   const getCurrentStep = e => {
     if(selected) return
+    e.stopPropagation();
     currentStep = Math.floor((e.target.scrollLeft / (width - screenWidth)) * carrouselItems.length)
     if (currentStep === carrouselItems.length) currentStep --
   }

@@ -56,8 +56,8 @@
       <img src={image} alt={title} class={classes.logo} />
       {/if}
       <!-- {#if previewed } -->
-      <h2 transition:fade={{ duration: 300 }}>{title}</h2>
-      <p transition:slide={{ duration: 400, delay: 300 }}>{text}</p>
+      <h2>{title}</h2>
+      <p>{text}</p>
       <!-- {/if} -->
     </div>
 </div>
