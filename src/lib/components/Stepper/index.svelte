@@ -15,7 +15,9 @@
 <div class={`${classes.stepper} ${className}`}>
   {#each [...Array(steps).keys()] as step}
     <button
-      class="{classes.step} {step === active ? classes.active : classes.inactive}"
+      class="{classes.step} {step === active
+        ? classes.active
+        : classes.inactive}"
       on:click={() => {
         activate(step)
       }}

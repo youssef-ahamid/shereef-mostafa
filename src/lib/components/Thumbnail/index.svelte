@@ -10,7 +10,7 @@
   $: classes = config({ fade })
 </script>
 
-  <div class={`${classes.thumbnailWrapper} ${className}`} on:click>
-    <div class={classes.overlay} />
-    <img class={classes.thumbnail} {src} {alt} />
-  </div>
+<div class={`${classes.thumbnailWrapper} ${className}`} on:click>
+  <div class={classes.overlay} />
+  <img class={classes.thumbnail} {src} {alt} />
+</div>

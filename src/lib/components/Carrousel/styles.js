@@ -11,7 +11,8 @@ export let carrouselWrapper = () => {
 export let carrousel = () => {
   return [
     {
-      classes: 'flex flex-nowrap transition duration-300 ease-out pb-12 overflow-x-auto no-scrollbar snap-x snap-mandatory',
+      classes:
+        'flex flex-nowrap transition duration-300 ease-out pb-12 overflow-x-auto no-scrollbar snap-x snap-mandatory',
     },
   ]
 }
@@ -19,7 +20,8 @@ export let carrousel = () => {
 export let carrouselItem = () => {
   return [
     {
-      classes: 'cursor-pointer mx-0 snap-center snap-always first:md:pl-52 last:md:pr-52',
+      classes:
+        'cursor-pointer mx-0 snap-center snap-always first:md:pl-52 last:md:pr-52',
     },
   ]
 }

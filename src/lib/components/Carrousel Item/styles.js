@@ -20,7 +20,8 @@ export let carrouselItemWrapper = options => {
 export let infoContainer = options => {
   return [
     {
-      classes: 'transition duration-500 z-50 ease-out min-w-[100%] md:translate-y-32 md:-translate-x-32 pl-3'
+      classes:
+        'transition duration-500 z-50 ease-out min-w-[100%] md:translate-y-32 md:-translate-x-32 pl-3',
     },
     {
       on: [options.previewed, true],
