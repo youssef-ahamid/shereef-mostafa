@@ -3,7 +3,7 @@
 
   export let description = ''
   export let title = ''
-  export let img = 'https://media.graphcms.com/g0hy97CbRi9KyihxslLg'
+  export let img = 'https://media.graphcms.com/C4wQ9i8vQiW5T6aWweJH'
 
   const pageTitle = `${siteTitle} ${title}`
 </script>
