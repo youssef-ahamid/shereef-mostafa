@@ -1,8 +1,9 @@
 <script>
   import Go from '$lib/components/Go/index.svelte'
-  import { number } from '$lib/stores'
+  import { number, scroll } from '$lib/stores'
   import { fly, fade } from 'svelte/transition'
   import logo from '$lib/images/logo.png'
+  $scroll = true
 </script>
 
 {#if $number === 0}
