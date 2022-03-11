@@ -10,12 +10,14 @@
   <div
     class="fixed inset-0 flex flex-col flex-wrap justify-center items-center"
   >
-    <img
-      transition:fade={{ duration: 400 }}
-      class="block w-64 md:w-80 absolute bottom-1/2"
-      src={logo}
-      alt="ahmed mitry logo"
-    />
+    <Go to="/bio">
+        <img
+            transition:fade={{ duration: 400 }}
+            class="block w-64 md:w-80 absolute bottom-1/2"
+            src={logo}
+            alt="ahmed mitry logo"
+        />
+    </Go>
     <div
       class="flex justify-center items-center my-24 md:my-12 absolute top-1/2"
       transition:fly={{ y: 20, duration: 300, delay: 400 }}
