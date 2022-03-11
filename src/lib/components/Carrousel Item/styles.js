@@ -4,7 +4,7 @@ export let carrouselItemWrapper = options => {
   return [
     {
       classes:
-        'inline-flex py-12 flex-wrap sm:flex-nowrap items-start scale-75 justify-center transition duration-500 ease-out w-80 md:w-[500px] mx-2',
+        'inline-flex py-12 pt-20 md:pt-12 flex-wrap sm:flex-nowrap items-start scale-75 justify-center transition duration-500 ease-out w-80 md:w-[500px] mx-2',
     },
     {
       on: [options.previewed, true],

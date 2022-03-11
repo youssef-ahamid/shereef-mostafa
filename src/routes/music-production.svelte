@@ -2,17 +2,34 @@
   import { fade } from 'svelte/transition'
   import { scroll, number } from '$lib/stores.js'
   import Carrousel from '$lib/components/Carrousel/index.svelte'
-
-  import { production } from '$lib/presets'
+  import Thumbnail from '$lib/components/Thumbnail/index.svelte'
+  
+  import { getProjects } from '$lib/gql';
+  let projects
+  getProjects("MusicProduction").then(data => {
+    projects = data.map(project => {
+      return {
+        thumbnail: {
+          component: Thumbnail,
+          data: {
+            alt: `${project.title} | Ahmed Mitry | Music Production`,
+            src: project.thumbnail || ''
+          },
+        },
+        title: project.title,
+        image: project.clientLogo.url
+      }
+    })
+  }).catch(e => console.error(e))
 </script>
 
-{#if $number === 2}
+{#if $number === 2 && !!projects}
   <div
     in:fade={{ duration: 500, delay: 300 }}
     out:fade={{ duration: 250 }}
   >
     <Carrousel
-      items={production}
+      items={projects}
       on:complete={() => {
         $scroll = true
       }}

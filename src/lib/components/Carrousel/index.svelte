@@ -1,5 +1,4 @@
 <script>
-  import { getOffset } from './../../helpers.js'
   /* props */
   export let items = [] // *, array of carrousel items
   export let currentStep = 0 // *, starting step
@@ -13,7 +12,7 @@
   import Arrow from '$lib/icons/arrow.svelte'
 
   /* events */
-  import { createEventDispatcher } from 'svelte/internal'
+  import { createEventDispatcher, onMount } from 'svelte/internal'
   const dispatch = createEventDispatcher()
 
   /* methods */
@@ -64,6 +63,10 @@
 
   import { config } from './styles'
   $: classes = config()
+
+  onMount(() => {
+    dispatch('rewatch')
+  })
 </script>
 
 <svelte:window bind:outerWidth={screenWidth} />
@@ -78,8 +81,8 @@
     <div
       bind:this={carrouselItems[items.indexOf(item)]}
       class={`${classes.carrouselItem} ${
-        items.indexOf(item) % 2 === 0 ? '-' : ''
-      }mt-32`}
+        items.indexOf(item) % 2 === 0 ? '-mt-16 md:-mt-32' : 'mt-16 md:mt-32'
+      }`}
     >
       <CarrouselItem
         {...item}

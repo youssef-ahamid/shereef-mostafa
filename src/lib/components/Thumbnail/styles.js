@@ -1,7 +1,7 @@
 import { serializeClasses } from '$lib/helpers'
 
 const thumbnailWrapperStyles =
-  'relative w-full min-w-[300px] md:min-w-[500px] lg:min-w-[700px] max-w-[300px] md:max-w-[500px] lg:max-w-[700px] max-h-[500px]'
+  'relative w-full min-w-[300px] md:min-w-[500px] lg:min-w-[700px] max-w-[300px] md:max-w-[500px] lg:max-w-[700px] max-h-[500px] overflow-hidden'
 
 const overlayStyles =
   'absolute inset-0 bg-gradient-to-b from-transparent to-secondary z-30 pointer-events-none'
@@ -9,7 +9,7 @@ const overlayStyles =
 const thumbnailStyles = [
   {
     type: 'base',
-    classes: 'w-full peer block mx-auto',
+    classes: 'w-full peer block mx-auto overflow-hidden',
   },
   { fade: 'small', classes: 'opacity-75' },
   { fade: 'medium', classes: 'opacity-50' },

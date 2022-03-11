@@ -29,7 +29,7 @@ export let carrouselItem = () => {
 export let controls = () => {
   return [
     {
-      classes: 'pt-12 pr-4 float-right',
+      classes: 'pt-12 pr-4 fixed bottom-[10%] right-8',
     },
   ]
 }
