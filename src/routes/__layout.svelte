@@ -1,4 +1,5 @@
 <script context="module">
+  export const prerender = true
   let links = [
     {
       text: '',
@@ -45,6 +46,7 @@
   import { number } from '$lib/stores.js'
   import '$lib/styles/app.css'
   import Page from '$lib/components/Page/index.svelte'
+  import SEO from '$lib/components/SEO/index.svelte'
   import { socialLinks } from '$lib/presets'
   import { goto } from '$app/navigation'
   import { browser } from '$app/env'
@@ -69,7 +71,7 @@
         }
       : null
 </script>
-
+<SEO bind:title description="Egyptian Music Producer & Sound Designer" />
 <Page
   bind:number={$number}
   {links}

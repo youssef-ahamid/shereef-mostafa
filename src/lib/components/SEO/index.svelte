@@ -3,9 +3,11 @@
 
   export let description = ''
   export let title = ''
-  export let img = ''
+  export let img = 'https://media.graphcms.com/g0hy97CbRi9KyihxslLg'
 
-  const pageTitle = `${siteTitle} | ${title}`
+  $: console.log(title)
+
+  const pageTitle = `${siteTitle} ${title}`
 </script>
 
 <svelte:head>
