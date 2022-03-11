@@ -5,11 +5,10 @@ const labelStyles = [
   { type: 'text', classes: 'min-w-[45%]' },
   { long: false, classes: 'max-w-[45%]' },
   { type: 'text area', long: true, classes: 'w-full max-w-full' },
-  { clean: false, classes: 'animate-wiggle' },
 ]
 
 const nameStyles = [
-  { type: 'base', classes: 'transition duration-150 ease-out' },
+  { type: 'base', classes: 'transition duration-150 ease-out capitalize' },
   { clean: false, classes: 'text-error' },
 ]
 
@@ -19,6 +18,7 @@ const inputStyles = [
     classes:
       'transition duration-200 ease-out appearance-none outline-none bg-primary bg-opacity-[15%] focus:bg-opacity-25 px-2 pt-1 md:px-3 md:pt-2 pb-1 my-0.5 md:my-1 border-content border-b-2 border-primary border-opacity-50 focus:border-opacity-100',
   },
+  { clean: false, classes: 'animate-wiggle' },
   {
     type: 'text area',
     classes: 'resize-none w-full h-24 md:h-32',

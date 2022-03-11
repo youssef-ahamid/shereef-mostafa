@@ -4,7 +4,7 @@ const buttonStyles = [
   {
     type: 'base',
     classes:
-      'px-2 py-1 m-2 md:px-4 md:py-2 md:m-4 flex items-center justify-center group transition duration-300 ease-out hover:scale-[105%]',
+      'px-2 py-1 m-2 md:px-4 md:py-2 my-2 md:my-4 flex items-center justify-center group transition duration-300 ease-out',
   },
   { type: 'reverse', classes: 'flex-row-reverse' },
   { type: 'primary', classes: 'bg-secondary text-primary' },

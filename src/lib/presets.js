@@ -145,7 +145,6 @@ export const contact = {
     {
       component: TextInput,
       data: {
-        long: true,
         label: 'name',
         value: '',
         validations: [
@@ -154,28 +153,46 @@ export const contact = {
       },
     },
     {
-      component: TextInput,
-      data: {
-        label: 'university',
-        type: 'select',
-        options: ['', 'AUC', 'NYUAD', 'GUC'],
-        value: '',
-      },
+        component: TextInput,
+        data: {
+            label: 'email',
+            value: '',
+            validations: [
+            { type: 'required', error: 'required field :(' },
+            { type: 'email', error: 'must be a valid email 🧐' },
+            ],
+        },
     },
     {
       component: TextInput,
       data: {
-        full: true,
-        label: 'email',
+        label: 'phone',
         value: '',
         validations: [
-          { type: 'required', error: 'required field :(' },
-          { type: 'email', error: 'must be a valid email 🧐' },
+            { type: 'required', error: 'required field :(' },
         ],
       },
     },
+    {
+        component: TextInput,
+        data: {
+            label: 'company',
+            value: '',
+        },
+    },
+    {
+        component: TextInput,
+        data: {
+            label: 'message',
+            value: '',
+            validations: [
+                { type: 'required', error: 'required field :(' },
+            ],
+            type: 'text area'
+        },
+    },
   ],
-  button: { label: 'request', shape: 'full' },
+  button: { label: 'send message', shape: 'full' },
 }
 
 export const profile = {

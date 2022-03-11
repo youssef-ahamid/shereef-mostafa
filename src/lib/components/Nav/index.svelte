@@ -22,10 +22,10 @@
   {/key}
   <svelte:component this={icon} className={classes.icon} {active} />
   <h3
-    class:opacity-75={number < links.length - 1}
+    class:opacity-75={number < links.length - 2}
     class="transition duration-300 ease-out"
   >
-    {links.length}
+    {links.length - 1}
   </h3>
 </div>
 
