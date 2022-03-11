@@ -17,7 +17,8 @@
           },
         },
         title: project.title,
-        image: project.clientLogo? project.clientLogo.url : null
+        image: project.clientLogo? project.clientLogo.url : null,
+        videoUrl: project.videoUrl
       }
     })
   }).catch(e => console.error(e))

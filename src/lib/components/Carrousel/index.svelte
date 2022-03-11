@@ -81,7 +81,7 @@
     <div
       bind:this={carrouselItems[items.indexOf(item)]}
       class={`${classes.carrouselItem} ${
-        items.indexOf(item) % 2 === 0 ? '-mt-16 md:-mt-32' : 'mt-16 md:mt-32'
+        items.indexOf(item) % 2 === 0 ? 'mt-4 md:-mt-32' : 'mt-12 md:mt-32'
       }`}
     >
       <CarrouselItem

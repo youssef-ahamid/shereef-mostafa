@@ -40,12 +40,13 @@ export async function getProjects(type) {
           videoUrl
           thumbnail {
             url(
-              transformation: {image: {resize: {fit: crop}}, document: {output: {format: png}}}
+              transformation: {document: {output: {format: png}}}
             )
           }
           clientLogo {
             url(transformation: {document: {output: {format: png}}})
           }
+          videoUrl
         }
       }
   `
