@@ -5,7 +5,7 @@
   export let title = ''
   export let img = 'https://media.graphcms.com/C4wQ9i8vQiW5T6aWweJH'
 
-  const pageTitle = `${siteTitle} ${title}`
+  const pageTitle = `${siteTitle} | ${title.toUpperCase()}`
 </script>
 
 <svelte:head>
