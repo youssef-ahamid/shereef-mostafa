@@ -31,9 +31,10 @@
   export const select = num => {
     currentStep = num
     if (!carrouselItems[currentStep]) return
-    if (num == items.length - 1) setTimeout(() => {
-      dispatch('complete')
-    }, 500)
+    if (num == items.length - 1)
+      setTimeout(() => {
+        dispatch('complete')
+      }, 500)
     else dispatch('rewatch')
     selected = true
     carrouselItems[currentStep].scrollIntoView({
@@ -81,7 +82,9 @@
     <div
       bind:this={carrouselItems[items.indexOf(item)]}
       class={`${classes.carrouselItem} ${
-        items.indexOf(item) % 2 === 0 ? 'mt-4 md:-mt-32' : 'mt-12 md:mt-32'
+        items.indexOf(item) % 2 === 0
+          ? 'mt-4 md:-mt-32'
+          : 'mt-12 md:mt-32'
       }`}
     >
       <CarrouselItem

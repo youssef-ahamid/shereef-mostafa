@@ -8,7 +8,10 @@ const labelStyles = [
 ]
 
 const nameStyles = [
-  { type: 'base', classes: 'transition duration-150 ease-out capitalize' },
+  {
+    type: 'base',
+    classes: 'transition duration-150 ease-out capitalize',
+  },
   { clean: false, classes: 'text-error' },
 ]
 

@@ -1,5 +1,5 @@
 <script>
-	import { scroll } from '$lib/stores.js';
+  import { scroll } from '$lib/stores.js'
   import Button from '$lib/components/Button/index.svelte'
   import Nav from '$lib/components/Nav/index.svelte'
   import Stepper from '$lib/components/Stepper/index.svelte'
@@ -51,15 +51,20 @@
       {title}
     </h1>
   {/key}
-  {#if controls }
-  <span transition:fade={{duration:500}}>
-    <Nav {links} bind:number icon={Burger} className={classes.nav} />
-    <Stepper
-      steps={5}
-      bind:active={number}
-      className={classes.stepper}
-    />
-  </span>
+  {#if controls}
+    <span transition:fade={{ duration: 500 }}>
+      <Nav
+        {links}
+        bind:number
+        icon={Burger}
+        className={classes.nav}
+      />
+      <Stepper
+        steps={5}
+        bind:active={number}
+        className={classes.stepper}
+      />
+    </span>
   {/if}
   <div class={classes.content}>
     <slot prop={number} />
@@ -72,8 +77,8 @@
     <SocialLink {...item} />
   </List>
   {#if $scroll}
-  <span transition:fade={{duration:500}}>
-    <ScrollControl on:up={prev} on:down={next} />
-  </span>
+    <span transition:fade={{ duration: 500 }}>
+      <ScrollControl on:up={prev} on:down={next} />
+    </span>
   {/if}
 </div>

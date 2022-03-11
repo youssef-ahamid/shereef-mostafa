@@ -3,25 +3,27 @@
   import { scroll, number } from '$lib/stores.js'
   import Carrousel from '$lib/components/Carrousel/index.svelte'
   import Thumbnail from '$lib/components/Thumbnail/index.svelte'
-  
-  import { getProjects } from '$lib/gql';
+
+  import { getProjects } from '$lib/gql'
   let projects
-  getProjects("SoundDesign").then(data => {
-    projects = data.map(project => {
-      return {
-        thumbnail: {
-          component: Thumbnail,
-          data: {
-            alt: `${project.title} | Ahmed Mitry | Sound Design`,
-            src: project.thumbnail? project.thumbnail.url : ''
+  getProjects('SoundDesign')
+    .then(data => {
+      projects = data.map(project => {
+        return {
+          thumbnail: {
+            component: Thumbnail,
+            data: {
+              alt: `${project.title} | Ahmed Mitry | Sound Design`,
+              src: project.thumbnail ? project.thumbnail.url : '',
+            },
           },
-        },
-        title: project.title,
-        image: project.clientLogo? project.clientLogo.url : null,
-        videoUrl: project.videoUrl
-      }
+          title: project.title,
+          image: project.clientLogo ? project.clientLogo.url : null,
+          videoUrl: project.videoUrl,
+        }
+      })
     })
-  }).catch(e => console.error(e))
+    .catch(e => console.error(e))
 </script>
 
 {#if $number === 3 && !!projects}

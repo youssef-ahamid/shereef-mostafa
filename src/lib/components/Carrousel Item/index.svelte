@@ -1,16 +1,16 @@
 <script>
-	/* props */
+  /* props */
   export let thumbnail = {} // *, thumbnail component
   export let text = '' // *, body text
-  export let videoUrl  // *, video url
+  export let videoUrl // *, video url
   export let title = '' // *, title text
   export let image = null // *, logo/image url
   export let selected = false // *, selection state
   export let remaining = 0 // *, carrousel steps to reach item
   export let className = '' // *, custom wrapper classes
-  
-  import Go from '$lib/components/Go/index.svelte';
-  import Button from '$lib/components/Button/index.svelte';
+
+  import Go from '$lib/components/Go/index.svelte'
+  import Button from '$lib/components/Button/index.svelte'
   import Arrow from '$lib/icons/arrow.svelte'
   import { fade, slide } from 'svelte/transition'
 
@@ -61,9 +61,14 @@
     <h2>{title}</h2>
     <p>{text}</p>
     <!-- {/if} -->
-    {#if videoUrl }
+    {#if videoUrl}
       <Go to={videoUrl} redirect>
-        <Button shape="ghost" icon={Arrow} label="watch" className="-ml-2"/>
+        <Button
+          shape="ghost"
+          icon={Arrow}
+          label="watch"
+          className="-ml-2"
+        />
       </Go>
     {/if}
   </div>
