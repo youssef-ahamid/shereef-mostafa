@@ -1,19 +1,14 @@
-import spotify from '$lib/icons/social/spotify.svelte'
-import soundcloud from '$lib/icons/social/soundcloud.svelte'
-import anghami from '$lib/icons/social/anghami.svelte'
+import facebook from '$lib/icons/social/facebook.svelte'
+import linkedin from '$lib/icons/social/linkedin.svelte'
 
 export const socialLinks = [
   {
-    link: '/hamada1',
-    icon: spotify,
+    link: 'https://www.facebook.com/ahmed.mitry',
+    icon: facebook,
   },
   {
-    link: '/hamada2',
-    icon: soundcloud,
-  },
-  {
-    link: '/hamada3',
-    icon: anghami,
+    link: 'https://eg.linkedin.com/in/ahmed-mitry-56b219143',
+    icon: linkedin,
   },
 ]
 
