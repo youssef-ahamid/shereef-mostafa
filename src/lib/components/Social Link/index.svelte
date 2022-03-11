@@ -14,5 +14,5 @@
   class={classes.link + className}
   target={redirect ? '_blank' : '_self'}
 >
-  <svelte:component this={icon} />
+  <svelte:component this={icon} className={classes.icon} />
 </a>
