@@ -18,6 +18,7 @@
   /* methods */
   export const next = () => {
     if (currentStep != items.length - 1) currentStep++
+    else dispatch('finish')
   }
   export const prev = () => {
     if (currentStep != 0) currentStep--

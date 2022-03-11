@@ -34,6 +34,9 @@
       on:complete={() => {
         $scroll = true
       }}
+      on:finish={() => {
+        $number++
+      }}
       on:rewatch={() => {
         $scroll = false
       }}
