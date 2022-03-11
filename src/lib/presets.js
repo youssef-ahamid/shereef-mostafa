@@ -17,126 +17,7 @@ export const socialLinks = [
   },
 ]
 
-import Thumbnail from '$lib/components/Thumbnail/index.svelte'
-export const bio = [
-  {
-    thumbnail: {
-      component: Thumbnail,
-      data: {
-        alt: 'hello',
-        src: 'https://github.githubassets.com/images/modules/signup/gc_banner_light.png',
-      },
-    },
-    text: 'Ahmed Mitry is an Egyptian musician, producer, and sound designer. Born in 1998, Mitry started with learning both instruments guitar & piano at the age of 7 until he decided to take his skill to the next level by taking courses in Music Production & Sound Engineering.',
-    title: 'cairo olympics',
-    image:
-      'https://logos-download.com/wp-content/uploads/2016/05/Allianz_logo_logotype.png',
-  },
-  {
-    thumbnail: {
-      component: Thumbnail,
-      data: {
-        alt: 'hello',
-        src: 'https://github.githubassets.com/images/modules/signup/gc_banner_light.png',
-      },
-    },
-    title: 'cairo olympics',
-    image:
-      'https://logos-download.com/wp-content/uploads/2016/05/Allianz_logo_logotype.png',
-  },
-  {
-    thumbnail: {
-      component: Thumbnail,
-      data: {
-        alt: 'hello',
-        src: 'https://github.githubassets.com/images/modules/signup/gc_banner_light.png',
-      },
-    },
-    text: 'Ahmed Mitry is an Egyptian musician, producer, and sound designer. Born in 1998, Mitry started with learning both instruments guitar & piano at the age of 7 until he decided to take his skill to the next level by taking courses in Music Production & Sound Engineering.',
-    image:
-      'https://logos-download.com/wp-content/uploads/2016/05/Allianz_logo_logotype.png',
-  },
-]
 
-export const production = [
-  {
-    thumbnail: {
-      component: Thumbnail,
-      data: {
-        alt: 'hello',
-        src: 'https://github.githubassets.com/images/modules/signup/gc_banner_light.png',
-      },
-    },
-    text: 'Ahmed Mitry is an Egyptian musician, producer, and sound designer. Born in 1998, Mitry started with learning both instruments guitar & piano at the age of 7 until he decided to take his skill to the next level by taking courses in Music Production & Sound Engineering.',
-    title: 'cairo olympics',
-    image:
-      'https://logos-download.com/wp-content/uploads/2016/05/Allianz_logo_logotype.png',
-  },
-  {
-    thumbnail: {
-      component: Thumbnail,
-      data: {
-        alt: 'hello',
-        src: 'https://github.githubassets.com/images/modules/signup/gc_banner_light.png',
-      },
-    },
-    title: 'cairo olympics',
-    image:
-      'https://logos-download.com/wp-content/uploads/2016/05/Allianz_logo_logotype.png',
-  },
-  {
-    thumbnail: {
-      component: Thumbnail,
-      data: {
-        alt: 'hello',
-        src: 'https://github.githubassets.com/images/modules/signup/gc_banner_light.png',
-      },
-    },
-    text: 'Ahmed Mitry is an Egyptian musician, producer, and sound designer. Born in 1998, Mitry started with learning both instruments guitar & piano at the age of 7 until he decided to take his skill to the next level by taking courses in Music Production & Sound Engineering.',
-    image:
-      'https://logos-download.com/wp-content/uploads/2016/05/Allianz_logo_logotype.png',
-  },
-]
-
-export const design = [
-  {
-    thumbnail: {
-      component: Thumbnail,
-      data: {
-        alt: 'hello',
-        src: 'https://github.githubassets.com/images/modules/signup/gc_banner_light.png',
-      },
-    },
-    text: 'Ahmed Mitry is an Egyptian musician, producer, and sound designer. Born in 1998, Mitry started with learning both instruments guitar & piano at the age of 7 until he decided to take his skill to the next level by taking courses in Music Production & Sound Engineering.',
-    title: 'cairo olympics',
-    image:
-      'https://logos-download.com/wp-content/uploads/2016/05/Allianz_logo_logotype.png',
-  },
-  {
-    thumbnail: {
-      component: Thumbnail,
-      data: {
-        alt: 'hello',
-        src: 'https://github.githubassets.com/images/modules/signup/gc_banner_light.png',
-      },
-    },
-    title: 'cairo olympics',
-    image:
-      'https://logos-download.com/wp-content/uploads/2016/05/Allianz_logo_logotype.png',
-  },
-  {
-    thumbnail: {
-      component: Thumbnail,
-      data: {
-        alt: 'hello',
-        src: 'https://github.githubassets.com/images/modules/signup/gc_banner_light.png',
-      },
-    },
-    text: 'Ahmed Mitry is an Egyptian musician, producer, and sound designer. Born in 1998, Mitry started with learning both instruments guitar & piano at the age of 7 until he decided to take his skill to the next level by taking courses in Music Production & Sound Engineering.',
-    image:
-      'https://logos-download.com/wp-content/uploads/2016/05/Allianz_logo_logotype.png',
-  },
-]
 
 import TextInput from '$lib/components/Text Input/index.svelte'
 
@@ -148,7 +29,7 @@ export const contact = {
         label: 'name',
         value: '',
         validations: [
-          { type: 'required', error: 'required field :(' },
+          { type: 'required', error: 'required field' },
         ],
       },
     },
@@ -158,8 +39,8 @@ export const contact = {
         label: 'email',
         value: '',
         validations: [
-          { type: 'required', error: 'required field :(' },
-          { type: 'email', error: 'must be a valid email 🧐' },
+          { type: 'required', error: 'required field' },
+          { type: 'email', error: 'must be a valid email' },
         ],
       },
     },
@@ -169,7 +50,7 @@ export const contact = {
         label: 'phone',
         value: '',
         validations: [
-          { type: 'required', error: 'required field :(' },
+          { type: 'required', error: 'required field' },
         ],
       },
     },
@@ -186,7 +67,7 @@ export const contact = {
         label: 'message',
         value: '',
         validations: [
-          { type: 'required', error: 'required field :(' },
+          { type: 'required', error: 'required field' },
         ],
         type: 'text area',
       },
@@ -196,6 +77,6 @@ export const contact = {
 }
 
 export const profile = {
-  phone: '+201200525233',
-  email: 'youssef@tutoruu.com',
+  phone: '+201005584543',
+  email: 'am8594@nyu.edu',
 }

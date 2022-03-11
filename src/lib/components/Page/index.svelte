@@ -48,7 +48,7 @@
       in:typewriter={{ speed: 2, delay: 400 }}
       out:fade={{ duration: 200 }}
     >
-      {title}
+      {title !== 'home'? title : ''}
     </h1>
   {/key}
   {#if controls}

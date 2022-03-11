@@ -2,7 +2,7 @@
   export const prerender = true
   let links = [
     {
-      text: '',
+      text: 'home',
       link: '/',
     },
     {
