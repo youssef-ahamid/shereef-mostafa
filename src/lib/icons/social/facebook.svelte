@@ -11,7 +11,6 @@
   y="0px"
   viewBox="0 0 29.94 29.94"
   style="enable-background:new 0 0 29.94 29.94;"
-  xml:space="preserve"
   class={`hover:text-[#3b5998] transition duration-300 ease-out fill-current w-full h-auto ${className}`}
 >
   <g>
