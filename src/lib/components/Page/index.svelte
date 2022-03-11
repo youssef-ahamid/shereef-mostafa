@@ -55,7 +55,6 @@
     <span transition:fade={{ duration: 500 }}>
       <Nav
         {links}
-        bind:number
         icon={Burger}
         className={classes.nav}
       />
