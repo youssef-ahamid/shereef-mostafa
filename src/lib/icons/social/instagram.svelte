@@ -59,20 +59,20 @@
   /><g
     ><path
       fill="none"
-      class="group-hover:stroke-white stroke-current transition duration-300 ease-out"
+      class="group-hover:stroke-white stroke-secondary transition duration-300 ease-out"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-miterlimit="10"
       stroke-width="2"
       d="M30,11H18c-3.9,0-7,3.1-7,7v12c0,3.9,3.1,7,7,7h12c3.9,0,7-3.1,7-7V18C37,14.1,33.9,11,30,11z"
-    /><circle cx="31" cy="16" r="1" class="group-hover:text-white fill-current transition duration-300 ease-out" /></g
+    /><circle cx="31" cy="16" r="1" class="group-hover:text-white text-secondary fill-current transition duration-300 ease-out" /></g
   ><g
     ><circle
       cx="24"
       cy="24"
       r="6"
       fill="none"
-      class="group-hover:stroke-white stroke-current transition duration-300 ease-out"
+      class="group-hover:stroke-white stroke-secondary transition duration-300 ease-out"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-miterlimit="10"
