@@ -5,8 +5,6 @@
   export let title = ''
   export let img = 'https://media.graphcms.com/g0hy97CbRi9KyihxslLg'
 
-  $: console.log(title)
-
   const pageTitle = `${siteTitle} ${title}`
 </script>
 
