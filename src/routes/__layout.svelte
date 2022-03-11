@@ -36,16 +36,13 @@
     }
 
     return {
-      props: {
-        num,
-        links,
-      },
+      props: { num },
     }
   }
 </script>
 
 <script>
-  import { number, scroll } from '$lib/stores.js'
+  import { number } from '$lib/stores.js'
   import '$lib/styles/app.css'
   import Page from '$lib/components/Page/index.svelte'
   import { socialLinks } from '$lib/presets'
@@ -59,7 +56,7 @@
   $: if (browser) {
     goto(links[$number].link)
   }
-  $: $scroll = $number < 4
+
   $: controls = $number != 5
 
   $: cta =

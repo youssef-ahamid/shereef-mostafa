@@ -12,12 +12,12 @@
         thumbnail: {
           component: Thumbnail,
           data: {
-            alt: `${project.title} | Ahmed Mitry | Music Production`,
-            src: project.thumbnail || ''
+            alt: `${project.title} | Ahmed Mitry | Sound Design`,
+            src: project.thumbnail? project.thumbnail.url : ''
           },
         },
         title: project.title,
-        image: project.clientLogo.url
+        image: project.clientLogo? project.clientLogo.url : null
       }
     })
   }).catch(e => console.error(e))

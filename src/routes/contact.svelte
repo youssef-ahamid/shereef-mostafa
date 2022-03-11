@@ -6,8 +6,9 @@
   import { sendMessage } from '$lib/gql'
 
   import { contact, profile } from '$lib/presets'
-  import { number, user } from '$lib/stores'
+  import { number, user, scroll } from '$lib/stores'
   import { fade } from 'svelte/transition'
+  $scroll = false
 
   function send(message) {
     $user = message.detail

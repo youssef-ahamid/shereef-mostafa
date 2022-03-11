@@ -1,8 +1,9 @@
 <script>
 	import Button from '$lib/components/Button/index.svelte';
     import Arrow from "$lib/icons/arrow.svelte";
-    import { number, user } from "$lib/stores";
+    import { number, user, scroll } from "$lib/stores";
     if (!$user) $number = 0
+    $scroll = false
 
 </script>
 
