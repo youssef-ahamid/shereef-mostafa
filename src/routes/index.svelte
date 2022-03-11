@@ -10,10 +10,10 @@
   <div
     class="fixed inset-0 flex flex-col flex-wrap justify-center items-center"
   >
-    <Go to="/bio">
+    <Go to="/bio" className="absolute bottom-1/2 flex justify-center w-full left-0 right-0">
         <img
             transition:fade={{ duration: 400 }}
-            class="block w-64 md:w-80 absolute bottom-1/2"
+            class="block w-64 md:w-80"
             src={logo}
             alt="ahmed mitry logo"
         />
