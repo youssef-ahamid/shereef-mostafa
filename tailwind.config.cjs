@@ -3,14 +3,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#E1E2EF',
-        secondary: '#02020A',
-        error: '#D0342C',
+        primary: '#e4d8b4',
+        secondary: '#272324',
+        accent: '#e2cd6d',
+        error: '#e86f68',
       },
       fontFamily: {
-        cursive: ['Homemade Apple', 'cursive'],
+        cursive: ['Lobster', 'cursive'],
         body: ['Josefin Slab', 'serif'],
-        mono: ['Fira Code', 'monospace'],
+        mono: ['Inconsolata', 'monospace'],
         yes: ['Montagu Slab', 'serif'],
       },
       keyframes: {

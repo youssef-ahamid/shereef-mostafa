@@ -1,6 +1,5 @@
 /* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500;700&family=Homemade+Apple&family=Josefin+Slab:wght@200;400;700&family=Montagu+Slab:wght@300;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@100,700;200,700&family=Lobster&display=swap');
 /* tailwind stuff */
 @tailwind base;
 @tailwind components;
@@ -9,34 +8,42 @@
 @layer base {
   /* typography */
   h1 {
-    @apply font-cursive capitalize text-2xl md:text-4xl;
+    @apply font-cursive text-primary text-5xl md:text-[64px];
   }
   h2 {
-    @apply font-bold uppercase tracking-[.5em] text-lg md:text-2xl;
+    @apply font-mono font-bold text-2xl text-white uppercase md:text-4xl;
   }
   h3 {
-    @apply font-bold capitalize text-lg md:text-2xl;
+    @apply font-bold font-mono uppercase text-sm md:text-lg;
   }
   h4 {
-    @apply font-mono text-[10px] md:text-sm;
+    @apply font-mono font-bold text-base text-white uppercase md:text-lg;
   }
   h5 {
-    @apply font-yes font-light text-xs md:text-sm whitespace-pre;
+    @apply font-cursive capitalize text-primary text-2xl md:text-4xl;
   }
   p {
-    @apply text-sm md:font-bold md:text-2xl;
+    @apply text-sm md:text-lg text-white leading-loose font-body;
+  }
+  .body-lg {
+    @apply text-lg md:text-2xl text-white leading-loose font-body;
   }
   input {
-    @apply text-sm md:text-lg;
+    @apply font-mono font-bold text-lg md:text-2xl text-primary;
   }
+ 
 
   /* base */
   html {
-    @apply font-body font-normal bg-secondary text-primary;
-  }
+    @apply bg-secondary;
+  } 
 }
 
 @layer utilities {
+
+  h3 {
+    font-stretch: expanded;
+  }
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -48,5 +55,10 @@
   .no-scrollbar {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+  }
+
+  .clip-rounded {
+    -webkit-clip-path: ellipse(100% 50% at 50% 50%);
+  clip-path: ellipse(100% 50% at 50% 50%);
   }
 }

@@ -1,75 +1,62 @@
-import { serializeClasses } from '$lib/helpers'
+import { resolve } from '$lib/helpers'
 
-const buttonStyles = [
-  {
-    type: 'base',
-    classes:
-      'px-2 py-1 m-2 md:px-4 md:py-2 my-2 md:my-4 flex items-center justify-center group transition duration-300 ease-out',
-  },
-  { type: 'reverse', classes: 'flex-row-reverse' },
-  { type: 'primary', classes: 'bg-secondary text-primary' },
-  { type: 'secondary', classes: 'bg-primary text-secondary' },
-  { type: 'disabled', classes: 'opacity-25 hover:scale-100' },
-  {
-    shape: 'default',
-    classes: 'border-2 border-primary hover:bg-current',
-  },
-  {
-    shape: 'full',
-    classes:
-      'w-full border-2 border-primary hover:bg-current mx-auto',
-  },
-  { shape: 'ghost', classes: 'bg-transparent hover:text-primary' },
-]
-
-const labelStyles = [
-  { type: 'base', classes: 'transition duration-200 ease-out' },
-  { type: 'primary', classes: 'group-hover:text-secondary' },
-  {
-    type: 'secondary',
-    classes: 'text-secondary group-hover:text-primary',
-  },
-  {
-    shape: 'default',
-    classes: 'uppercase tracking-[.5em] px-2 py-1',
-  },
-  { shape: 'full', classes: 'uppercase tracking-[.5em] px-2 py-1' },
-  { shape: 'ghost', classes: 'group-hover:text-current' },
-]
-
-const iconStyles = [
-  { type: 'base', classes: 'w-8 h-8 mx-1 md:w-12 md:h-12 md:mx-2' },
-  { type: 'reverse', classes: 'transform rotate-180' },
-  {
-    type: 'primary',
-    classes: 'text-primary group-hover:text-secondary',
-  },
-  {
-    type: 'secondary',
-    classes: 'text-secondary group-hover:text-primary',
-  },
-  {
-    shape: 'ghost',
-    classes: 'text-primary group-hover:text-primary',
-  },
-]
-
-let options
-const isActiveClass = style => {
-  return (
-    style.type === options.type ||
-    style.type === 'base' ||
-    style.shape === options.shape ||
-    (!options.active && style.type === 'disabled') ||
-    (options.reverse && style.type === 'reverse')
-  )
+export let button = options => {
+  return [
+    {
+      classes:
+        'transition duration-300 ease-out flex justify-center items-center'
+    },
+    {
+      on: [options.type, 'primary'],
+      classes: 'text-accent border-accent decoration-transparent bg-secondary hover:decoration-accent hover:bg-accent hover:text-secondary',
+    },
+    {
+      on: [options.type, 'secondary'],
+      classes: 'text-secondary border-secondary decoration-transparent bg-accent hover:decoration-secondary hover:bg-secondary hover:text-accent hover:border-accent',
+    },
+    {
+      on: [options.shape, 'default'],
+      classes: ' border-[3px] px-5 py-3 rounded-xl ',
+    },
+    {
+      on: [options.shape, 'ghost'],
+      classes: 'bg-transparent hover:bg-transparent hover:text-accent underline underline-offset-4 px-5 py-3',
+    },
+    {
+      on: [options.shape, 'round'],
+      classes: 'border-[3px] px-5 py-3 clip-rounded bg-clip-padding',
+    },
+  ]
 }
 
+export let label = options => {
+  return [
+    {
+      classes:
+        'leading-5 font-bold capitalize font-mono',
+    },
+    {
+      on: [options.shape, 'round'],
+      classes: '',
+    }
+  ]
+}
+
+export let icon = options => {
+  return [
+    {
+      classes:
+        'w-7 ml-3',
+    },
+  ]
+}
+
+let options
 export const config = props => {
   options = props
   return {
-    button: serializeClasses(buttonStyles, isActiveClass),
-    label: serializeClasses(labelStyles, isActiveClass),
-    icon: serializeClasses(iconStyles, isActiveClass),
+    button: resolve(button(options)),
+    label: resolve(label(options)),
+    icon: resolve(icon(options)),
   }
 }

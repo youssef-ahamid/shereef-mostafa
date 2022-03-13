@@ -72,6 +72,8 @@
     />
   {/if}
   {#if !clean}
-    <h4 transition:slide={{ duration: 300 }}>{error}</h4>
+    <h4 transition:slide={{ duration: 300 }} class={classes.error}>
+      {error}
+    </h4>
   {/if}
 </label>

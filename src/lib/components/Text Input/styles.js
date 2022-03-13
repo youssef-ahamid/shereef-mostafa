@@ -1,55 +1,60 @@
-import { serializeClasses } from '$lib/helpers'
+import { resolve } from '$lib/helpers'
 
-const labelStyles = [
-  { type: 'base', classes: 'my-3 md:my-6 block' },
-  { type: 'text', classes: 'min-w-[45%]' },
-  { long: false, classes: 'max-w-[45%]' },
-  { type: 'text area', long: true, classes: 'w-full max-w-full' },
-]
-
-const nameStyles = [
-  {
-    type: 'base',
-    classes: 'transition duration-150 ease-out capitalize',
-  },
-  { clean: false, classes: 'text-error' },
-]
-
-const inputStyles = [
-  {
-    type: 'base',
-    classes:
-      'transition duration-200 ease-out appearance-none outline-none bg-primary bg-opacity-[15%] focus:bg-opacity-25 px-2 pt-1 md:px-3 md:pt-2 pb-1 my-0.5 md:my-1 border-content border-b-2 border-primary border-opacity-50 focus:border-opacity-100',
-  },
-  { clean: false, classes: 'animate-wiggle' },
-  {
-    type: 'text area',
-    classes: 'resize-none w-full h-24 md:h-32',
-  },
-  {
-    type: 'text',
-    classes: 'w-full h-8 md:h-12',
-  },
-  { clean: false, classes: 'bg-opacity-25' },
-  { trim: true, classes: 'lowercase' },
-]
-
-let options
-const isActiveClass = style => {
-  return (
-    style.type === 'base' ||
-    style.type === options.type ||
-    style.trim === options.trim ||
-    style.long === options.long ||
-    style.clean === options.clean
-  )
+export let label = options => {
+  return [
+    {
+      classes:
+        ' py-1 ',
+    }
+  ]
 }
 
+export let input = options => {
+  return [
+    {
+      classes:
+        'outline-none appearance-none px-1 py-2 transition duration-300 ease-out border-b-4 bg-primary bg-opacity-5 focus:bg-opacity-25 text-primary focus:text-accent rounded min-w-[180px]',
+    },
+    {
+      on: [options.clean, false],
+      classes: 'border-error bg-opacity-[15%]'
+    },
+    {
+      on: [options.clean, true],
+      classes: 'border-primary focus:border-accent'
+    },
+    {
+      on: [options.type, 'text area'],
+      classes: 'h-24 resize-none'
+    }
+  ]
+}
+
+export let name = options => {
+  return [
+    {
+      classes:
+        'text-primary capitalize py-0.5',
+    },
+  ]
+}
+
+export let error = options => {
+  return [
+    {
+      classes:
+        'text-error font-bold',
+    },
+  ]
+}
+
+let options
 export const config = props => {
   options = props
   return {
-    label: serializeClasses(labelStyles, isActiveClass),
-    input: serializeClasses(inputStyles, isActiveClass),
-    name: serializeClasses(nameStyles, isActiveClass),
+    label: resolve(label(options)),
+    input: resolve(input(options)),
+    name: resolve(name(options)),
+    error: resolve(error(options)),
   }
 }
