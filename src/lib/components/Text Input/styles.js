@@ -25,7 +25,7 @@ export let input = options => {
     },
     {
       on: [options.type, 'text area'],
-      classes: 'h-24 resize-none'
+      classes: 'resize-none h-24 w-[272.8px]'
     }
   ]
 }
