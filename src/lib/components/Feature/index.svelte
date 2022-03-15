@@ -9,7 +9,7 @@
 </script>
 
 <div class={`${classes.feature} ${className}`}>
-  <div class={classes.left}><slot name="image" /></div>
+  <div class={classes.left}><slot name="preview" /></div>
   <div class={classes.right}>
     <span class={classes.image}><slot name="image" /></span>
     <h2><slot name="title" /></h2>
