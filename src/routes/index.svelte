@@ -14,11 +14,11 @@
       preview: {
         component: Image,
         data: {
-          type:"custom",
-          alt:"hello from the alt world", 
-          src:"https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg",
+          type: 'custom',
+          alt: 'hello from the alt world',
+          src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
           clip: true,
-        }
+        },
       },
     },
     {
@@ -29,11 +29,11 @@
       preview: {
         component: Image,
         data: {
-          type:"custom",
-          alt:"hello from the alt world", 
-          src:"https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg",
+          type: 'custom',
+          alt: 'hello from the alt world',
+          src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
           clip: true,
-        }
+        },
       },
     },
     {
@@ -44,28 +44,50 @@
       preview: {
         component: Image,
         data: {
-          type:"custom",
-          alt:"hello from the alt world", 
-          src:"https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg",
+          type: 'custom',
+          alt: 'hello from the alt world',
+          src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
           clip: true,
-        }
+        },
       },
     },
   ]
 
   // let value = ''
   // let value2 = ''
+  import NavLink from '$lib/components/Nav Link/index.svelte'
 
-
+  let links = [
+    {
+      to: '/hamada1',
+      redirect: true,
+      text: 'hamada 1',
+    },
+    {
+      to: '/hamada2',
+      redirect: true,
+      text: 'hamada 2',
+    },
+    {
+      to: '/hamada3',
+      redirect: true,
+      text: 'hamada 3',
+    },
+    {
+      to: '/hamada4',
+      redirect: true,
+      text: 'hamada 4',
+    },
+  ]
 </script>
 
 <!-- <Stepper steps={5} direction="horizontal" /> -->
+
+<NavLink to="https://getbrewsy.com" redirect {links}>Brewsy</NavLink>
 <div class="py-20 w-full">
   <Title>bio</Title>
   <FeatureList {features} zigzag />
 </div>
-
-
 
 <!-- <div
   class="flex justify-around items-center flex-wrap w-screen h-screen"
