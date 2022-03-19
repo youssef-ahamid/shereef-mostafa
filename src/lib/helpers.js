@@ -46,6 +46,14 @@ export const resolve = theme => {
     .join(' ')
 }
 
+export const stylus = theme => {
+  let active = theme.filter(s => s.on)
+  return { 
+    classes: active.map(_ => _.classes).join(' '),
+    styles: active.map(_ => _.styles).join(' '),
+  }
+}
+
 export const getOffset = el => {
   var _x = 0
   var _y = 0
