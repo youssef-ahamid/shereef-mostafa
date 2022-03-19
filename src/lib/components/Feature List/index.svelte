@@ -15,14 +15,12 @@
 
 <List items={features} let:prop={feature} className={`${classes.list} ${className}`}>
     <Feature 
-        reverse={ (features.indexOf(feature) % 2 === 0) && zigzag } 
+        reverse={ (features.indexOf(feature) % 2 === 1) && zigzag } 
         className={classes.feature}
         images={feature.images}
         title={feature.title}
     >
-        {#if feature.preview}
-            <svelte:component this={feature.preview.component} {...feature.preview.data} slot="preview" />
-        {/if}
+        <span slot="preview"><svelte:component this={feature.preview.component} {...feature.preview.data} /></span> 
         {#if feature.body }
             <p>{feature.body}</p>
         {/if}

@@ -1,9 +1,9 @@
 export const imgWrapper = (props) => {
   return [
-    { classes: "relative group", on: true },
+    { classes: "relative group w-fit", on: true },
     { classes: "", styles: "", on: props.type == "custom" },
-    { classes: "h-[700px]", styles: "", on: props.size == "lg" },
-    { classes: "h-[420px]", styles: "", on: props.size == "md" },
+    { classes: "h-[700px]", styles: "", on: props.type == "custom" && props.size == "lg" },
+    { classes: "h-[420px]", styles: "", on: props.type == "custom" && props.size == "md" },
     { classes: "", styles: "", on: props.type == "card" },
     { classes: "", styles: "", on: props.type == "overlay" },
   ];
@@ -21,7 +21,9 @@ export const imgOverlay = (props) => {
 
 export const img = (props) => {
   return [
-    { classes: "h-full object-cover", styles: `clip-path: url('#window-${props.size}');`, on: props.type == "custom" },
+    { classes: "h-full object-cover inline-block", styles: `clip-path: url('#window-${props.size}');`, on: props.type == "custom" },
+    { classes: "w-[420px]", styles: "", on: props.size == "lg" && props.type == "custom" },
+    { classes: "w-72", styles: "", on: props.size == "md" && props.type == "custom" },
     { classes: "", styles: "", on: props.type == "card" },
     { classes: "", styles: "", on: props.type == "overlay" },
   ];

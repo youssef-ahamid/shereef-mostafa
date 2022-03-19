@@ -14,12 +14,16 @@
   <div class={classes.left}><slot name="preview" /></div>
   <div class={classes.right}>
     {#if images.length > 0 }
-      {#each images as image}
-        <img class={classes.image} src={image} alt={`${title} | thumbnail image | Shereef Mostafa`}>
-      {/each}
-    {/if}
-    <h2>{title}</h2>
-    <slot />
+    <div>
+        {#each images as image}
+          <img class={classes.image} src={image} alt={`${title} | thumbnail image | Shereef Mostafa`}>
+        {/each}
+      </div>
+      {/if}
+      <div class="my-6">
+        <h2>{title}</h2>
+        <slot />
+      </div>
     <div><slot name="cta" /></div>
   </div>
 </div>

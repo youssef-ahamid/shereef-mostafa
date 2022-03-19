@@ -10,14 +10,14 @@ export let line = props => {
   return [
     {
       classes:
-        'rounded-full w-48 md:w-80 bg-primary h-1 mr-3',
+        'rounded-br-full rounded-tr-full w-36 md:w-80 bg-primary h-1 mr-3',
     },
   ]
 }
 
 export let title = props => {
   return [
-    { classes: '' },
+    { classes: 'leading-0' },
   ]
 }
 
