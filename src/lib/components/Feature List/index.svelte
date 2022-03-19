@@ -24,7 +24,7 @@
             <svelte:component this={feature.preview.component} {...feature.preview.data} slot="preview" />
         {/if}
         {#if feature.body }
-            <svelte:fragment slot="body">{feature.body}</svelte:fragment>
+            <p>{feature.body}</p>
         {/if}
         {#if feature.cta }
             <Button slot="cta" {...feature.cta} />

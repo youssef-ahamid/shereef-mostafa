@@ -19,7 +19,7 @@
       {/each}
     {/if}
     <h2>{title}</h2>
-    <p><slot name="body" /></p>
+    <slot />
     <div><slot name="cta" /></div>
   </div>
 </div>
