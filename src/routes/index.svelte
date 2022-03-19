@@ -2,8 +2,56 @@
   // import Stepper from '$lib/components/Stepper/index.svelte'
   import Title from '$lib/components/Title/index.svelte'
   import Image from '$lib/components/Image/index.svelte'
+  import FeatureList from '$lib/components/Feature List/index.svelte'
   // import TextInput from '$lib/components/Text Input/index.svelte'
   // import Arrow from '$lib/icons/arrow.svelte'
+  let features = [
+    {
+      title: 'Early Life',
+      body: `Hello there and welcome to the feature section!
+      
+      it can have line breaks and whatnot.`,
+      preview: {
+        component: Image,
+        data: {
+          type:"custom",
+          alt:"hello from the alt world", 
+          src:"https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg",
+          clip: true,
+        }
+      },
+    },
+    {
+      title: 'Early Life',
+      body: `Hello there and welcome to the feature section!
+      
+      it can have line breaks and whatnot.`,
+      preview: {
+        component: Image,
+        data: {
+          type:"custom",
+          alt:"hello from the alt world", 
+          src:"https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg",
+          clip: true,
+        }
+      },
+    },
+    {
+      title: 'Early Life',
+      body: `Hello there and welcome to the feature section!
+      
+      it can have line breaks and whatnot.`,
+      preview: {
+        component: Image,
+        data: {
+          type:"custom",
+          alt:"hello from the alt world", 
+          src:"https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg",
+          clip: true,
+        }
+      },
+    },
+  ]
 
   // let value = ''
   // let value2 = ''
@@ -14,12 +62,7 @@
 <!-- <Stepper steps={5} direction="horizontal" /> -->
 <div class="py-20 w-full">
   <Title>bio</Title>
-  <Image 
-    type="custom" 
-    alt="hello from the alt world" 
-    src="https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg" 
-    clip
-  />
+  <FeatureList {features} zigzag />
 </div>
 
 

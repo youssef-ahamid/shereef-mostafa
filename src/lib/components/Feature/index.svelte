@@ -1,5 +1,7 @@
 <script>
   /* props */
+  export let title = ''
+  export let images = []
   export let reverse = false // *, true
   export let className = '' // *, custom wrapper classes
 
@@ -11,8 +13,12 @@
 <div class={`${classes.feature} ${className}`}>
   <div class={classes.left}><slot name="preview" /></div>
   <div class={classes.right}>
-    <span class={classes.image}><slot name="image" /></span>
-    <h2><slot name="title" /></h2>
+    {#if images.length > 0 }
+      {#each images as image}
+        <img class={classes.image} src={image} alt={`${title} | thumbnail image | Shereef Mostafa`}>
+      {/each}
+    {/if}
+    <h2>{title}</h2>
     <p><slot name="body" /></p>
     <div><slot name="cta" /></div>
   </div>

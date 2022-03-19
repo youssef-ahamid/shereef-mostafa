@@ -3,15 +3,15 @@ import { resolve } from '$lib/helpers'
 export let feature = options => {
   return [
     {
-      classes: ''
+      classes: 'flex flex-wrap md:flex-nowrap justify-between w-full flex-col'
     },
     {
       on: [options.reverse, true],
-      classes: '',
+      classes: 'items-end md:items-start md:flex-row-reverse',
     },
     {
       on: [options.reverse, false],
-      classes: '',
+      classes: 'items-start md:flex-row',
     },
   ]
 }
@@ -19,7 +19,7 @@ export let feature = options => {
 export let left = options => {
   return [
     {
-      classes: ''
+      classes: 'w-1/2 flex justify-center'
     },
   ]
 }
@@ -27,7 +27,7 @@ export let left = options => {
 export let right = options => {
     return [
       {
-        classes: ''
+        classes: 'w-1/2 px-6'
       },
     ]
   }
@@ -36,7 +36,7 @@ export let image = options => {
   return [
     {
       classes:
-        'w-7 ml-3',
+        'h-6 w-auto mr-3',
     },
   ]
 }

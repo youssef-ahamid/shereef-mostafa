@@ -1,6 +1,7 @@
 <script>
   /* props */
   export let features = []
+  export let zigzag = false
   export let className = ""; // *, custom wrapper classes
 
   import List from '$lib/components/List/index.svelte'
@@ -13,15 +14,14 @@
 </script>
 
 <List items={features} let:prop={feature} className={`${classes.list} ${className}`}>
-    <Feature reverse={ features.indexOf(feature) % 2 === 0 } className={classes.feature}>
+    <Feature 
+        reverse={ (features.indexOf(feature) % 2 === 0) && zigzag } 
+        className={classes.feature}
+        images={feature.images}
+        title={feature.title}
+    >
         {#if feature.preview}
             <svelte:component this={feature.preview.component} {...feature.preview.data} slot="preview" />
-        {/if}
-        {#if feature.image }
-            <img slot="image" src={feature.image} alt={feature.title || feature.body}>
-        {/if}
-        {#if feature.title }
-            <svelte:fragment slot="title">{feature.title}</svelte:fragment>
         {/if}
         {#if feature.body }
             <svelte:fragment slot="body">{feature.body}</svelte:fragment>
