@@ -7,6 +7,8 @@
   import Go from '$lib/components/Go/index.svelte'
   import List from '$lib/components/List/index.svelte'
 
+  import { slide } from 'svelte/transition'
+
   /* styles */
   import { config } from './styles'
   $: classes = config({ active })
@@ -16,8 +18,12 @@
   <h5 class={classes.link}><slot /></h5>
 </Go>
 
-<List items={links} let:prop={link} className={classes.list}>
-  <Go {...link}>
-    <h4 class={classes.sublink}>{link.text}</h4>
-  </Go>
-</List>
+{#if links.length > 0 && active}
+  <div transition:slide={{ duration: 300 }}>
+    <List items={links} let:prop={link} className={classes.list}>
+      <Go {...link}>
+        <h4 class={classes.sublink}>{link.text}</h4>
+      </Go>
+    </List>
+  </div>
+{/if}

@@ -56,6 +56,7 @@
   // let value = ''
   // let value2 = ''
   import NavLink from '$lib/components/Nav Link/index.svelte'
+  import Button from '$lib/components/Button/index.svelte'
 
   let links = [
     {
@@ -79,11 +80,19 @@
       text: 'hamada 4',
     },
   ]
+
+  let active = false
+
+  const toggle = () => {
+    active = !active
+  }
 </script>
 
 <!-- <Stepper steps={5} direction="horizontal" /> -->
-
-<NavLink to="https://getbrewsy.com" redirect {links}>Brewsy</NavLink>
+<Button label="activate" on:click={toggle} />
+<NavLink to="https://getbrewsy.com" redirect {links} bind:active
+  >Brewsy</NavLink
+>
 <div class="py-20 w-full">
   <Title>bio</Title>
   <FeatureList {features} zigzag />
