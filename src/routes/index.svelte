@@ -98,6 +98,8 @@
   <FeatureList {features} zigzag />
 </div>
 
+<Image type="overlay" alt="hamada" src="https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg" />
+
 <!-- <div
   class="flex justify-around items-center flex-wrap w-screen h-screen"
 >
