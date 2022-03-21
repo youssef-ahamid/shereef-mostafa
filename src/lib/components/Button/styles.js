@@ -33,7 +33,7 @@ export let label = options => {
   return [
     {
       classes:
-        'leading-5 font-bold capitalize font-mono',
+        'leading-5 font-bold font-mono',
     },
     {
       on: [options.shape, 'round'],

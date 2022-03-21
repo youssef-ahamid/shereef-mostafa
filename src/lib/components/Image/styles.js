@@ -16,7 +16,7 @@ export const imgOverlay = (props) => {
     { classes: "w-[390px] -translate-y-24 group-hover:-translate-y-40 translate-x-24 group-hover:translate-x-40", on: props.type == "custom" && props.size == 'lg' },
     { classes: "w-68 -translate-y-12 group-hover:-translate-y-20 translate-x-12 group-hover:translate-x-20", on: props.type == "custom" && props.size == 'md' },
     { classes: "absolute inset-0 rotate-[-12deg] transform group-hover:rotate-[-6deg] z-[-1]", styles: `background-image: url(${props.src})`, on: props.type == "card" },
-    { classes: "absolute inset-0 z-50 bg-gradient-to-b from-secondary via-transparent to-secondary", on: props.type == "overlay" },
+    { classes: "absolute inset-0 scale-105 z-50 bg-gradient-to-b from-secondary via-transparent to-secondary", on: props.type == "overlay" },
   ];
 };
 

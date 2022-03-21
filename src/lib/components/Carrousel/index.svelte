@@ -69,6 +69,7 @@
   onMount(() => {
     dispatch('rewatch')
   })
+  $: mobile = screenWidth < 500
 </script>
 
 <svelte:window bind:outerWidth={screenWidth} />
@@ -78,21 +79,17 @@
     {items}
     let:prop={item}
     className={classes.carrousel}
-    on:scroll={getCurrentStep}
   >
     <div
       bind:this={carrouselItems[items.indexOf(item)]}
-      class={`${classes.carrouselItem} ${
-        items.indexOf(item) % 2 === 0
-          ? 'mt-4 md:-mt-32'
-          : 'mt-12 md:mt-32'
-      }`}
+      class={classes.carrouselItem}
     >
       <CarrouselItem
         {...item}
         on:preview={() => {
           select(items.indexOf(item))
         }}
+        bind:mobile
         bind:remaining={remainders[items.indexOf(item)]}
       />
     </div>
@@ -106,15 +103,13 @@
     />
     <div class={classes.buttons}>
       <Button
-        label="next"
-        icon={Arrow}
+        label="prev"
         shape="ghost"
         on:click={prev}
         className={classes.button}
       />
       <Button
         label="next"
-        icon={Arrow}
         shape="ghost"
         on:click={next}
         className={classes.button}

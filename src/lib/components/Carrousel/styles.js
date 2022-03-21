@@ -3,7 +3,7 @@ import { resolve } from '$lib/helpers'
 export let carrouselWrapper = () => {
   return [
     {
-      classes: 'h-full',
+      classes: 'h-full w-full overflow-x-hidden',
     },
   ]
 }
@@ -12,7 +12,7 @@ export let carrousel = () => {
   return [
     {
       classes:
-        'flex flex-nowrap transition duration-300 ease-out pb-12 overflow-x-auto no-scrollbar snap-x snap-mandatory',
+        'flex flex-nowrap transition duration-300 ease-out pb-12 justify-center items-center',
     },
   ]
 }
@@ -21,7 +21,7 @@ export let carrouselItem = () => {
   return [
     {
       classes:
-        'cursor-pointer mx-0 snap-center snap-always',
+        'mx-auto',
     },
   ]
 }
@@ -29,7 +29,7 @@ export let carrouselItem = () => {
 export let controls = () => {
   return [
     {
-      classes: 'pt-12 pr-4 fixed top-[10%] right-8 flex flex-col items-end',
+      classes: 'pt-12 pr-4 fixed bottom-[5%] md:top-[10%] md:bottom-auto right-2 md:right-8 flex flex-col items-end justify-end',
     },
   ]
 }
@@ -42,13 +42,21 @@ export let buttons = () => {
   ]
 }
 
-let options
+export let stepper = () => {
+  return [
+    {
+      classes: 'w-full flex justify-end pr-4 md:pr-6',
+    },
+  ]
+}
+
 export const config = props => {
-  options = props
   return {
     carrouselWrapper: resolve(carrouselWrapper()),
     carrousel: resolve(carrousel()),
     carrouselItem: resolve(carrouselItem()),
     controls: resolve(controls()),
+    buttons: resolve(buttons()),
+    stepper: resolve(stepper()),
   }
 }

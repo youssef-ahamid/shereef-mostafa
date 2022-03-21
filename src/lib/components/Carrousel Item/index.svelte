@@ -6,6 +6,7 @@
   export let title = '' // *, title text
   export let images = [] // *, logo/images url
   export let selected = false // *, selection state
+  export let mobile = false // *, selection state
   export let remaining = 0 // *, carrousel steps to reach item
   export let className = '' // *, custom wrapper classes
 
@@ -48,6 +49,7 @@
 >
   <Image
     {...thumbnail}
+    type={mobile ? 'overlay' : 'card'}
     className={classes.thumbnail}
   />
   <!-- {#if !!video && selected}
