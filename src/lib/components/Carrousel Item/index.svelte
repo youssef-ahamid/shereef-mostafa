@@ -4,13 +4,14 @@
   export let text = '' // *, body text
   export let videoUrl // *, video url
   export let title = '' // *, title text
-  export let image = null // *, logo/image url
+  export let images = [] // *, logo/images url
   export let selected = false // *, selection state
   export let remaining = 0 // *, carrousel steps to reach item
   export let className = '' // *, custom wrapper classes
 
   import Go from '$lib/components/Go/index.svelte'
   import Button from '$lib/components/Button/index.svelte'
+  import Image from '$lib/components/Image/index.svelte'
   import Arrow from '$lib/icons/arrow.svelte'
   import { fade, slide } from 'svelte/transition'
 
@@ -45,18 +46,15 @@
     togglePreviewed(true)
   }}
 >
-  <svelte:component
-    this={thumbnail.component}
-    {...thumbnail.data}
+  <Image
+    {...thumbnail}
     className={classes.thumbnail}
   />
   <!-- {#if !!video && selected}
         <svelte:component this={video.component} {...video.options} className={classes.video} />
     {/if} -->
   <div class={classes.infoContainer}>
-    {#if image}
-      <img src={image} alt={title} class={classes.logo} />
-    {/if}
+    
     <!-- {#if previewed } -->
     <h2>{title}</h2>
     <p>{text}</p>
@@ -64,12 +62,18 @@
     {#if videoUrl}
       <Go to={videoUrl} redirect>
         <Button
-          shape="ghost"
+          shape="round"
           icon={Arrow}
           label="watch"
           className="-ml-2"
         />
       </Go>
+    {/if}
+
+    {#if images.length > 0}
+      {#each images as img }
+        <img {...img} class={classes.logo} />
+      {/each}
     {/if}
   </div>
 </div>

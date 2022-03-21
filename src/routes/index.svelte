@@ -1,4 +1,5 @@
 <script>
+	import Carrousel from '$lib/components/Carrousel/index.svelte';
   // import Stepper from '$lib/components/Stepper/index.svelte'
   import Title from '$lib/components/Title/index.svelte'
   import Image from '$lib/components/Image/index.svelte'
@@ -86,10 +87,52 @@
   const toggle = () => {
     active = !active
   }
+
+
+  let items = [
+    {
+      thumbnail: {
+        src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+        alt: 'hello',
+        type: 'card'
+      }, 
+      text: `3ed el gmail heheheh
+      
+      lessa same3ha`, 
+      title: 'hello!', 
+      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+    },
+    {
+      thumbnail: {
+        src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+        alt: 'hello',
+        type: 'card'
+      }, 
+      text: `3ed el gmail heheheh
+      
+      lessa same3ha`, 
+      title: 'hello!', 
+      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+    },
+    {
+      thumbnail: {
+        src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+        alt: 'hello',
+        type: 'card'
+      }, 
+      text: `3ed el gmail heheheh
+      
+      lessa same3ha`, 
+      title: 'hello!', 
+      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+    }
+  ]
 </script>
 
+<Carrousel {items} />
+
 <!-- <Stepper steps={5} direction="horizontal" /> -->
-<Button label="activate" on:click={toggle} />
+<!-- <Button label="activate" on:click={toggle} />
 <NavLink to="https://getbrewsy.com" redirect {links} bind:active
   >Brewsy</NavLink
 >
@@ -99,7 +142,7 @@
 </div>
 
 <Image type="card" alt="hamada" src="https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg" />
-<Image type="overlay" alt="hamada" src="https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg" />
+<Image type="overlay" alt="hamada" src="https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg" /> -->
 
 <!-- <div
   class="flex justify-around items-center flex-wrap w-screen h-screen"
