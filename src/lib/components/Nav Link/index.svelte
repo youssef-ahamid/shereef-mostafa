@@ -1,5 +1,6 @@
 <script>
   export let to = ''
+  export let text = ''
   export let redirect = false
   export let active = false
   export let links = []
@@ -14,8 +15,14 @@
   $: classes = config({ active })
 </script>
 
-<Go {to} {redirect}>
-  <h5 class={classes.link}><slot /></h5>
+<Go {to} {redirect} on:click>
+  <h5 class={classes.link}>
+    {#if text != ''}
+      {text}
+    {:else}
+      <slot />
+    {/if}
+  </h5>
 </Go>
 
 {#if links.length > 0 && active}

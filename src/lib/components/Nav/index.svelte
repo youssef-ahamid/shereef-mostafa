@@ -1,11 +1,14 @@
 <script>
-  import List from '$lib/components/List/index.svelte'
-  import { slide } from 'svelte/transition'
-  import { number } from '$lib/stores'
   /* props */
   export let links = [] // *, list items
   export let icon = null
   export let className = '' // *, custom wrapper classes
+  
+  import List from '$lib/components/List/index.svelte'
+  import NavLink from '$lib/components/Nav Link/index.svelte'
+  
+  import { slide } from 'svelte/transition'
+  import { number } from '$lib/stores'
 
   let active = false
   const toggle = () => (active = !active)
@@ -34,24 +37,15 @@
     transition:slide={{ duration: 400 }}
   >
     <List items={links} let:prop={item} className={classes.links}>
-      {#if item.text != ''}
-        <button
-          on:click={() => {
-            $number = links.indexOf(item)
-            active = false
-          }}
-        >
-          <h3
-            class={`${classes.link} ${
-              $number === links.indexOf(item)
-                ? classes.active
-                : classes.inactive
-            }`}
-          >
-            {item.text}
-          </h3>
-        </button>
-      {/if}
+      <NavLink 
+        {...item} 
+        active={$number === links.indexOf(item)} 
+        on:click={() => {
+          $number = links.indexOf(item)
+          active = false
+        }} 
+        className={""}
+      />
     </List>
   </nav>
 {/if}
