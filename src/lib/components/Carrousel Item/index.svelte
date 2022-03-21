@@ -36,6 +36,8 @@
     else dispatch('depreview')
   }
 
+  $: type = mobile ? "overlay" : "card"
+
   /* styles */
   import { config } from './styles'
   $: classes = config({ selected, previewed, remaining })
@@ -49,7 +51,7 @@
 >
   <Image
     {...thumbnail}
-    type={mobile ? 'overlay' : 'card'}
+    {type}
     className={classes.thumbnail}
   />
   <!-- {#if !!video && selected}

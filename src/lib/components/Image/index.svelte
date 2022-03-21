@@ -12,9 +12,9 @@
     import { stylus } from "$lib/helpers";
     import { imgWrapper, imgOverlay, img } from './styles'
     
-    let wrapper = stylus(imgWrapper({ type, size }))
-    let overlay = stylus(imgOverlay({ type, src, size }))
-    let image = stylus(img({ type, size }))
+    $: wrapper = stylus(imgWrapper({ type, size }))
+    $: overlay = stylus(imgOverlay({ type, src, size }))
+    $: image = stylus(img({ type, size }))
 </script>
 
 <div class={`${wrapper.classes} ${className}`} style={wrapper.styles}>

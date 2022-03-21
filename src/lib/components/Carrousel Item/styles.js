@@ -4,7 +4,7 @@ export let carrouselItemWrapper = options => {
   return [
     {
       classes:
-        'absolute overflow-hidden inset-0 flex flex-wrap md:flex-nowrap items-center justify-center transition duration-500 ease-out w-full mx-2',
+        'absolute overflow-hidden inset-0 flex flex-wrap md:flex-nowrap items-center justify-center transition duration-500 ease-out w-full',
     },
     {
       on: [options.previewed, true],

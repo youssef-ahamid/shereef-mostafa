@@ -29,7 +29,7 @@ export let carrouselItem = () => {
 export let controls = () => {
   return [
     {
-      classes: 'pt-12 pr-4 fixed bottom-[5%] md:top-[10%] md:bottom-auto right-2 md:right-8 flex flex-col items-end justify-end',
+      classes: 'pt-12 px-8 fixed bottom-[5%] md:top-[10%] md:bottom-auto left-0 right-0 md:right-8 flex flex-col md:items-end md:justify-end items-center center',
     },
   ]
 }
@@ -37,7 +37,7 @@ export let controls = () => {
 export let buttons = () => {
   return [
     {
-      classes: 'flex w-full justify-end items-center',
+      classes: 'flex w-full justify-between md:justify-end items-center',
     },
   ]
 }
@@ -45,7 +45,7 @@ export let buttons = () => {
 export let stepper = () => {
   return [
     {
-      classes: 'w-full flex justify-end pr-4 md:pr-6',
+      classes: 'w-full min-w-[300px] mx-auto flex justify-center md:justify-end',
     },
   ]
 }

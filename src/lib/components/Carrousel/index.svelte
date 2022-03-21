@@ -9,8 +9,6 @@
   import Stepper from '$lib/components/Stepper/index.svelte'
   import Button from '$lib/components/Button/index.svelte'
 
-  import Arrow from '$lib/icons/arrow.svelte'
-
   /* events */
   import { createEventDispatcher, onMount } from 'svelte/internal'
   const dispatch = createEventDispatcher()
@@ -47,29 +45,18 @@
       selected = false
     }, 500)
   }
-  $: select(currentStep)
-  function getWidth(total, el) {
-    return total + el.offsetWidth
-  }
-  let screenWidth
-  $: width = carrouselItems.reduce(getWidth, 0)
-  const getCurrentStep = e => {
-    if (selected) return
-    e.stopPropagation()
-    currentStep = Math.floor(
-      (e.target.scrollLeft / (width - screenWidth)) *
-        carrouselItems.length
-    )
-    if (currentStep === carrouselItems.length) currentStep--
-  }
 
+  $: select(currentStep)
+  
   import { config } from './styles'
   $: classes = config()
-
+  
   onMount(() => {
     dispatch('rewatch')
   })
-  $: mobile = screenWidth < 500
+  
+  let screenWidth
+  $: mobile = screenWidth < 768
 </script>
 
 <svelte:window bind:outerWidth={screenWidth} />
@@ -89,7 +76,7 @@
         on:preview={() => {
           select(items.indexOf(item))
         }}
-        bind:mobile
+        {mobile}
         bind:remaining={remainders[items.indexOf(item)]}
       />
     </div>
@@ -106,7 +93,7 @@
         label="prev"
         shape="ghost"
         on:click={prev}
-        className={classes.button}
+        className={`${classes.button} ${currentStep === 0 ? 'opacity-0': 'opacity-100'}`}
       />
       <Button
         label="next"
