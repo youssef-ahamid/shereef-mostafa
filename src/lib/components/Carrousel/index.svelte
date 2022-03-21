@@ -104,12 +104,21 @@
       bind:active={currentStep}
       className={classes.stepper}
     />
-    <Button
-      label="next"
-      icon={Arrow}
-      shape="ghost"
-      on:click={next}
-      className={classes.button}
-    />
+    <div class={classes.buttons}>
+      <Button
+        label="next"
+        icon={Arrow}
+        shape="ghost"
+        on:click={prev}
+        className={classes.button}
+      />
+      <Button
+        label="next"
+        icon={Arrow}
+        shape="ghost"
+        on:click={next}
+        className={classes.button}
+      />
+    </div>
   </div>
 </div>

@@ -21,7 +21,7 @@ export let carrouselItem = () => {
   return [
     {
       classes:
-        'cursor-pointer mx-0 snap-center snap-always first:md:pl-52 last:md:pr-52',
+        'cursor-pointer mx-0 snap-center snap-always',
     },
   ]
 }
@@ -29,7 +29,15 @@ export let carrouselItem = () => {
 export let controls = () => {
   return [
     {
-      classes: 'pt-12 pr-4 fixed bottom-[10%] right-8 flex flex-col items-end',
+      classes: 'pt-12 pr-4 fixed top-[10%] right-8 flex flex-col items-end',
+    },
+  ]
+}
+
+export let buttons = () => {
+  return [
+    {
+      classes: 'flex w-full justify-end items-center',
     },
   ]
 }

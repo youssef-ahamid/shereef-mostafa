@@ -4,15 +4,15 @@ export let carrouselItemWrapper = options => {
   return [
     {
       classes:
-        'inline-flex py-12 pt-20 md:pt-12 flex-wrap sm:flex-nowrap items-start scale-75 justify-center transition duration-500 ease-out w-80 md:w-[500px] mx-2',
+        'absolute inset-x-0 flex py-12 pt-20 md:pt-12 flex-wrap sm:flex-nowrap items-start justify-center transition duration-500 ease-out w-full mx-2',
     },
     {
       on: [options.previewed, true],
-      classes: 'opacity-100 z-50',
+      classes: 'opacity-100 scale-100 delay-300',
     },
     {
       on: [options.previewed, false],
-      classes: 'opacity-50 z-0',
+      classes: 'opacity-0 scale-75',
     },
   ]
 }
@@ -21,7 +21,7 @@ export let infoContainer = options => {
   return [
     {
       classes:
-        'transition duration-500 z-50 ease-out min-w-[100%] md:translate-y-32 md:-translate-x-32 pl-3',
+        'transition duration-500 z-50 ease-out min-w-[100%] pl-3',
     },
     {
       on: [options.previewed, true],
@@ -38,7 +38,7 @@ export let logo = options => {
   return [
     {
       classes:
-        'min-w-[50px] md:max-w-[200px] min-h-[10px] max-w-[150px] brightness-[5000%] mb-1 -mt-3',
+        'min-w-[50px] md:max-w-[200px] min-h-[10px] max-w-[150px] mb-1 -mt-3',
     },
   ]
 }
