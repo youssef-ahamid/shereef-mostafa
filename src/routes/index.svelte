@@ -98,6 +98,7 @@
   <FeatureList {features} zigzag />
 </div>
 
+<Image type="card" alt="hamada" src="https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg" />
 <Image type="overlay" alt="hamada" src="https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg" />
 
 <!-- <div
