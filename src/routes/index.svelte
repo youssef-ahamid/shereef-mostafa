@@ -58,6 +58,7 @@
   // let value2 = ''
   import NavLink from '$lib/components/Nav Link/index.svelte'
   import Button from '$lib/components/Button/index.svelte'
+  import Nav from '$lib/components/Nav/index.svelte'
 
   let links = [
     {
@@ -69,6 +70,18 @@
       to: '/hamada2',
       redirect: true,
       text: 'hamada 2',
+      links: [
+        {
+          to: '/hamada3',
+          redirect: true,
+          text: 'hamada 3',
+        },
+        {
+          to: '/hamada4',
+          redirect: true,
+          text: 'hamada 4',
+        },
+      ]
     },
     {
       to: '/hamada3',
@@ -185,6 +198,7 @@
     }
   ]
 </script>
+<Nav {links} />
 
 <Carrousel {items} />
 

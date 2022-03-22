@@ -1,4 +1,5 @@
 <script>
+  export let className = ''
   export let to = ''
   export let text = ''
   export let redirect = false
@@ -16,7 +17,7 @@
 </script>
 
 <Go {to} {redirect} on:click>
-  <h5 class={classes.link}>
+  <h5 class={`${classes.link} ${className}`}>
     {#if text != ''}
       {text}
     {:else}

@@ -1,13 +1,14 @@
 <script>
+	import Burger from '$lib/icons/burger.svelte';
   /* props */
   export let links = [] // *, list items
-  export let icon = null
+  export let icon = Burger
   export let className = '' // *, custom wrapper classes
   
   import List from '$lib/components/List/index.svelte'
   import NavLink from '$lib/components/Nav Link/index.svelte'
   
-  import { slide } from 'svelte/transition'
+  import { fly } from 'svelte/transition'
   import { number } from '$lib/stores'
 
   let active = false
@@ -15,26 +16,17 @@
 
   /* styles */
   import { config } from './styles'
-  let classes = config()
+  $: classes = config({ active })
 </script>
 
 <div class={classes.iconWrapper} on:click={toggle}>
-  {#key $number}
-    <h3 transition:slide={{ duration: 500 }}>{$number + 1}</h3>
-  {/key}
   <svelte:component this={icon} className={classes.icon} {active} />
-  <h3
-    class:opacity-75={$number < links.length - 2}
-    class="transition duration-300 ease-out"
-  >
-    {links.length - 1}
-  </h3>
 </div>
 
 {#if active}
   <nav
     class={`${classes.nav} ${className}`}
-    transition:slide={{ duration: 400 }}
+    transition:fly={{ x: -300, duration: 400 }}
   >
     <List items={links} let:prop={item} className={classes.links}>
       <NavLink 
@@ -44,7 +36,7 @@
           $number = links.indexOf(item)
           active = false
         }} 
-        className={""}
+        className={classes.link}
       />
     </List>
   </nav>

@@ -29,7 +29,7 @@ export let carrouselItem = () => {
 export let controls = () => {
   return [
     {
-      classes: 'pt-12 px-8 fixed bottom-[5%] md:top-[10%] md:bottom-auto left-0 right-0 md:right-8 flex flex-col md:items-end md:justify-end items-center center',
+      classes: 'pt-12 px-8 fixed bottom-[5%] md:top-4 md:bottom-auto left-0 right-0 md:right-8 flex flex-col md:items-end md:justify-end items-center center',
     },
   ]
 }
