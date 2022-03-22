@@ -2,11 +2,73 @@
 	import Carrousel from '$lib/components/Carrousel/index.svelte';
   // import Stepper from '$lib/components/Stepper/index.svelte'
   import Title from '$lib/components/Title/index.svelte'
+  import Go from '$lib/components/Go/index.svelte'
+  import Button from '$lib/components/Button/index.svelte'
   import Image from '$lib/components/Image/index.svelte'
   import FeatureList from '$lib/components/Feature List/index.svelte'
   // import TextInput from '$lib/components/Text Input/index.svelte'
   // import Arrow from '$lib/icons/arrow.svelte'
-  let features = [
+
+  let projects = [
+    {
+      preview: {
+        component: Image,
+        data: {
+          type: 'card',
+          alt: 'hello from the alt world',
+          src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+        },
+      },
+      body: `Lorem ipsum is a filler text developed to take up space when a you require the appearance of wriiten text ten text when really nothing is written. If yo’ve read this far you’re part of the problem.`, 
+      title: 'hello!', 
+      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+    },
+    {
+      preview: {
+        component: Image,
+        data: {
+          type: 'card',
+          alt: 'hello from the alt world',
+          src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+        },
+      },
+      body: `3ed el gmail heheheh
+      
+      lessa same3ha`, 
+      title: 'hello!', 
+      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+    },
+    {
+      preview: {
+        component: Image,
+        data: {
+          type: 'card',
+          alt: 'hello from the alt world',
+          src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+        },
+      },
+      body: `3ed el gmail heheheh
+      
+      lessa same3ha`, 
+      title: 'hello!', 
+      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+    },
+    {
+      preview: {
+        component: Image,
+        data: {
+          type: 'card',
+          alt: 'hello from the alt world',
+          src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+        },
+      },
+      body: `Lorem ipsum is a filler text developed to take up space when a you require the appearance of wriiten text ten text when really nothing is written. If yo’ve read this far you’re part of the problem.`, 
+      title: 'hello!', 
+      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+    }
+  ]
+
+  let bios = [
     {
       title: 'Early Life',
       body: `Hello there and welcome to the feature section!
@@ -57,7 +119,6 @@
   // let value = ''
   // let value2 = ''
   import NavLink from '$lib/components/Nav Link/index.svelte'
-  import Button from '$lib/components/Button/index.svelte'
   import Nav from '$lib/components/Nav/index.svelte'
 
   let links = [
@@ -200,17 +261,26 @@
 </script>
 <Nav {links} />
 
-<Carrousel {items} />
+<div class="py-20 w-full">
+  <Title>bio</Title>
+  <FeatureList features={bios} zigzag />
+</div>
+
+<div class="py-20 w-full">
+  <Title>Projects</Title>
+  <FeatureList features={projects} zigzag />
+  <Go to="/projects">
+    <Button label="view more projects" type="round" />
+  </Go>
+</div>
+
+
 
 <!-- <Stepper steps={5} direction="horizontal" /> -->
 <!-- <Button label="activate" on:click={toggle} />
 <NavLink to="https://getbrewsy.com" redirect {links} bind:active
   >Brewsy</NavLink
 >
-<div class="py-20 w-full">
-  <Title>bio</Title>
-  <FeatureList {features} zigzag />
-</div>
 
 <Image type="card" alt="hamada" src="https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg" />
 <Image type="overlay" alt="hamada" src="https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg" /> -->
