@@ -37,9 +37,6 @@
           src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
         },
       },
-      body: `3ed el gmail heheheh
-      
-      lessa same3ha`, 
       cta: {
         link: '/projects?num=1',
         shape: 'ghost',
@@ -57,10 +54,7 @@
           alt: 'hello from the alt world',
           src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
         },
-      },
-      body: `3ed el gmail heheheh
-      
-      lessa same3ha`, 
+      }, 
       title: 'hello!',
       cta: {
         link: '/projects?num=2',
@@ -79,7 +73,6 @@
           src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
         },
       },
-      body: `Lorem ipsum is a filler text developed to take up space when a you require the appearance of wriiten text ten text when really nothing is written. If yo’ve read this far you’re part of the problem.`, 
       title: 'hello!', 
       cta: {
         link: '/projects?num=3',
