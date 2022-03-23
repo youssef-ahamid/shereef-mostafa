@@ -1,6 +1,6 @@
 <script context="module">
   export async function load({ url }) {
-    let startStep = url.searchParams.get('project') || 0
+    let startStep = url.searchParams.get('num') || 0
     return {
       props: { startStep }
     }
