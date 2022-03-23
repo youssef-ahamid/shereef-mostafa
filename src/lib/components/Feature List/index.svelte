@@ -7,6 +7,7 @@
   import List from '$lib/components/List/index.svelte'
   import Feature from '$lib/components/Feature/index.svelte'
   import Button from '$lib/components/Button/index.svelte'
+  import Go from '$lib/components/Go/index.svelte'
 
   /* styles */
   import { config } from "./styles";
@@ -25,7 +26,9 @@
             <p>{feature.body}</p>
         {/if}
         {#if feature.cta }
-            <Button slot="cta" {...feature.cta} />
+            <Go to={feature.cta.link}>
+                <Button slot="cta" {...feature.cta} />
+            </Go>
         {/if}
     </Feature>
 </List>
