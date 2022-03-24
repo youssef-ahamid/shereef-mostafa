@@ -286,12 +286,12 @@
 </script>
 <Nav {links} />
 
-<div class="py-20 w-full">
+<div class="py-20 w-full md:max-w-[90%] mx-auto">
   <Title>bio</Title>
   <FeatureList features={bios} zigzag />
 </div>
 
-<div class="py-20 w-full">
+<div class="py-20 w-full md:max-w-[90%] mx-auto">
   <Title>Projects</Title>
   <FeatureList features={projects} zigzag />
   <div class="w-full flex justify-center">
@@ -301,7 +301,7 @@
   </div>
 </div>
 
-<div class="py-20 w-full">
+<div class="py-20 w-full md:max-w-[90%] mx-auto">
   <Title>Contact</Title>
   <Form
     {...contact}
