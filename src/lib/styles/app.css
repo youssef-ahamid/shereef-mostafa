@@ -35,7 +35,7 @@
 
   /* base */
   html {
-    @apply bg-secondary;
+    @apply bg-secondary selection:bg-primary selection:text-accent selection:font-bold;
   } 
 }
 
