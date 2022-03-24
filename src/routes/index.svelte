@@ -2,13 +2,18 @@
 	import Carrousel from '$lib/components/Carrousel/index.svelte';
   // import Stepper from '$lib/components/Stepper/index.svelte'
   import Title from '$lib/components/Title/index.svelte'
+  import Form from '$lib/components/Form/index.svelte'
   import Go from '$lib/components/Go/index.svelte'
   import Button from '$lib/components/Button/index.svelte'
   import Image from '$lib/components/Image/index.svelte'
   import FeatureList from '$lib/components/Feature List/index.svelte'
   // import TextInput from '$lib/components/Text Input/index.svelte'
   import Arrow from '$lib/icons/arrow.svelte'
+  import { contact } from '$lib/presets'
 
+  function send(e) {
+    console.log(e.detail)
+  }
   let projects = [
     {
       preview: {
@@ -139,36 +144,40 @@
 
   let links = [
     {
-      to: '/hamada1',
-      redirect: true,
-      text: 'hamada 1',
+      to: '/',
+      text: 'Home',
     },
     {
-      to: '/hamada2',
+      to: '/projects',
       redirect: true,
-      text: 'hamada 2',
+      text: 'projects',
       links: [
         {
-          to: '/hamada3',
+          to: '/projects?num=0',
+          redirect: true,
+          text: 'hamada 1',
+        },
+        {
+          to: '/projects?num=1',
+          redirect: true,
+          text: 'hamada 2',
+        },
+        {
+          to: '/projects?num=2',
           redirect: true,
           text: 'hamada 3',
         },
         {
-          to: '/hamada4',
+          to: '/projects?num=3',
           redirect: true,
           text: 'hamada 4',
         },
       ]
     },
     {
-      to: '/hamada3',
+      to: '/contact',
       redirect: true,
-      text: 'hamada 3',
-    },
-    {
-      to: '/hamada4',
-      redirect: true,
-      text: 'hamada 4',
+      text: 'contact',
     },
   ]
 
@@ -292,7 +301,14 @@
   </div>
 </div>
 
-
+<div class="py-20 w-full">
+  <Title>Contact</Title>
+  <Form
+    {...contact}
+    on:submit={send}
+    className="max-w-[90%] md:max-w-[75%] mx-auto"
+  />
+</div>
 
 <!-- <Stepper steps={5} direction="horizontal" /> -->
 <!-- <Button label="activate" on:click={toggle} />

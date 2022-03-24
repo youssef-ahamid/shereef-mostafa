@@ -4,7 +4,7 @@ export let iconWrapper = options => {
   return [
     {
       classes:
-        'transition duration-200 w-12 h-12 md:h-16 flex rounded-full flex-col items-center justify-center text-center md:w-16 fixed right-8 top-10 md:left-8 md:top-1/2 md:-translate-y-1/2 z-[999]',
+        'transition duration-200 w-12 h-12 md:h-16 flex rounded-full flex-col items-center justify-center text-center md:w-16 fixed md:absolute bg-secondary shadow-secondary/30 shadow-xl right-8 top-10 md:left-8 md:top-1/2 md:-translate-y-1/2 z-[999]',
     },
     {
       on: [options.active, true],

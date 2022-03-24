@@ -26,7 +26,7 @@
   </h5>
 </Go>
 
-{#if links.length > 0 && active}
+{#if links.length > 0 }
   <div transition:slide={{ duration: 300 }}>
     <List items={links} let:prop={link} className={classes.list}>
       <Go {...link}>
