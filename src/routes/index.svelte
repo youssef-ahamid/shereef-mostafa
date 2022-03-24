@@ -285,9 +285,11 @@
 <div class="py-20 w-full">
   <Title>Projects</Title>
   <FeatureList features={projects} zigzag />
-  <Go to="/projects">
-    <Button label="view more projects" type="round" />
-  </Go>
+  <div class="w-full flex justify-center">
+    <Go to="/projects">
+      <Button label="view more projects" shape="round" />
+    </Go>
+  </div>
 </div>
 
 
