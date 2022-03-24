@@ -30,7 +30,7 @@
     class={`${classes.nav} ${className}`}
     transition:fly={{ x: -300, duration: 400 }}
     use:clickOutside
-    on:outclick={toggle}
+    on:outclick={() => { active = false }}
   >
     <List items={links} let:prop={item} className={classes.links}>
       <NavLink 
