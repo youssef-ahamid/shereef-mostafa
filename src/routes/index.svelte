@@ -5,6 +5,7 @@
   import Form from '$lib/components/Form/index.svelte'
   import Go from '$lib/components/Go/index.svelte'
   import Button from '$lib/components/Button/index.svelte'
+  import Section from '$lib/components/Section/index.svelte'
   import Image from '$lib/components/Image/index.svelte'
   import FeatureList from '$lib/components/Feature List/index.svelte'
   // import TextInput from '$lib/components/Text Input/index.svelte'
@@ -286,29 +287,21 @@
 </script>
 <Nav {links} />
 
-<div class="py-20 w-full md:max-w-[90%] mx-auto">
-  <Title>bio</Title>
+<Section title="bio">
   <FeatureList features={bios} zigzag />
-</div>
+</Section>
 
-<div class="py-20 w-full md:max-w-[90%] mx-auto">
-  <Title>Projects</Title>
+<Section title="projects" cta={{ link: 'projects', label: 'view more projects', shape: 'round' }}>
   <FeatureList features={projects} zigzag />
-  <div class="w-full flex justify-center">
-    <Go to="/projects">
-      <Button label="view more projects" shape="round" />
-    </Go>
-  </div>
-</div>
+</Section>
 
-<div class="py-20 w-full md:max-w-[90%] mx-auto">
-  <Title>Contact</Title>
+<Section title="contact">
   <Form
     {...contact}
     on:submit={send}
     className="max-w-[90%] md:max-w-[600px] mx-auto"
   />
-</div>
+</Section>
 
 <!-- <Stepper steps={5} direction="horizontal" /> -->
 <!-- <Button label="activate" on:click={toggle} />
