@@ -306,7 +306,7 @@
   <Form
     {...contact}
     on:submit={send}
-    className="max-w-[90%] md:max-w-[75%] mx-auto"
+    className="max-w-[90%] md:max-w-[600px] mx-auto"
   />
 </div>
 

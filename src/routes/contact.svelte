@@ -15,11 +15,12 @@
   }
 </script>
 
+<h1 class="pl-4 md:pl-8 pt-6 md:pt-8">Contact</h1>
 <div
   class="p-4 max-w-5xl mx-auto pt-20 md:mt-0"
   transition:fade={{ duration: 500 }}
 >
-  <h2 class="mx-auto text-center">get in toush with shereef</h2>
+  <h2 class="mx-auto text-center">get in touch with shereef</h2>
   <Form
     {...contact}
     on:submit={send}

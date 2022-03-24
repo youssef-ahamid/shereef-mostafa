@@ -28,7 +28,7 @@
   .body-lg {
     @apply text-lg md:text-2xl text-white leading-loose font-body;
   }
-  input {
+  input, textarea {
     @apply font-mono font-bold text-lg md:text-2xl text-primary;
   }
  

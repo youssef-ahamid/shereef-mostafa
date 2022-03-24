@@ -73,7 +73,7 @@ export const contact = {
       },
     },
   ],
-  button: { label: 'send message', shape: 'full' },
+  button: { label: 'send message', shape: 'round', type: 'secondary', className: 'w-full max-w-[90%] mx-auto' },
 }
 
 export const profile = {
