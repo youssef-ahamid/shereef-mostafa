@@ -65,6 +65,7 @@ export const contact = {
       component: TextInput,
       data: {
         label: 'message',
+        className: 'w-full'
         value: '',
         validations: [
           { type: 'required', error: 'required field' },
