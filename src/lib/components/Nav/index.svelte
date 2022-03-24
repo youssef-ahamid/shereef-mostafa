@@ -8,6 +8,8 @@
   import List from '$lib/components/List/index.svelte'
   import NavLink from '$lib/components/Nav Link/index.svelte'
   
+  import { clickOutside } from '$lib/actions'
+
   import { fly } from 'svelte/transition'
   import { number } from '$lib/stores'
 
@@ -27,6 +29,8 @@
   <nav
     class={`${classes.nav} ${className}`}
     transition:fly={{ x: -300, duration: 400 }}
+    use:clickOutside
+    on:outclick={toggle}
   >
     <List items={links} let:prop={item} className={classes.links}>
       <NavLink 
