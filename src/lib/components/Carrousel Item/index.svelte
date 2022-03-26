@@ -45,9 +45,6 @@
 
 <div
   class={`${classes.carrouselItemWrapper} ${className}`}
-  on:click={() => {
-    togglePreviewed(true)
-  }}
 >
   <Image
     {...thumbnail}

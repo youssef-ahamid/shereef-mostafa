@@ -4,6 +4,7 @@
   export let text = ''
   export let redirect = false
   export let active = false
+  export let activeSub
   export let links = []
 
   import Go from '$lib/components/Go/index.svelte'
@@ -30,7 +31,7 @@
   <div transition:slide={{ duration: 300 }}>
     <List items={links} let:prop={link} className={classes.list}>
       <Go {...link}>
-        <h4 class={classes.sublink}>{link.text}</h4>
+        <h4 class={`${classes.sublink} ${active && activeSub === links.indexOf(link)? classes.activeSub: classes.inactiveSub}`}>{link.text}</h4>
       </Go>
     </List>
   </div>

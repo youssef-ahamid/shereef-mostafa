@@ -35,8 +35,11 @@
 
   /* base */
   html {
-    @apply bg-secondary selection:bg-primary selection:text-accent selection:font-bold;
+    @apply bg-secondary selection:bg-primary selection:text-secondary selection:font-bold;
   } 
+  body {
+    @apply overflow-x-hidden w-[100vw];
+  }
 }
 
 @layer utilities {

@@ -27,7 +27,23 @@ export let link = options => {
 export let sublink = options => {
     return [
         {
-            classes: 'w-[120px] md:w-40 pb-1 text-white decoration-transparent underline decoration-2 underline-offset-4 hover:text-primary hover:decoration-primary transition duration-300 ease-out'
+            classes: 'w-[120px] md:w-40 pb-1 underline decoration-2 underline-offset-4 hover:text-primary hover:decoration-primary transition duration-300 ease-out'
+        },
+    ]
+}
+
+export let activeSub = options => {
+    return [
+        {
+            classes: 'text-primary decoration-primary'
+        },
+    ]
+}
+
+export let inactiveSub = options => {
+    return [
+        {
+            classes: 'text-white decoration-transparent'
         },
     ]
 }
@@ -38,5 +54,7 @@ export const config = props => {
         list: resolve(list(props)),
         link: resolve(link(props)),
         sublink: resolve(sublink(props)),
+        activeSub: resolve(activeSub(props)),
+        inactiveSub: resolve(inactiveSub(props)),
     }
 }

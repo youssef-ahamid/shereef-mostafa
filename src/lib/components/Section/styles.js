@@ -11,7 +11,7 @@ export let section = options => {
 export let content = options => {
     return [
         {
-            classes: "max-w-[90%] mx-auto"
+            classes: "md:max-w-[80%] mx-auto"
         },
     ]
 }

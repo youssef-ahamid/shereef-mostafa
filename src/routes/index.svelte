@@ -141,46 +141,7 @@
   // let value = ''
   // let value2 = ''
   // import NavLink from '$lib/components/Nav Link/index.svelte'
-  import Nav from '$lib/components/Nav/index.svelte'
 
-  let links = [
-    {
-      to: '/',
-      text: 'Home',
-    },
-    {
-      to: '/projects',
-      redirect: true,
-      text: 'projects',
-      links: [
-        {
-          to: '/projects?num=0',
-          redirect: true,
-          text: 'hamada 1',
-        },
-        {
-          to: '/projects?num=1',
-          redirect: true,
-          text: 'hamada 2',
-        },
-        {
-          to: '/projects?num=2',
-          redirect: true,
-          text: 'hamada 3',
-        },
-        {
-          to: '/projects?num=3',
-          redirect: true,
-          text: 'hamada 4',
-        },
-      ]
-    },
-    {
-      to: '/contact',
-      redirect: true,
-      text: 'contact',
-    },
-  ]
 
   let active = false
 
@@ -285,7 +246,6 @@
     }
   ]
 </script>
-<Nav {links} />
 
 <Section title="bio">
   <FeatureList features={bios} zigzag />

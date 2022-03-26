@@ -2,6 +2,7 @@
   /* props */
   export let steps = 0 // *, number of steps
   export let active = 0 // *, current step
+
   export let direction = 'vertical' // *, horizontal
   export let className = '' // *, custom wrapper classes
 

@@ -13,7 +13,7 @@ export let input = options => {
   return [
     {
       classes:
-        'outline-none appearance-none px-1 py-2 transition duration-300 ease-out border-b-4 bg-primary bg-opacity-5 focus:bg-opacity-25 text-primary focus:text-accent rounded min-w-[160px] w-full',
+        'outline-none appearance-none p-4 pb-1 transition duration-300 ease-out border-b-4 bg-primary bg-opacity-5 focus:bg-opacity-25 text-primary focus:text-accent rounded w-full',
     },
     {
       on: [options.clean, false],
@@ -25,7 +25,7 @@ export let input = options => {
     },
     {
       on: [options.type, 'text area'],
-      classes: 'resize-none h-24 w-full min-w-[100%] block'
+      classes: 'resize-none h-28 md:h-40 w-full min-w-[100%] block'
     }
   ]
 }

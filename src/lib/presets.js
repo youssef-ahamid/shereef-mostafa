@@ -27,6 +27,7 @@ export const contact = {
       component: TextInput,
       data: {
         label: 'name',
+        className: 'md:w-[45%]',
         value: '',
         validations: [
           { type: 'required', error: 'required field' },
@@ -37,6 +38,7 @@ export const contact = {
       component: TextInput,
       data: {
         label: 'email',
+        className: 'md:w-[45%]',
         value: '',
         validations: [
           { type: 'required', error: 'required field' },
@@ -48,6 +50,7 @@ export const contact = {
       component: TextInput,
       data: {
         label: 'phone',
+        className: 'md:w-[45%]',
         value: '',
         validations: [
           { type: 'required', error: 'required field' },
@@ -58,6 +61,7 @@ export const contact = {
       component: TextInput,
       data: {
         label: 'company',
+        className: 'md:w-[45%]',
         value: '',
       },
     },
@@ -74,7 +78,7 @@ export const contact = {
       },
     },
   ],
-  button: { label: 'send message', shape: 'round', type: 'secondary', className: 'w-full max-w-[90%] mx-auto' },
+  button: { label: 'send message', shape: 'round', type: 'secondary' },
 }
 
 export const profile = {

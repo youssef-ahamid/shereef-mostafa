@@ -26,8 +26,8 @@
             <p>{feature.body}</p>
         {/if}
         {#if !!feature.cta }
-            <Go to={feature.cta.link}>
-                <Button slot="cta" {...feature.cta} />
+            <Go to={feature.cta.link} slot="cta">
+                <Button  {...feature.cta} />
             </Go>
         {/if}
     </Feature>

@@ -1,4 +1,5 @@
 <script context="module">
+  export const prerender = true
   export async function load({ url }) {
     let startStep = url.searchParams.get('num') || 0
     return {
@@ -129,7 +130,7 @@
     //   })
     //   .catch(e => console.error(e))
   </script>
-    <h1 class="pl-4 md:pl-8 pt-6 md:pt-8">Projects</h1>
+    <h1 class="pl-4 md:pl-8 pt-9 md:pt-12">Projects</h1>
     <div
       in:fade={{ duration: 500, delay: 300 }}
       out:fade={{ duration: 250 }}

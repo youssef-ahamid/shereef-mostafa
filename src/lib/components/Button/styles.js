@@ -4,7 +4,7 @@ export let button = options => {
   return [
     {
       classes:
-        'transition duration-300 ease-out flex justify-center items-center'
+        'transition duration-300 ease-out flex justify-center items-center group'
     },
     {
       on: [options.type, 'primary'],
@@ -20,7 +20,7 @@ export let button = options => {
     },
     {
       on: [options.shape, 'ghost'],
-      classes: 'bg-transparent hover:bg-transparent hover:text-accent underline underline-offset-4 px-5 py-3',
+      classes: 'bg-transparent hover:bg-transparent hover:text-accent underline underline-offset-4 py-3',
     },
     {
       on: [options.shape, 'round'],
@@ -46,7 +46,7 @@ export let icon = options => {
   return [
     {
       classes:
-        'w-7 ml-3',
+        'w-7 ml-3 group-hover:translate-x-2 transition duration-500 ease-out',
     },
   ]
 }

@@ -42,10 +42,18 @@ export let buttons = () => {
   ]
 }
 
+export let button = () => {
+  return [
+    {
+      classes: 'ml-6',
+    },
+  ]
+}
+
 export let stepper = () => {
   return [
     {
-      classes: 'w-full min-w-[300px] mx-auto flex justify-center md:justify-end',
+      classes: 'w-full min-w-[300px] max-w-[460px] mx-auto flex justify-center md:mx-0 md:justify-end',
     },
   ]
 }
@@ -57,6 +65,7 @@ export const config = props => {
     carrouselItem: resolve(carrouselItem()),
     controls: resolve(controls()),
     buttons: resolve(buttons()),
+    button: resolve(button()),
     stepper: resolve(stepper()),
   }
 }

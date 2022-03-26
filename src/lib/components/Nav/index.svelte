@@ -2,6 +2,8 @@
 	import Burger from '$lib/icons/burger.svelte';
   /* props */
   export let links = [] // *, list items
+  export let activeLink
+  export let activeSub
   export let icon = Burger
   export let className = '' // *, custom wrapper classes
   
@@ -21,27 +23,28 @@
   $: classes = config({ active })
 </script>
 
+<div 
+  use:clickOutside
+  on:outclick={() => { active = false }}
+>
 <div class={classes.iconWrapper} on:click={toggle}>
   <svelte:component this={icon} className={classes.icon} {active} />
 </div>
+<nav
+  class={`${classes.nav} ${className}`}
+>
+  <List items={links} let:prop={item} className={classes.links}>
+    <NavLink 
+      {...item} 
+      active={activeLink === links.indexOf(item)}
+      {activeSub} 
+      on:click={() => {
+        activeLink = links.indexOf(item)
+        active = false
+      }} 
+      className={classes.link}
+    />
+  </List>
+</nav>
 
-{#if active}
-  <nav
-    class={`${classes.nav} ${className}`}
-    transition:fly={{ x: -300, duration: 400 }}
-    use:clickOutside
-    on:outclick={() => { active = false }}
-  >
-    <List items={links} let:prop={item} className={classes.links}>
-      <NavLink 
-        {...item} 
-        active={$number === links.indexOf(item)} 
-        on:click={() => {
-          $number = links.indexOf(item)
-          active = false
-        }} 
-        className={classes.link}
-      />
-    </List>
-  </nav>
-{/if}
+</div>
