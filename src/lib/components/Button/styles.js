@@ -4,15 +4,15 @@ export let button = options => {
   return [
     {
       classes:
-        'transition duration-300 ease-out flex justify-center items-center group'
+        'transition duration-300 ease-out flex justify-center items-center group hover:scale-105 active:scale-95'
     },
     {
       on: [options.type, 'primary'],
-      classes: 'text-accent border-accent decoration-transparent bg-secondary hover:decoration-accent hover:bg-accent hover:text-secondary',
+      classes: 'text-accent border-accent decoration-transparent active:text-accent active:border-accent active:decoration-transparent bg-secondary active:bg-secondary hover:decoration-accent hover:bg-accent hover:text-secondary',
     },
     {
       on: [options.type, 'secondary'],
-      classes: 'text-secondary border-secondary decoration-transparent bg-accent hover:decoration-secondary hover:bg-secondary hover:text-accent hover:border-accent',
+      classes: 'text-secondary border-secondary decoration-transparent bg-accent active:text-secondary active:border-secondary active:decoration-transparent active:bg-accent hover:decoration-secondary hover:bg-secondary hover:text-accent hover:border-accent',
     },
     {
       on: [options.shape, 'default'],

@@ -129,7 +129,7 @@
     //   })
     //   .catch(e => console.error(e))
   </script>
-    <h1 class="pl-4 md:pl-8 pt-9 md:pt-12">Projects</h1>
+    <h1 class="pl-8 pt-9 md:pt-12">Projects</h1>
     <div
       in:fade={{ duration: 500, delay: 300 }}
       out:fade={{ duration: 250 }}

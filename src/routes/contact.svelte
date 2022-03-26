@@ -3,6 +3,10 @@
   import { goto } from '$app/navigation'
 
   import Button from '$lib/components/Button/index.svelte'
+  import Go from '$lib/components/Go/index.svelte'
+  import Copy from '$lib/components/Copy/index.svelte'
+  import Emailattatchment from '$lib/icons/social/email attatchment.svelte';
+  import Mappin from '$lib/icons/social/map pin.svelte';
   import Footer from '$lib/components/Footer/index.svelte'
   import Form from '$lib/components/Form/index.svelte'
   import { sendMessage } from '$lib/gql'
@@ -17,7 +21,17 @@
   }
 </script>
 
-<h1 class="pl-4 md:pl-8 pt-9 md:pt-12">Contact</h1>
+<h1 class="pl-8 pt-9 md:pt-12">Contact</h1>
+
+<div class="hidden md:flex absolute right-[10%] top-12 w-80 justify-between items-center">
+  <Copy value={profile.email}>
+    <Button label="email" shape="ghost" reverse icon={Emailattatchment}/>
+  </Copy>
+  <Go to="{profile.location}" redirect>
+    <Button label="visit" shape="ghost" reverse icon={Mappin}/>
+  </Go>
+</div>
+
 <div
   class="p-4 max-w-5xl mx-auto pt-20 md:mt-0"
   transition:fade={{ duration: 500 }}
