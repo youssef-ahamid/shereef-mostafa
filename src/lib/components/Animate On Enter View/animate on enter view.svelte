@@ -27,7 +27,7 @@
 </script>
 
 <div
-  use:inView
+  use:inView={{ bottom: 50 }}
   on:enter={enter}
   on:exit={exit}
   class={wrapper.classes}

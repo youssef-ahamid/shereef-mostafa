@@ -1,7 +1,7 @@
 export const animationWrapper = props => {
   return [
     {
-      classes: 'transition duration-700 ease-out delay-200',
+      classes: 'transition duration-700 ease-out delay-200 overflow-hidden',
       on: true,
     },
     {
