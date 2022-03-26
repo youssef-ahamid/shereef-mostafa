@@ -1,7 +1,5 @@
 <script context="module">
-
-
-
+  export const prerender = true
   export async function load({ url }) {
     let links = [
     {
@@ -76,6 +74,9 @@
   export let activeLink
   export let activeSub
   export let links
+
+  import { navlinks } from '$lib/stores'
+  $: $navlinks = links
 </script>
 
 <Nav {links} {activeLink} {activeSub} />

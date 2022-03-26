@@ -6,8 +6,10 @@
   import Hero from '$lib/components/Hero/index.svelte'
   import Image from '$lib/components/Image/index.svelte'
   import FeatureList from '$lib/components/Feature List/index.svelte'
+  import Footer from '$lib/components/Footer/index.svelte'
   import Arrow from '$lib/icons/arrow.svelte'
   import { contact } from '$lib/presets'
+  import { navlinks } from '$lib/stores'
 
   function send(e) {
     console.log(e.detail)
@@ -190,3 +192,5 @@
     className="max-w-[90%] md:max-w-[600px] mx-auto"
   />
 </Section>
+
+<Footer links={$navlinks} />

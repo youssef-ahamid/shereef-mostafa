@@ -1,7 +1,9 @@
 <script>
+  import { navlinks } from '$lib/stores'
   import { goto } from '$app/navigation'
 
   import Button from '$lib/components/Button/index.svelte'
+  import Footer from '$lib/components/Footer/index.svelte'
   import Form from '$lib/components/Form/index.svelte'
   import { sendMessage } from '$lib/gql'
 
@@ -27,3 +29,5 @@
     className="max-w-[90%] md:max-w-[600px] mx-auto"
   />
 </div>
+
+<Footer links={$navlinks} />

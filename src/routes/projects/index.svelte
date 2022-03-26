@@ -1,5 +1,4 @@
 <script context="module">
-  export const prerender = true
   export async function load({ url }) {
     let startStep = url.searchParams.get('num') || 0
     return {
