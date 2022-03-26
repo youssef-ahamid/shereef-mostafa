@@ -13,7 +13,12 @@
   $: classes = config({ type, shape, active, reverse })
 </script>
 
-<button on:click on:dblclick class={`${classes.button} ${className}`} type="button">
+<button
+  on:click
+  on:dblclick
+  class={`${classes.button} ${className}`}
+  type="button"
+>
   <h3 class={classes.label}>
     {label}
   </h3>

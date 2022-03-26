@@ -47,14 +47,14 @@
   }
 
   $: select(currentStep)
-  
+
   import { config } from './styles'
   $: classes = config()
-  
+
   onMount(() => {
     dispatch('rewatch')
   })
-  
+
   let screenWidth
   $: mobile = screenWidth < 768
 </script>
@@ -62,11 +62,7 @@
 <svelte:window bind:outerWidth={screenWidth} />
 
 <div class={`${classes.carrouselWrapper} ${className}`}>
-  <List
-    {items}
-    let:prop={item}
-    className={classes.carrousel}
-  >
+  <List {items} let:prop={item} className={classes.carrousel}>
     <div
       bind:this={carrouselItems[items.indexOf(item)]}
       class={classes.carrouselItem}
@@ -93,7 +89,9 @@
         label="prev"
         shape="ghost"
         on:click={prev}
-        className={`${classes.button} ${currentStep === 0 ? 'opacity-0': 'opacity-100'}`}
+        className={`${classes.button} ${
+          currentStep === 0 ? 'opacity-0' : 'opacity-100'
+        }`}
       />
       <Button
         label="next"

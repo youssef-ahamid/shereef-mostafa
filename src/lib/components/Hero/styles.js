@@ -11,13 +11,13 @@ export let hero = options => {
 }
 
 export let cta = options => {
-    return [
-      {
-        classes:
-          'absolute left-4 -top-2 md:left-auto md:right-0 md:translate-x-1/2',
-      },
-    ]
-  }
+  return [
+    {
+      classes:
+        'absolute left-4 -top-2 md:left-auto md:right-0 md:translate-x-1/2',
+    },
+  ]
+}
 
 export let left =
   'mx-auto w-[80%] relative my-3 lg:my-0 lg:-mt-4 lg:max-w-[45%] space-y-2'
@@ -27,10 +27,10 @@ export let right =
 let options
 export const config = props => {
   options = props
-  return { 
-      hero: resolve(hero(options)),
-      cta: resolve(cta(options)),
-      left, 
-      right, 
-    }
+  return {
+    hero: resolve(hero(options)),
+    cta: resolve(cta(options)),
+    left,
+    right,
+  }
 }

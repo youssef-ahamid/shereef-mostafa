@@ -16,11 +16,12 @@ specifiers:
   prettier: 2.5.1
   prettier-plugin-svelte: 2.6.0
   svelte: 3.46.4
+  svelte-intersection-observer: ^0.10.0
   tailwindcss: 3.0.19
 
 devDependencies:
-  '@sveltejs/adapter-vercel': 1.0.0-next.44
-  '@sveltejs/kit': 1.0.0-next.281_svelte@3.46.4
+  '@sveltejs/adapter-vercel': 1.0.0-next.47
+  '@sveltejs/kit': 1.0.0-next.303_svelte@3.46.4
   '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.19
   autoprefixer: 10.4.2_postcss@8.4.6
   cssnano: 5.0.17_postcss@8.4.6
@@ -34,6 +35,7 @@ devDependencies:
   prettier: 2.5.1
   prettier-plugin-svelte: 2.6.0_prettier@2.5.1+svelte@3.46.4
   svelte: 3.46.4
+  svelte-intersection-observer: 0.10.0
   tailwindcss: 3.0.19_833e1018ad0d7954aa80c53675939269
 
 packages:
@@ -149,19 +151,19 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.44:
+  /@sveltejs/adapter-vercel/1.0.0-next.47:
     resolution:
       {
-        integrity: sha512-q0o7JG0pAam2lkkM5XiaLzYBGSRtOogjXpKYwpc7iiMuaSV4nzsnYlLxwbtib7ZJQzE1D32pPZQuvf5pAIqrmQ==,
+        integrity: sha512-VV3vP8KqL9XOc7xfQLVhXTM5jrTme+r1qJy98u5/dhAhkdjqrGDwAKo/s7MoB3rTYxLb2b8I4QxAaoz2Y2aIBg==,
       }
     dependencies:
       esbuild: 0.14.23
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.281_svelte@3.46.4:
+  /@sveltejs/kit/1.0.0-next.303_svelte@3.46.4:
     resolution:
       {
-        integrity: sha512-IBEqbckzNmLGEFqi+4gG0XxNyQ/koO+OYK2fSjNZvRxLL9W1H4RhMRmEGdZGvPt1opBuqD0ErgdgmHMNO+B8XQ==,
+        integrity: sha512-WdxDc8OiF1WEd/bEza7CBdzA+3qIcCi1GKBj/gieKX9I3N8iDJt/Cg2POrLo9wQoJ47nZcAd1eOhfr7XEX1aIQ==,
       }
     engines: { node: '>=14.13' }
     hasBin: true
@@ -2651,6 +2653,13 @@ packages:
       svelte: '>=3.19.0'
     dependencies:
       svelte: 3.46.4
+    dev: true
+
+  /svelte-intersection-observer/0.10.0:
+    resolution:
+      {
+        integrity: sha512-GdOTMSrRpoBciMe+NbocsHOBvqKJ5OiL5H8Jz4mBoDGHba9VOI4oGeXAmMOmh8mi5gq95+0b0DVI+6alcQ7TCA==,
+      }
     dev: true
 
   /svelte/3.46.4:

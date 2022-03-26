@@ -28,22 +28,21 @@
   .body-lg {
     @apply text-lg md:text-2xl text-white leading-loose font-body;
   }
-  input, textarea {
+  input,
+  textarea {
     @apply font-mono font-bold text-lg md:text-2xl text-primary;
   }
- 
 
   /* base */
   html {
     @apply bg-secondary selection:bg-primary selection:text-secondary selection:font-bold;
-  } 
+  }
   body {
     @apply overflow-x-hidden w-[100vw];
   }
 }
 
 @layer utilities {
-
   h3 {
     font-stretch: expanded;
   }
@@ -62,6 +61,6 @@
 
   .clip-rounded {
     -webkit-clip-path: ellipse(100% 50% at 50% 50%);
-  clip-path: ellipse(100% 50% at 50% 50%);
+    clip-path: ellipse(100% 50% at 50% 50%);
   }
 }

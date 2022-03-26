@@ -9,7 +9,12 @@
   let classes = config()
 </script>
 
-<ul role="list" class={`${classes.list} + ${className}`} style={styles} on:scroll>
+<ul
+  role="list"
+  class={`${classes.list} + ${className}`}
+  style={styles}
+  on:scroll
+>
   {#each items as item}
     <li class={classes.listItem}>
       <slot prop={item} />

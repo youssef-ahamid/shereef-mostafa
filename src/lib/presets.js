@@ -17,8 +17,6 @@ export const socialLinks = [
   },
 ]
 
-
-
 import TextInput from '$lib/components/Text Input/index.svelte'
 
 export const contact = {
@@ -29,9 +27,7 @@ export const contact = {
         label: 'name',
         className: 'md:w-[45%]',
         value: '',
-        validations: [
-          { type: 'required', error: 'required field' },
-        ],
+        validations: [{ type: 'required', error: 'required field' }],
       },
     },
     {
@@ -52,9 +48,7 @@ export const contact = {
         label: 'phone',
         className: 'md:w-[45%]',
         value: '',
-        validations: [
-          { type: 'required', error: 'required field' },
-        ],
+        validations: [{ type: 'required', error: 'required field' }],
       },
     },
     {
@@ -71,14 +65,16 @@ export const contact = {
         label: 'message',
         className: 'w-full',
         value: '',
-        validations: [
-          { type: 'required', error: 'required field' },
-        ],
+        validations: [{ type: 'required', error: 'required field' }],
         type: 'text area',
       },
     },
   ],
-  button: { label: 'send message', shape: 'round', type: 'secondary' },
+  button: {
+    label: 'send message',
+    shape: 'round',
+    type: 'secondary',
+  },
 }
 
 export const profile = {

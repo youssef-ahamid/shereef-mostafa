@@ -10,7 +10,7 @@
 <div class={`${classes.hero} ${className}`}>
   {#if $$slots.cta}
     <div class={classes.cta}>
-        <slot name="cta" />
+      <slot name="cta" />
     </div>
   {/if}
   {#if $$slots.left}

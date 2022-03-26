@@ -8,12 +8,13 @@ export let iconWrapper = options => {
     },
     {
       on: [options.active, true],
-      classes: "bg-transparent md:bg-primary md:bg-opacity-50 text-primary md:text-secondary"
+      classes:
+        'bg-transparent md:bg-primary md:bg-opacity-50 text-primary md:text-secondary',
     },
     {
       on: [options.active, false],
-      classes: "bg-secondary bg-opacity-75 text-primary"
-    }
+      classes: 'bg-secondary bg-opacity-75 text-primary',
+    },
   ]
 }
 
@@ -44,16 +45,16 @@ export let inactive = options => {
 export let link = options => {
   return [
     {
-      classes:
-        'mt-12 md:mt-16',
-    }
+      classes: 'mt-12 md:mt-16',
+    },
   ]
 }
 
 export let links = options => {
   return [
     {
-      classes: 'before:absolute before:top-16 before:-translate-y-1/2 before:left-0 before:w-80 md:before:w-96 before:h-0.5 md:before:h-1 before:bg-primary before:rounded-r-full pt-16 md:pl-16',
+      classes:
+        'before:absolute before:top-16 before:-translate-y-1/2 before:left-0 before:w-80 md:before:w-96 before:h-0.5 md:before:h-1 before:bg-primary before:rounded-r-full pt-16 md:pl-16',
     },
   ]
 }
@@ -66,11 +67,11 @@ export let nav = options => {
     },
     {
       on: [options.active, false],
-      classes: "-translate-x-full opacity-25"
+      classes: '-translate-x-full opacity-25',
     },
     {
       on: [options.active, true],
-      classes: "translate-x-0 opacity-100"
+      classes: 'translate-x-0 opacity-100',
     },
   ]
 }

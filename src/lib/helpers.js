@@ -48,7 +48,7 @@ export const resolve = theme => {
 
 export const stylus = theme => {
   let active = theme.filter(s => s.on)
-  return { 
+  return {
     classes: active.map(_ => _.classes).join(' '),
     styles: active.map(_ => _.styles).join(' '),
   }

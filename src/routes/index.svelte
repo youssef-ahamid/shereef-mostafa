@@ -153,7 +153,7 @@
         <Button label="explore" icon={Arrow} shape="ghost" />
       </Go>
     </svelte:fragment>
-    
+
     <svelte:fragment slot="cta">
       <Go to="/contact">
         <Button label="contact" type="secondary" shape="round" />

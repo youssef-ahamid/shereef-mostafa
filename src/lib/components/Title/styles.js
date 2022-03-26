@@ -1,9 +1,7 @@
 import { resolve } from '$lib/helpers'
 
 export let titleWrapper = props => {
-  return [
-    { classes: 'w-full flex items-center' }
-  ]
+  return [{ classes: 'w-full flex items-center' }]
 }
 
 export let line = props => {
@@ -16,9 +14,7 @@ export let line = props => {
 }
 
 export let title = props => {
-  return [
-    { classes: 'leading-0' },
-  ]
+  return [{ classes: 'leading-0' }]
 }
 
 let options

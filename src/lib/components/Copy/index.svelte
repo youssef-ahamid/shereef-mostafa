@@ -1,6 +1,5 @@
 <script>
-import { draw } from "svelte/transition";
-
+  import { draw } from 'svelte/transition'
 
   export let value = ''
   export let id = ''
@@ -30,25 +29,30 @@ import { draw } from "svelte/transition";
 
   <div
     role="tooltip"
-    class="{copied? 'bg-opacity-75': 'bg-opacity-50'} opacity-0 translate-y-1 flex justify-center items-center scale-95 peer-hover:scale-100 peer-active:scale-95 left-1/2 -translate-x-1/2 peer-hover:opacity-100 peer-hover:translate-y-0 absolute z-10 bottom-full py-2 px-3 bg-primary rounded-lg shadow-sm transition duration-300"
-    
+    class="{copied
+      ? 'bg-opacity-75'
+      : 'bg-opacity-50'} opacity-0 translate-y-1 flex justify-center items-center scale-95 peer-hover:scale-100 peer-active:scale-95 left-1/2 -translate-x-1/2 peer-hover:opacity-100 peer-hover:translate-y-0 absolute z-10 bottom-full py-2 px-3 bg-primary rounded-lg shadow-sm transition duration-300"
   >
     {#if copied}
-    <svg
-      class="stroke-current text-secondary stroke-8 inline-block rounded-xl w-6 -mt-2 mr-2"
-      stroke-miterlimit="20"
-      stroke-dashoffset="0"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 40 40"
-      ><path
-        fill="none"
-        in:draw={{ duration: 200 }}
-        d="M14.1 27.2l7.1 7.2 16.7-16.8"
-      /></svg
-    >
-      <p class="font-bold text-secondary leading-none whitespace-nowrap">copied to clipboard</p>
+      <svg
+        class="stroke-current text-secondary stroke-8 inline-block rounded-xl w-6 -mt-2 mr-2"
+        stroke-miterlimit="20"
+        stroke-dashoffset="0"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 40 40"
+        ><path
+          fill="none"
+          in:draw={{ duration: 200 }}
+          d="M14.1 27.2l7.1 7.2 16.7-16.8"
+        /></svg
+      >
+      <p
+        class="font-bold text-secondary leading-none whitespace-nowrap"
+      >
+        copied to clipboard
+      </p>
     {:else}
-    <p class="font-bold text-secondary leading-none">copy</p>
+      <p class="font-bold text-secondary leading-none">copy</p>
     {/if}
   </div>
 </div>

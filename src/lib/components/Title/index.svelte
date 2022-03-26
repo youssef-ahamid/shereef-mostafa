@@ -9,8 +9,8 @@
 </script>
 
 <div class={`${classes.titleWrapper} ${className}`}>
-  {#if line }
-    <div class={classes.line}></div>
+  {#if line}
+    <div class={classes.line} />
   {/if}
   <h1 class={classes.title}><slot /></h1>
 </div>

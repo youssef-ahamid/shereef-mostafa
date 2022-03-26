@@ -14,7 +14,10 @@ export let stepStyles = props => {
       classes:
         'rounded-lg transition duration-300 ease-out cursor-pointer ring-1 ring-secondary ring-opacity-50',
     },
-    { on: [props.direction, 'vertical'], classes: 'w-1.5 h-full max-h-[100px]' },
+    {
+      on: [props.direction, 'vertical'],
+      classes: 'w-1.5 h-full max-h-[100px]',
+    },
     {
       on: [props.direction, 'horizontal'],
       classes: 'h-1.5 w-full inline-block max-w-[100px]',

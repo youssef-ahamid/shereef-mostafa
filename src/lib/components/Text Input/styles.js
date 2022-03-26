@@ -3,9 +3,8 @@ import { resolve } from '$lib/helpers'
 export let label = options => {
   return [
     {
-      classes:
-        ' py-1 ',
-    }
+      classes: ' py-1 ',
+    },
   ]
 }
 
@@ -17,24 +16,23 @@ export let input = options => {
     },
     {
       on: [options.clean, false],
-      classes: 'border-error bg-opacity-[15%]'
+      classes: 'border-error bg-opacity-[15%]',
     },
     {
       on: [options.clean, true],
-      classes: 'border-primary focus:border-accent'
+      classes: 'border-primary focus:border-accent',
     },
     {
       on: [options.type, 'text area'],
-      classes: 'resize-none h-28 md:h-40 w-full min-w-[100%] block'
-    }
+      classes: 'resize-none h-28 md:h-40 w-full min-w-[100%] block',
+    },
   ]
 }
 
 export let name = options => {
   return [
     {
-      classes:
-        'text-primary capitalize py-0.5',
+      classes: 'text-primary capitalize py-0.5',
     },
   ]
 }
@@ -42,8 +40,7 @@ export let name = options => {
 export let error = options => {
   return [
     {
-      classes:
-        'text-error font-bold',
+      classes: 'text-error font-bold',
     },
   ]
 }

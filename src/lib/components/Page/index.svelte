@@ -36,7 +36,11 @@
   {#if cta}
     <span out:fade={{ duration: 300 }} in:fade={{ duration: 500 }}>
       <Button
-        {...cta}
+        label={cta.label}
+        type={cta.type}
+        shape={cta.shape}
+        icon={cta.icon}
+        reverse={cta.reverse}
         on:click={cta.action}
         className={classes.cta}
       />
@@ -48,16 +52,12 @@
       in:typewriter={{ speed: 2, delay: 400 }}
       out:fade={{ duration: 200 }}
     >
-      {title !== 'home'? title : ''}
+      {title !== 'home' ? title : ''}
     </h1>
   {/key}
   {#if controls}
     <span transition:fade={{ duration: 500 }}>
-      <Nav
-        {links}
-        icon={Burger}
-        className={classes.nav}
-      />
+      <Nav {links} icon={Burger} className={classes.nav} />
       <Stepper
         steps={5}
         bind:active={number}

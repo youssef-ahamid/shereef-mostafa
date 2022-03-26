@@ -52,6 +52,14 @@
     />
   {/each}
   {#if !!button}
-    <Button {...button} className={classes.button} />
+    <Button
+      on:click={submit}
+      label={button.label}
+      type={button.type}
+      shape={button.shape}
+      icon={button.icon}
+      reverse={button.reverse}
+      className={classes.button}
+    />
   {/if}
 </form>

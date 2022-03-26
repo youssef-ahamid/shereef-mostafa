@@ -36,26 +36,19 @@
     else dispatch('depreview')
   }
 
-  $: type = mobile ? "overlay" : "card"
+  $: type = mobile ? 'overlay' : 'card'
 
   /* styles */
   import { config } from './styles'
   $: classes = config({ selected, previewed, remaining })
 </script>
 
-<div
-  class={`${classes.carrouselItemWrapper} ${className}`}
->
-  <Image
-    {...thumbnail}
-    {type}
-    className={classes.thumbnail}
-  />
+<div class={`${classes.carrouselItemWrapper} ${className}`}>
+  <Image {...thumbnail} {type} className={classes.thumbnail} />
   <!-- {#if !!video && selected}
         <svelte:component this={video.component} {...video.options} className={classes.video} />
     {/if} -->
   <div class={classes.infoContainer}>
-    
     <!-- {#if previewed } -->
     <h2>{title}</h2>
     <p>{text}</p>
@@ -72,7 +65,7 @@
     {/if}
 
     {#if images.length > 0}
-      {#each images as img }
+      {#each images as img}
         <img {...img} class={classes.logo} />
       {/each}
     {/if}

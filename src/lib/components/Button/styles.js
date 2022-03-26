@@ -4,15 +4,17 @@ export let button = options => {
   return [
     {
       classes:
-        'transition duration-300 ease-out flex justify-center items-center group hover:scale-105 active:scale-95'
+        'transition duration-300 ease-out flex justify-center items-center group hover:scale-105 active:scale-95',
     },
     {
       on: [options.type, 'primary'],
-      classes: 'text-accent border-accent decoration-transparent active:text-accent active:border-accent active:decoration-transparent bg-secondary active:bg-secondary hover:decoration-accent hover:bg-accent hover:text-secondary',
+      classes:
+        'text-accent border-accent decoration-transparent active:text-accent active:border-accent active:decoration-transparent bg-secondary active:bg-secondary hover:decoration-accent hover:bg-accent hover:text-secondary',
     },
     {
       on: [options.type, 'secondary'],
-      classes: 'text-secondary border-secondary decoration-transparent bg-accent active:text-secondary active:border-secondary active:decoration-transparent active:bg-accent hover:decoration-secondary hover:bg-secondary hover:text-accent hover:border-accent',
+      classes:
+        'text-secondary border-secondary decoration-transparent bg-accent active:text-secondary active:border-secondary active:decoration-transparent active:bg-accent hover:decoration-secondary hover:bg-secondary hover:text-accent hover:border-accent',
     },
     {
       on: [options.shape, 'default'],
@@ -20,7 +22,8 @@ export let button = options => {
     },
     {
       on: [options.shape, 'ghost'],
-      classes: 'bg-transparent hover:bg-transparent hover:text-accent underline underline-offset-4 py-3',
+      classes:
+        'bg-transparent hover:bg-transparent hover:text-accent underline underline-offset-4 py-3',
     },
     {
       on: [options.shape, 'round'],
@@ -32,13 +35,12 @@ export let button = options => {
 export let label = options => {
   return [
     {
-      classes:
-        'leading-5 font-bold font-mono',
+      classes: 'leading-5 font-bold font-mono',
     },
     {
       on: [options.shape, 'round'],
       classes: '',
-    }
+    },
   ]
 }
 

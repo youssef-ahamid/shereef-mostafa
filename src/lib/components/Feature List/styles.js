@@ -3,19 +3,18 @@ import { resolve } from '$lib/helpers'
 export let list = options => {
   return [
     {
-      classes: 'w-full py-12'
+      classes: 'w-full py-12',
     },
   ]
 }
 
 export let feature = options => {
-    return [
-      {
-        classes: ''
-      },
-    ]
-  }
-
+  return [
+    {
+      classes: '',
+    },
+  ]
+}
 
 let options
 export const config = props => {
