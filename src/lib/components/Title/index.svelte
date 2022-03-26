@@ -1,6 +1,7 @@
 <script>
   /* props */
   export let className = '' // *, custom wrapper classes
+  export let line = true
 
   /* styles */
   import { config } from './styles'
@@ -8,6 +9,8 @@
 </script>
 
 <div class={`${classes.titleWrapper} ${className}`}>
-  <div class={classes.line}></div>
+  {#if line }
+    <div class={classes.line}></div>
+  {/if}
   <h1 class={classes.title}><slot /></h1>
 </div>

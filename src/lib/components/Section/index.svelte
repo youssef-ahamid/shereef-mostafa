@@ -3,6 +3,7 @@
     export let title = ''
     export let id = title
     export let cta = null
+    export let noContain = false
   
     import Title from '$lib/components/Title/index.svelte'
     import Go from '$lib/components/Go/index.svelte'
@@ -10,12 +11,12 @@
   
     /* styles */
     import { config } from './styles'
-    $: classes = config()
+    $: classes = config({ noContain })
   </script>
   
 
 <section class="{`${classes.section} ${className}`}" {id}>
-    <Title>{title}</Title>
+    <Title line={title.length > 0}>{title}</Title>
     <div class={classes.content}>
         <slot />
         {#if cta}

@@ -1,14 +1,11 @@
 <script>
-	import Carrousel from '$lib/components/Carrousel/index.svelte';
-  // import Stepper from '$lib/components/Stepper/index.svelte'
-  import Title from '$lib/components/Title/index.svelte'
   import Form from '$lib/components/Form/index.svelte'
   import Go from '$lib/components/Go/index.svelte'
   import Button from '$lib/components/Button/index.svelte'
   import Section from '$lib/components/Section/index.svelte'
+  import Hero from '$lib/components/Hero/index.svelte'
   import Image from '$lib/components/Image/index.svelte'
   import FeatureList from '$lib/components/Feature List/index.svelte'
-  // import TextInput from '$lib/components/Text Input/index.svelte'
   import Arrow from '$lib/icons/arrow.svelte'
   import { contact } from '$lib/presets'
 
@@ -25,14 +22,15 @@
           src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
         },
       },
-      title: 'hello!', 
+      title: 'hello!',
       cta: {
         link: '/projects?num=0',
         shape: 'ghost',
         icon: Arrow,
-        label: 'view project'
+        label: 'view project',
       },
-      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+      videoUrl:
+        'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
     },
     {
       preview: {
@@ -47,10 +45,11 @@
         link: '/projects?num=1',
         shape: 'ghost',
         icon: Arrow,
-        label: 'view project'
+        label: 'view project',
       },
-      title: 'hello!', 
-      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+      title: 'hello!',
+      videoUrl:
+        'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
     },
     {
       preview: {
@@ -60,15 +59,16 @@
           alt: 'hello from the alt world',
           src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
         },
-      }, 
+      },
       title: 'hello!',
       cta: {
         link: '/projects?num=2',
         shape: 'ghost',
         icon: Arrow,
-        label: 'view project'
-      }, 
-      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+        label: 'view project',
+      },
+      videoUrl:
+        'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
     },
     {
       preview: {
@@ -79,15 +79,16 @@
           src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
         },
       },
-      title: 'hello!', 
+      title: 'hello!',
       cta: {
         link: '/projects?num=3',
         shape: 'ghost',
         icon: Arrow,
-        label: 'view project'
+        label: 'view project',
       },
-      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-    }
+      videoUrl:
+        'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
+    },
   ]
 
   let bios = [
@@ -137,121 +138,48 @@
       },
     },
   ]
-
-  // let value = ''
-  // let value2 = ''
-  // import NavLink from '$lib/components/Nav Link/index.svelte'
-
-
-  let active = false
-
-  const toggle = () => {
-    active = !active
-  }
-
-
-  let items = [
-    {
-      thumbnail: {
-        src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-        alt: 'hello',
-      }, 
-      text: `Lorem ipsum is a filler text developed to take up space when a you require the appearance of wriiten text ten text when really nothing is written. If yo’ve read this far you’re part of the problem.`, 
-      title: 'hello!', 
-      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-    },
-    {
-      thumbnail: {
-        src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-        alt: 'hello',
-      }, 
-      text: `3ed el gmail heheheh
-      
-      lessa same3ha`, 
-      title: 'hello!', 
-      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-    },
-    {
-      thumbnail: {
-        src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-        alt: 'hello',
-      }, 
-      text: `3ed el gmail heheheh
-      
-      lessa same3ha`, 
-      title: 'hello!', 
-      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-    },
-    {
-      thumbnail: {
-        src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-        alt: 'hello',
-      }, 
-      text: `Lorem ipsum is a filler text developed to take up space when a you require the appearance of wriiten text ten text when really nothing is written. If yo’ve read this far you’re part of the problem.`, 
-      title: 'hello!', 
-      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-    },
-    {
-      thumbnail: {
-        src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-        alt: 'hello',
-      }, 
-      text: `3ed el gmail heheheh
-      
-      lessa same3ha`, 
-      title: 'hello!', 
-      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-    },
-    {
-      thumbnail: {
-        src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-        alt: 'hello',
-      }, 
-      text: `3ed el gmail heheheh
-      
-      lessa same3ha`, 
-      title: 'hello!', 
-      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-    },
-    {
-      thumbnail: {
-        src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-        alt: 'hello',
-      }, 
-      text: `Lorem ipsum is a filler text developed to take up space when a you require the appearance of wriiten text ten text when really nothing is written. If yo’ve read this far you’re part of the problem.`, 
-      title: 'hello!', 
-      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-    },
-    {
-      thumbnail: {
-        src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-        alt: 'hello',
-      }, 
-      text: `3ed el gmail heheheh
-      
-      lessa same3ha`, 
-      title: 'hello!', 
-      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-    },
-    {
-      thumbnail: {
-        src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-        alt: 'hello',
-      }, 
-      text: `3ed el gmail heheheh
-      
-      lessa same3ha`, 
-      title: 'hello!', 
-      videoUrl: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-    }
-  ]
 </script>
+
+<Section id="home">
+  <Hero fullHeight>
+    <svelte:fragment slot="left">
+      <h1 class="text-6xl md:text-7xl md:whitespace-nowrap">
+        Shereef Mostafa
+      </h1>
+      <p class="body-lg">hello from the underworld!</p>
+      <Go to="/projects">
+        <Button label="explore" icon={Arrow} shape="ghost" />
+      </Go>
+    </svelte:fragment>
+    
+    <svelte:fragment slot="cta">
+      <Go to="/contact">
+        <Button label="contact" type="secondary" shape="round" />
+      </Go>
+    </svelte:fragment>
+
+    <svelte:fragment slot="right">
+      <Image
+        type="card"
+        alt="shereef mostafa | website"
+        src="https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg"
+      />
+    </svelte:fragment>
+  </Hero>
+</Section>
 
 <Section title="bio">
   <FeatureList features={bios} zigzag />
 </Section>
 
-<Section title="projects" cta={{ link: 'projects', label: 'view more projects', shape: 'round' }}>
+<Section
+  title="projects"
+  cta={{
+    link: 'projects',
+    label: 'view more projects',
+    shape: 'round',
+  }}
+>
   <FeatureList features={projects} zigzag />
 </Section>
 
@@ -262,45 +190,3 @@
     className="max-w-[90%] md:max-w-[600px] mx-auto"
   />
 </Section>
-
-<!-- <Stepper steps={5} direction="horizontal" /> -->
-<!-- <Button label="activate" on:click={toggle} />
-<NavLink to="https://getbrewsy.com" redirect {links} bind:active
-  >Brewsy</NavLink
->
-
-<Image type="card" alt="hamada" src="https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg" />
-<Image type="overlay" alt="hamada" src="https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg" /> -->
-
-<!-- <div
-  class="flex justify-around items-center flex-wrap w-screen h-screen"
->
-  <h5>Ajgjrmrfk rjjrgg</h5>
-  <h3>Ta3alaaneekak</h3>
-  <h4>YabnelmarayaFager</h4>
-  <Button label="walnuts arfeafe great" shape="round" />
-  <Button
-    label="walnuts arfeafe great"
-    shape="round"
-    type="secondary"
-    icon={Arrow}
-  />
-  <Button label="walnuts arfeafe great" shape="ghost" />
-
-  <Button label="walnuts arfeafe great" />
-  <Button label="walnuts arfeafe great" type="secondary" />
-
-  <TextInput
-    label="hamada"
-    type="text area"
-    bind:value
-    validations={[{ type: 'required', error: 'required field' }]}
-  />
-
-  <TextInput
-    label="hamada"
-    type="text"
-    bind:value2
-    validations={[{ type: 'required', error: 'required field' }]}
-  />
-</div> -->
