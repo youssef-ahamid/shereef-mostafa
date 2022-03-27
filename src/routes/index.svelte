@@ -1,170 +1,88 @@
+<script context="module">
+  import Image from '$lib/components/Image/index.svelte'
+  import { getBios } from '$lib/gql'
+
+  export async function load() {
+    let bios = await getBios()
+    bios = bios.map(bio => {
+      return {
+        title: bio.title,
+        body: bio.body,
+        preview: {
+          component: Image,
+          data: {
+            type: 'custom',
+            alt: `${bio.title} | Shereef Mostafa`,
+            src: bio.image.url,
+            clip: true,
+          },
+        },
+        main: bio.main,
+      }
+    })
+
+    return {
+      props: { bios },
+    }
+  }
+</script>
+
 <script>
   import Form from '$lib/components/Form/index.svelte'
   import Go from '$lib/components/Go/index.svelte'
   import Button from '$lib/components/Button/index.svelte'
   import Section from '$lib/components/Section/index.svelte'
   import Hero from '$lib/components/Hero/index.svelte'
-  import Image from '$lib/components/Image/index.svelte'
   import FeatureList from '$lib/components/Feature List/index.svelte'
   import Footer from '$lib/components/Footer/index.svelte'
   import Arrow from '$lib/icons/arrow.svelte'
-  
-  import { navlinks } from '$lib/stores'
-  
-  import { contact, profile } from '$lib/presets'
-  
-  import zaagel from 'zaagel';
-  zaagel.configure(profile)
+
+  import { contact } from '$lib/presets'
+  import {
+    featuredProjects,
+    navlinks,
+    contactConfig,
+  } from '$lib/stores'
+
+  import zaagel from '$lib/zaagel'
+  zaagel.configure($contactConfig)
 
   function send(e) {
-    zaagel.mail(
-      profile.siteEmail, 
-      `New Message Received from ${e.detail.name}`,
-      'message-received',
-      e.detail
-    )
-    zaagel.mail(
-      e.detail.email, 
-      `Message sent to ${e.detail.name}`,
-      'message-sent',
-      e.detail
-    )
-  }
-  let projects = [
-    {
-      preview: {
-        component: Image,
-        data: {
-          type: 'card',
-          alt: 'hello from the alt world',
-          src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-        },
-      },
-      title: 'hello!',
-      cta: {
-        link: '/projects?num=0',
-        shape: 'ghost',
-        icon: Arrow,
-        label: 'view project',
-      },
-      videoUrl:
-        'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-    },
-    {
-      preview: {
-        component: Image,
-        data: {
-          type: 'card',
-          alt: 'hello from the alt world',
-          src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-        },
-      },
-      cta: {
-        link: '/projects?num=1',
-        shape: 'ghost',
-        icon: Arrow,
-        label: 'view project',
-      },
-      title: 'hello!',
-      videoUrl:
-        'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-    },
-    {
-      preview: {
-        component: Image,
-        data: {
-          type: 'card',
-          alt: 'hello from the alt world',
-          src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-        },
-      },
-      title: 'hello!',
-      cta: {
-        link: '/projects?num=2',
-        shape: 'ghost',
-        icon: Arrow,
-        label: 'view project',
-      },
-      videoUrl:
-        'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-    },
-    {
-      preview: {
-        component: Image,
-        data: {
-          type: 'card',
-          alt: 'hello from the alt world',
-          src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-        },
-      },
-      title: 'hello!',
-      cta: {
-        link: '/projects?num=3',
-        shape: 'ghost',
-        icon: Arrow,
-        label: 'view project',
-      },
-      videoUrl:
-        'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-    },
-  ]
+    let message = {
+      to: $contactConfig.siteEmail,
+      subject: `New Message Received from ${e.detail.name}`,
+      template: 'message-received',
+      body: e.detail,
+      replyTo: e.detail.email,
+    }
 
-  let bios = [
-    {
-      title: 'Early Life',
-      body: `Hello there and welcome to the feature section!
-      
-      it can have line breaks and whatnot.`,
-      preview: {
-        component: Image,
-        data: {
-          type: 'custom',
-          alt: 'hello from the alt world',
-          src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-          clip: true,
-        },
-      },
-    },
-    {
-      title: 'Early Life',
-      body: `Hello there and welcome to the feature section!
-      
-      it can have line breaks and whatnot.`,
-      preview: {
-        component: Image,
-        data: {
-          type: 'custom',
-          alt: 'hello from the alt world',
-          src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-          clip: true,
-        },
-      },
-    },
-    {
-      title: 'Early Life',
-      body: `Hello there and welcome to the feature section!
-      
-      it can have line breaks and whatnot.`,
-      preview: {
-        component: Image,
-        data: {
-          type: 'custom',
-          alt: 'hello from the alt world',
-          src: 'https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg',
-          clip: true,
-        },
-      },
-    },
-  ]
+    zaagel.mail(message)
+
+    if ($contactConfig.thankYou) {
+      let confirmation = {
+        to: e.detail.email,
+        subject: `Message sent to ${$contactConfig.siteOwner}`,
+        template: 'message-sent',
+        body: e.detail,
+        replyTo: $contactConfig.siteEmail,
+      }
+
+      zaagel.mail(confirmation)
+    }
+  }
+
+  export let bios
+  let main = bios.filter(bio => bio.main)[0]
+  bios = bios.filter(bio => !bio.main)
 </script>
 
 <Section id="home">
   <Hero fullHeight>
     <svelte:fragment slot="left">
       <h1 class="text-6xl md:text-7xl md:whitespace-nowrap">
-        Shereef Mostafa
+        {main.title}
       </h1>
-      <p class="body-lg">hello from the underworld!</p>
+      <p class="body-lg">{main.body}</p>
       <Go to="/projects">
         <Button label="explore" icon={Arrow} shape="ghost" />
       </Go>
@@ -177,10 +95,9 @@
     </svelte:fragment>
 
     <svelte:fragment slot="right">
-      <Image
-        type="card"
-        alt="shereef mostafa | website"
-        src="https://i.ndtvimg.com/i/2015-09/grapes_625x350_61443376353.jpg"
+      <svelte:component
+        this={main.preview.component}
+        {...main.preview.data}
       />
     </svelte:fragment>
   </Hero>
@@ -198,7 +115,7 @@
     shape: 'round',
   }}
 >
-  <FeatureList features={projects} zigzag />
+  <FeatureList features={$featuredProjects} zigzag />
 </Section>
 
 <Section title="contact">
@@ -209,4 +126,4 @@
   />
 </Section>
 
-<Footer links={$navlinks} />
+<Footer links={$navlinks} copyright={$contactConfig.copyright} />

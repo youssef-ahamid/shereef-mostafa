@@ -14,4 +14,6 @@
   <title>oops! - Status {status}</title>
 </svelte:head>
 
-<h1>{status}: {error.message}</h1>
+<div class="w-screen h-screen flex justify-center items-center">
+  <h2>{status}: {error.message}</h2>
+</div>

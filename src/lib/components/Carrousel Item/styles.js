@@ -55,7 +55,16 @@ export let logo = options => {
   return [
     {
       classes:
-        'min-w-[50px] md:max-w-[200px] min-h-[10px] max-w-[150px] mb-1 -mt-3',
+        'h-10 w-auto block mr-3',
+    },
+  ]
+}
+
+export let logos = options => {
+  return [
+    {
+      classes:
+        'flex items-center',
     },
   ]
 }
@@ -67,6 +76,7 @@ export const config = props => {
     carrouselItemWrapper: resolve(carrouselItemWrapper(options)),
     infoContainer: resolve(infoContainer(options)),
     logo: resolve(logo(options)),
+    logos: resolve(logos(options)),
     thumbnail: resolve(thumbnail(options)),
   }
 }

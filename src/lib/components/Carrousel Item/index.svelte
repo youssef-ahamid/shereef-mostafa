@@ -14,10 +14,8 @@
   import Button from '$lib/components/Button/index.svelte'
   import Image from '$lib/components/Image/index.svelte'
   import Arrow from '$lib/icons/arrow.svelte'
-  import { fade, slide } from 'svelte/transition'
 
   $: previewed = remaining === 0
-  let itemWidth
 
   /* events */
   import { createEventDispatcher } from 'svelte/internal'
@@ -45,14 +43,19 @@
 
 <div class={`${classes.carrouselItemWrapper} ${className}`}>
   <Image {...thumbnail} {type} className={classes.thumbnail} />
-  <!-- {#if !!video && selected}
-        <svelte:component this={video.component} {...video.options} className={classes.video} />
-    {/if} -->
+
   <div class={classes.infoContainer}>
-    <!-- {#if previewed } -->
+    <div class={classes.logos}>
+      {#if images.length > 0}
+        {#each images as img}
+          <img src={img.url} alt={title} class={classes.logo} />
+        {/each}
+      {/if}
+    </div>
+
     <h2>{title}</h2>
     <p>{text}</p>
-    <!-- {/if} -->
+
     {#if videoUrl}
       <Go to={videoUrl} redirect>
         <Button
@@ -62,12 +65,6 @@
           className="-ml-2"
         />
       </Go>
-    {/if}
-
-    {#if images.length > 0}
-      {#each images as img}
-        <img {...img} class={classes.logo} />
-      {/each}
     {/if}
   </div>
 </div>

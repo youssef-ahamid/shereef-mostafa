@@ -24,38 +24,65 @@ export const sendMessage = async message => {
 export async function getBios() {
   const query = gql`
     {
-      bioSteps {
+      bios {
         image {
-          url
+          url(
+            transformation: { document: { output: { format: png } } }
+          )
         }
-        text {
-          text
+        body
+        title
+        main
+      }
+    }
+  `
+  const { bios } = await graphcms.request(query)
+  return bios
+}
+
+export async function getProjects(limit = 15) {
+  const query = gql`
+    {
+      projects(first: ${limit}) {
+        thumbnail {
+          url(
+            transformation: { document: { output: { format: jpg } } }
+          )
+        }
+        text
+        title
+        videoUrl
+        clientLogos {
+          url(
+            transformation: { document: { output: { format: png } } }
+          )
         }
       }
     }
   `
-  const { bioSteps } = await graphcms.request(query)
-  return bioSteps
-}
-
-export async function getProjects(type) {
-  const query = gql`
-      {
-        projects(where: {type: ${type}}) {
-          title
-          videoUrl
-          thumbnail {
-            url(
-              transformation: {document: {output: {format: png}}}
-            )
-          }
-          clientLogo {
-            url(transformation: {document: {output: {format: png}}})
-          }
-          videoUrl
-        }
-      }
-  `
   const { projects } = await graphcms.request(query)
   return projects
+}
+
+export async function getContact() {
+  const query = gql`
+    {
+      contacts {
+        anghami
+        copyright
+        siteEmail
+        facebook
+        instagram
+        linkedin
+        location
+        siteOwner
+        siteName
+        soundcloud
+        spotify
+        thankYou
+      }
+    }
+  `
+  const { contacts } = await graphcms.request(query)
+  return contacts[0]
 }

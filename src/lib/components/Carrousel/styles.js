@@ -46,7 +46,7 @@ export let buttons = () => {
 export let button = () => {
   return [
     {
-      classes: 'ml-6',
+      classes: 'md:ml-6',
     },
   ]
 }

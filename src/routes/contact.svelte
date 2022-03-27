@@ -1,34 +1,39 @@
 <script>
-  import { navlinks } from '$lib/stores'
-  import { goto } from '$app/navigation'
+  import { navlinks, contactConfig } from '$lib/stores'
 
   import Button from '$lib/components/Button/index.svelte'
   import Go from '$lib/components/Go/index.svelte'
   import Copy from '$lib/components/Copy/index.svelte'
-  import Emailattatchment from '$lib/icons/social/email attatchment.svelte'
+  import Emailattachment from '$lib/icons/social/email attachment.svelte'
   import Mappin from '$lib/icons/social/map pin.svelte'
   import Footer from '$lib/components/Footer/index.svelte'
   import Form from '$lib/components/Form/index.svelte'
 
-  import { contact, profile } from '$lib/presets'
+  import { contact } from '$lib/presets'
   import { fade } from 'svelte/transition'
   
   import zaagel from 'zaagel';
-  zaagel.configure(profile)
+  zaagel.configure($contactConfig)
 
   function send(e) {
-    zaagel.mail(
-      profile.siteEmail, 
-      `New Message Received from ${e.detail.name}`,
-      'message-received',
-      e.detail
-    )
-    zaagel.mail(
-      e.detail.email, 
-      `Message sent to ${e.detail.name}`,
-      'message-sent',
-      e.detail
-    )
+    let message = {
+      to: $contactConfig.siteEmail, 
+      subject: `New Message Received from ${e.detail.name}`,
+      template: 'message-received',
+      body: e.detail,
+      replyTo: e.detail.email,
+    }
+
+    let confirmation = {
+      to: e.detail.email, 
+      subject: `Message sent to ${$contactConfig.siteOwner}`,
+      template: 'message-sent',
+      body: e.detail,
+      replyTo: $contactConfig.siteEmail, 
+    }
+
+    zaagel.mail(message)
+    zaagel.mail(confirmation)
   }
 </script>
 
@@ -36,15 +41,15 @@
 <div
   class="hidden md:flex absolute right-[10%] top-12 w-80 justify-between items-center"
 >
-  <Copy value={profile.email}>
+  <Copy value={$contactConfig.siteEmail}>
     <Button
       label="email"
       shape="ghost"
       reverse
-      icon={Emailattatchment}
+      icon={Emailattachment}
     />
   </Copy>
-  <Go to={profile.location} redirect>
+  <Go to={$contactConfig.location} redirect>
     <Button label="visit" shape="ghost" reverse icon={Mappin} />
   </Go>
 </div>
@@ -61,4 +66,4 @@
   />
 </div>
 
-<Footer links={$navlinks} />
+<Footer links={$navlinks} copyright={$contactConfig.copyright} />

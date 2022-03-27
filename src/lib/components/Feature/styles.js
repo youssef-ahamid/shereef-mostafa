@@ -45,7 +45,7 @@ export let right = options => {
 export let image = options => {
   return [
     {
-      classes: 'h-6 w-auto mr-3',
+      classes: 'h-10 inline-block w-auto mr-3',
     },
   ]
 }

@@ -1,4 +1,4 @@
-export let footer = 'w-full py-12 pb-40 relative max-h-[100px]'
+export let footer = 'w-full py-12 pb-40 mb-20 relative max-h-[100px]'
 export let list = 'w-[70%] flex flex-wrap justify-between items-start'
 export let links = 'w-full'
 export let link = ''
