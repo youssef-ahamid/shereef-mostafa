@@ -8,6 +8,10 @@
   import Section from '$lib/components/Section/index.svelte'
   import List from '$lib/components/List/index.svelte'
   import NavLink from '$lib/components/Nav Link/index.svelte'
+  import Go from '$lib/components/Go/index.svelte'
+
+  import { socialLinks } from '$lib/stores';
+  let socials = $socialLinks.filter(link => !!link.to)
 
   /* styles */
   import { config } from './styles'
@@ -22,6 +26,11 @@
       </List>
       <slot />
     </nav>
+    <List items={socials} let:prop={link} className={classes.socials}>
+      <Go to={link.to} redirect={link.redirect} className={classes.socialLink}>
+        <svelte:component this={link.component} />
+      </Go>
+    </List>
     <h4 class={classes.copyright}>{copyright}</h4>
   </footer>
 </Section>

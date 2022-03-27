@@ -58,17 +58,29 @@
     navlinks,
     featuredProjects,
     contactConfig,
+    socialLinks,
   } from '$lib/stores'
 
+  // load links
   $navlinks[1].links = projectLinks
   $featuredProjects = projects
+
+  // load contact information
   $contactConfig = contactSettings
   $navlinks[2].links[1].to = contactSettings.location
+
+  // load social links
+  for (const [key, value] of Object.entries(contactSettings)) {
+    let linkIndex = $socialLinks.map(link => link.name).indexOf(key)
+    if(value != '' && linkIndex != -1) $socialLinks[linkIndex].to = value
+  }
   
+  // get active url
   let urls = $navlinks.map(link => link.to)
   let activeLink = urls.indexOf(url.pathname)
   let activeSub = 0
 
+  // get active sub url
   let linksWithSubs = $navlinks.map(link => link.links)
   linksWithSubs.forEach((subs, i) => {
     let sublink = url.href.replace(url.origin, '')
