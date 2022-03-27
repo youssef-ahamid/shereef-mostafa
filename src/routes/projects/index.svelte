@@ -30,11 +30,13 @@
   import Animateonenterview from '$lib/components/Animate On Enter View/animate on enter view.svelte'
   import PageTransition from '$lib/components/Page Transition/index.svelte'
 
-  import { goto } from '$app/navigation'
+  let contactRedirect
 
   export let projects
   export let currentStep
 </script>
+
+<a href="/contact" bind:this={contactRedirect} class="hidden">redirect</a>
 
 <PageTransition>
   {currentStep > 0? projects[currentStep].title: 'projects'}
@@ -45,8 +47,5 @@
   <Carrousel
     bind:currentStep
     items={projects}
-    on:finish={() => {
-      goto('/contact')
-    }}
   />
 </Animateonenterview>

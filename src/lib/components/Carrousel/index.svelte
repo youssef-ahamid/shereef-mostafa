@@ -97,7 +97,9 @@
         label="next"
         shape="ghost"
         on:click={next}
-        className={classes.button}
+        className={`${classes.button} ${
+          currentStep === items.length - 1 ? 'opacity-0' : 'opacity-100'
+        }`}
       />
     </div>
   </div>
