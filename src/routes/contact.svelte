@@ -18,8 +18,9 @@
 
   let thankyouRedirect
 
-  function send(e) {
+  async function send(e) {
     $user = e.detail
+    thankyouRedirect.click()
 
     let message = {
       to: $contactConfig.siteEmail,
@@ -42,8 +43,6 @@
 
       zaagel.mail(confirmation)
     }
-
-    thankyouRedirect.click()
   }
 </script>
 
