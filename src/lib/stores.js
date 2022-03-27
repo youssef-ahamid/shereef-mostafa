@@ -39,5 +39,16 @@ export const navlinks = writable([
   {
     to: '/contact',
     text: 'contact',
+    links: [
+      {
+        to: '/contact',
+        text: 'get in touch',
+      },
+      {
+        to: '',
+        text: 'visit',
+        redirect: true,
+      }
+    ]
   },
 ])

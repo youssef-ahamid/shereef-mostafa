@@ -63,7 +63,8 @@
   $navlinks[1].links = projectLinks
   $featuredProjects = projects
   $contactConfig = contactSettings
-
+  $navlinks[2].links[1].to = contactSettings.location
+  
   let urls = $navlinks.map(link => link.to)
   let activeLink = urls.indexOf(url.pathname)
   let activeSub = 0
