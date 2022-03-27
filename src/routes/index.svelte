@@ -32,6 +32,7 @@
   import Section from '$lib/components/Section/index.svelte'
   import Hero from '$lib/components/Hero/index.svelte'
   import FeatureList from '$lib/components/Feature List/index.svelte'
+  import PageTransition from '$lib/components/Page Transition/index.svelte'
   import Footer from '$lib/components/Footer/index.svelte'
   import Arrow from '$lib/icons/arrow.svelte'
 
@@ -42,6 +43,7 @@
     contactConfig,
     user,
   } from '$lib/stores'
+  
 
   import zaagel from 'zaagel'
   zaagel.configure($contactConfig)
@@ -84,6 +86,7 @@
 <a href="/thankyou" class="hidden" bind:this={thankyouRedirect}
   >redirect</a
 >
+<PageTransition />
 <Section id="home">
   <Hero fullHeight>
     <svelte:fragment slot="left">

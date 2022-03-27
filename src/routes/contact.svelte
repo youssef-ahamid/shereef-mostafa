@@ -9,6 +9,7 @@
   import Footer from '$lib/components/Footer/index.svelte'
   import Form from '$lib/components/Form/index.svelte'
   import Animateonenterview from '$lib/components/Animate On Enter View/animate on enter view.svelte'
+  import PageTransition from '$lib/components/Page Transition/index.svelte'
 
   import { contact } from '$lib/presets'
   import { fade } from 'svelte/transition'
@@ -49,6 +50,10 @@
 <a href="/thankyou" class="hidden" bind:this={thankyouRedirect}
   >redirect</a
 >
+
+<PageTransition>
+  get in touch
+</PageTransition>
 
 <Animateonenterview>
   <h1 class="pl-8 pt-9 md:pt-12">Contact</h1>

@@ -1,5 +1,4 @@
 <script context="module">
-  export const prerender = true
   import Image from '$lib/components/Image/index.svelte'
   import Arrow from '$lib/icons/arrow.svelte'
   import { getProjects, getContact } from '$lib/gql'
@@ -61,6 +60,10 @@
     socialLinks,
   } from '$lib/stores'
 
+  import { slide, fade } from 'svelte/transition'
+  import { afterUpdate, beforeUpdate, onMount } from 'svelte'
+  import Logo from '$lib/logo.svelte'
+
   // load links
   $navlinks[1].links = projectLinks
   $featuredProjects = projects
@@ -72,7 +75,8 @@
   // load social links
   for (const [key, value] of Object.entries(contactSettings)) {
     let linkIndex = $socialLinks.map(link => link.name).indexOf(key)
-    if(value != '' && linkIndex != -1) $socialLinks[linkIndex].to = value
+    if (value != '' && linkIndex != -1)
+      $socialLinks[linkIndex].to = value
   }
 
   // get active url
@@ -94,7 +98,9 @@
   })
 
   // Developer note
-  console.log(`Like looking under the hood?\n\nWant to know how something on this site was created?\n\nPing me!\nmailto: youssef@getbrewsy.com\ntel: +201200525233`)
+  console.log(
+    `Like looking under the hood?\n\nWant to know how something on this site was created?\n\nPing me!\nmailto: youssef@getbrewsy.com\ntel: +201200525233`
+  )
 </script>
 
 <Nav links={$navlinks} {activeLink} {activeSub} />
