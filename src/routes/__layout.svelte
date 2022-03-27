@@ -74,7 +74,7 @@
     let linkIndex = $socialLinks.map(link => link.name).indexOf(key)
     if(value != '' && linkIndex != -1) $socialLinks[linkIndex].to = value
   }
-  
+
   // get active url
   let urls = $navlinks.map(link => link.to)
   let activeLink = urls.indexOf(url.pathname)
@@ -94,7 +94,7 @@
   })
 
   // Developer note
-  console.log(`Like looking under the hood?\n\nWant to knows how something on this site was created?\n\nPing me!\nmailto: youssef@getbrewsy.com\ntel: +201200525233`)
+  console.log(`Like looking under the hood?\n\nWant to know how something on this site was created?\n\nPing me!\nmailto: youssef@getbrewsy.com\ntel: +201200525233`)
 </script>
 
 <Nav links={$navlinks} {activeLink} {activeSub} />
