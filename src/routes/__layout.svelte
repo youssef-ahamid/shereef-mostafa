@@ -60,9 +60,7 @@
     socialLinks,
   } from '$lib/stores'
 
-  import { slide, fade } from 'svelte/transition'
-  import { afterUpdate, beforeUpdate, onMount } from 'svelte'
-  import Logo from '$lib/logo.svelte'
+  import { onMount } from 'svelte'
 
   // load links
   $navlinks[1].links = projectLinks
@@ -101,6 +99,10 @@
   console.log(
     `Like looking under the hood?\n\nWant to know how something on this site was created?\n\nPing me!\nmailto: youssef@getbrewsy.com\ntel: +201200525233`
   )
+
+  onMount(() => {
+    window.scrollTo(0, 0);
+  })
 </script>
 
 <Nav links={$navlinks} {activeLink} {activeSub} />
