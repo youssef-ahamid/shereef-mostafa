@@ -54,8 +54,7 @@ export let thumbnail = options => {
 export let logo = options => {
   return [
     {
-      classes:
-        'h-10 w-auto block mr-3',
+      classes: 'h-10 w-auto block mr-3',
     },
   ]
 }
@@ -63,8 +62,7 @@ export let logo = options => {
 export let logos = options => {
   return [
     {
-      classes:
-        'flex items-center',
+      classes: 'flex items-center',
     },
   ]
 }

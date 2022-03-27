@@ -2,6 +2,13 @@ import { writable } from 'svelte/store'
 
 export const number = writable(0)
 export const scroll = writable(true)
+export const submitted = writable(false)
+export const user = writable({
+  name: '',
+  email: '',
+  phone: '',
+  company: '',
+})
 
 export const contactConfig = writable({
   phone: '+201200525233',
@@ -12,11 +19,11 @@ export const contactConfig = writable({
   instagram: '',
   facebook: '',
   linkedin: '',
-  siteOwner: 'Youssef Abdelhami', 
-  siteName: 'shereefmostafa.site', 
+  siteOwner: 'Youssef Abdelhami',
+  siteName: 'shereefmostafa.site',
   siteEmail: 'youssef@getbrewsy.com',
   thankYou: true,
-  copyright: 'forever by samurai software house'
+  copyright: 'copyright forever by samurai software house',
 })
 export const featuredProjects = writable([])
 

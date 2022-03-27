@@ -2,8 +2,8 @@
   export const prerender = true
   import Image from '$lib/components/Image/index.svelte'
   import Arrow from '$lib/icons/arrow.svelte'
-  import { getProjects, getContact } from '$lib/gql';
-  
+  import { getProjects, getContact } from '$lib/gql'
+
   export async function load({ url }) {
     let projectLinks = []
     let projects = await getProjects(4)
@@ -32,7 +32,7 @@
           label: 'view project',
         },
         videoUrl: project.videoUrl,
-        images: project.clientLogos.map(logo => logo.url)
+        images: project.clientLogos.map(logo => logo.url),
       }
     })
 
@@ -42,7 +42,7 @@
         url,
         contactSettings,
         projectLinks,
-        projects
+        projects,
       },
     }
   }
@@ -50,12 +50,16 @@
 
 <script>
   export let url, contactSettings, projectLinks, projects
-  
+
   import '$lib/styles/app.css'
 
   import Nav from '$lib/components/Nav/index.svelte'
-  import { navlinks, featuredProjects, contactConfig } from '$lib/stores'
-  
+  import {
+    navlinks,
+    featuredProjects,
+    contactConfig,
+  } from '$lib/stores'
+
   $navlinks[1].links = projectLinks
   $featuredProjects = projects
   $contactConfig = contactSettings
@@ -77,7 +81,7 @@
   })
 
   // Developer note
-  console.log(`Like looking under the hood?\n\nWant to knows how something on this site was created?\n\nPing me!\nmailto: youssef@getbrewsy.com\ntel: +201200525233`)
+  // console.log(`Like looking under the hood?\n\nWant to knows how something on this site was created?\n\nPing me!\nmailto: youssef@getbrewsy.com\ntel: +201200525233`)
 </script>
 
 <Nav links={$navlinks} {activeLink} {activeSub} />

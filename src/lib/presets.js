@@ -81,7 +81,7 @@ export const profile = {
   phone: '+201005584543',
   email: 'am8594@nyu.edu',
   location: 'https://goo.gl/maps/A2YC5MZU65mLVm58A',
-  siteOwner: 'Shereef Mostafa', 
-  siteName: 'shereefmostafa.site', 
+  siteOwner: 'Shereef Mostafa',
+  siteName: 'shereefmostafa.site',
   siteEmail: 'youssef@getbrewsy.com',
 }

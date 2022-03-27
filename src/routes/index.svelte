@@ -21,9 +21,7 @@
       }
     })
 
-    return {
-      props: { bios },
-    }
+    return { props: { bios } }
   }
 </script>
 
@@ -42,12 +40,17 @@
     featuredProjects,
     navlinks,
     contactConfig,
+    user,
   } from '$lib/stores'
 
-  import zaagel from '$lib/zaagel'
+  import zaagel from 'zaagel'
   zaagel.configure($contactConfig)
 
+  let thankyouRedirect
+
   function send(e) {
+    $user = e.detail
+
     let message = {
       to: $contactConfig.siteEmail,
       subject: `New Message Received from ${e.detail.name}`,
@@ -69,6 +72,8 @@
 
       zaagel.mail(confirmation)
     }
+
+    thankyouRedirect.click()
   }
 
   export let bios
@@ -76,6 +81,9 @@
   bios = bios.filter(bio => !bio.main)
 </script>
 
+<a href="/thankyou" class="hidden" bind:this={thankyouRedirect}
+  >redirect</a
+>
 <Section id="home">
   <Hero fullHeight>
     <svelte:fragment slot="left">

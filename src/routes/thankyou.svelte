@@ -1,20 +1,34 @@
 <script>
+  import { goto } from '$app/navigation'
+
+  import Go from '$lib/components/Go/index.svelte'
   import Button from '$lib/components/Button/index.svelte'
+  import Hero from '$lib/components/Hero/index.svelte'
   import Arrow from '$lib/icons/arrow.svelte'
-  import { number, user, scroll } from '$lib/stores'
-  if (!$user) $number = 0
-  $scroll = false
+  import Animateonenterview from '$lib/components/Animate On Enter View/animate on enter view.svelte'
+
+  import { user } from '$lib/stores'
+
+  import { onMount } from 'svelte'
+  onMount(() => {
+    if ($user.name.length == 0) goto('/')
+  })
 </script>
 
-<div class="p-6">
-  <h3>Thank you for your message, {$user.name.split(' ')[0]}</h3>
-  <Button
-    icon={Arrow}
-    label="Home"
-    shape="ghost"
-    reverse
-    on:click={() => {
-      $number = 0
-    }}
-  />
-</div>
+<Animateonenterview>
+  <Hero fullHeight className="items-center">
+    <div>
+      <h2>Thank you for your message, {$user.name.split(' ')[0]}</h2>
+      <div
+        class="flex items-center justify-between w-full max-w-[240px] md:max-w-sm"
+      >
+        <Go to="/">
+          <Button label="Home" shape="ghost" />
+        </Go>
+        <Go to="/projects">
+          <Button icon={Arrow} label="explore" shape="ghost" />
+        </Go>
+      </div>
+    </div>
+  </Hero>
+</Animateonenterview>

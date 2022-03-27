@@ -1,7 +1,7 @@
 <script context="module">
-  import { getProjects } from '$lib/gql';
+  import { getProjects } from '$lib/gql'
 
-  export async function load({ url }){
+  export async function load({ url }) {
     let currentStep = url.searchParams.get('num') || 0
 
     let projects = await getProjects()
@@ -18,26 +18,25 @@
         images: project.clientLogos,
       }
     })
-    
+
     return {
-      props: { currentStep, projects }
+      props: { currentStep, projects },
     }
   }
 </script>
 
-
 <script>
   import Carrousel from '$lib/components/Carrousel/index.svelte'
-  import Animateonenterview from '$lib/components/Animate On Enter View/animate on enter view.svelte';
-  
-  import { goto } from '$app/navigation';
-  
+  import Animateonenterview from '$lib/components/Animate On Enter View/animate on enter view.svelte'
+
+  import { goto } from '$app/navigation'
+
   export let projects
   export let currentStep
 </script>
 
-<h1 class="pl-8 pt-9 md:pt-12">Projects</h1>
 <Animateonenterview>
+  <h1 class="pl-8 pt-9 md:pt-12">Projects</h1>
   <Carrousel
     bind:currentStep
     items={projects}
