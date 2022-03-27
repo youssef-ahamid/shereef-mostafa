@@ -25,9 +25,9 @@ export let logoInner = 'group-hover:scale-95 group-active:scale-90 origin-center
 export let logoOuter = 'group-hover:scale-105 origin-center group-active:scale-110'
 
 export let left =
-  'mx-auto w-[80%] relative my-3 pt-12 lg:my-0 lg:-mt-4 lg:max-w-[45%] space-y-2'
+  'mx-auto w-[80%] relative my-3 pt-12 lg:pt-0 lg:my-0 lg:-mt-4 lg:max-w-[55%] space-y-2'
 export let right =
-  'mx-auto w-[80%] relative my-3 pt-2 lg:my-0 lg:-mt-4 lg:max-w-[45%] space-y-2'
+  'mx-auto w-[80%] relative my-3 pt-2 lg:pt-0 lg:my-0 lg:-mt-4 lg:max-w-[35%] space-y-2'
 
 let options
 export const config = props => {
