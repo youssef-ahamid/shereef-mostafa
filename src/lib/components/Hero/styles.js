@@ -4,7 +4,7 @@ export let hero = options => {
   return [
     {
       classes:
-        'w-full relative flex flex-col lg:flex-row flex-nowrap p-4 mx-auto items-center justify-center lg:justify-between',
+        'w-full relative flex flex-col lg:flex-row flex-nowrap p-4 mx-auto pt-12 items-center justify-center lg:justify-between',
     },
     { on: [options.fullHeight, true], classes: 'min-h-screen' },
   ]
@@ -20,9 +20,9 @@ export let cta = options => {
 }
 
 export let left =
-  'mx-auto w-[80%] relative my-3 lg:my-0 lg:-mt-4 lg:max-w-[45%] space-y-2'
+  'mx-auto w-[80%] relative my-3 pt-12 lg:my-0 lg:-mt-4 lg:max-w-[45%] space-y-2'
 export let right =
-  'mx-auto w-[80%] relative my-3 lg:my-0 lg:-mt-4 lg:max-w-[45%] space-y-2'
+  'mx-auto w-[80%] relative my-3 pt-2 lg:my-0 lg:-mt-4 lg:max-w-[45%] space-y-2'
 
 let options
 export const config = props => {

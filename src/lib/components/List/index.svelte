@@ -10,7 +10,6 @@
 </script>
 
 <ul
-  role="list"
   class={`${classes.list} + ${className}`}
   style={styles}
   on:scroll
