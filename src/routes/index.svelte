@@ -8,11 +8,27 @@
   import FeatureList from '$lib/components/Feature List/index.svelte'
   import Footer from '$lib/components/Footer/index.svelte'
   import Arrow from '$lib/icons/arrow.svelte'
-  import { contact } from '$lib/presets'
+  
   import { navlinks } from '$lib/stores'
+  
+  import { contact, profile } from '$lib/presets'
+  
+  import zaagel from 'zaagel';
+  zaagel.configure(profile)
 
   function send(e) {
-    console.log(e.detail)
+    zaagel.mail(
+      profile.siteEmail, 
+      `New Message Received from ${e.detail.name}`,
+      'message-received',
+      e.detail
+    )
+    zaagel.mail(
+      e.detail.email, 
+      `Message sent to ${e.detail.name}`,
+      'message-sent',
+      e.detail
+    )
   }
   let projects = [
     {

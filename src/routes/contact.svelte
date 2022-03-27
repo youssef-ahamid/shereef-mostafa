@@ -9,20 +9,30 @@
   import Mappin from '$lib/icons/social/map pin.svelte'
   import Footer from '$lib/components/Footer/index.svelte'
   import Form from '$lib/components/Form/index.svelte'
-  import { sendMessage } from '$lib/gql'
 
   import { contact, profile } from '$lib/presets'
-  import { number, user, scroll } from '$lib/stores'
   import { fade } from 'svelte/transition'
-  $scroll = false
+  
+  import zaagel from 'zaagel';
+  zaagel.configure(profile)
 
-  function send(message) {
-    console.log(message.detail)
+  function send(e) {
+    zaagel.mail(
+      profile.siteEmail, 
+      `New Message Received from ${e.detail.name}`,
+      'message-received',
+      e.detail
+    )
+    zaagel.mail(
+      e.detail.email, 
+      `Message sent to ${e.detail.name}`,
+      'message-sent',
+      e.detail
+    )
   }
 </script>
 
 <h1 class="pl-8 pt-9 md:pt-12">Contact</h1>
-
 <div
   class="hidden md:flex absolute right-[10%] top-12 w-80 justify-between items-center"
 >
