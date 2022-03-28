@@ -4,16 +4,16 @@ export let feature = options => {
   return [
     {
       classes:
-        'flex flex-nowrap w-full max-w-6xl mx-auto my-12 md:my-28 lg:my-44',
+        'flex flex-nowrap w-full max-w-6xl mx-auto my-12 lg:my-28 lg:my-44',
     },
     {
       on: [options.reverse, true],
       classes:
-        'flex-col items-end md:items-start md:flex-row-reverse',
+        'flex-col items-end lg:items-start lg:flex-row-reverse',
     },
     {
       on: [options.reverse, false],
-      classes: 'flex-col items-start md:flex-row',
+      classes: 'flex-col items-start lg:flex-row',
     },
   ]
 }
@@ -21,15 +21,15 @@ export let feature = options => {
 export let left = options => {
   return [
     {
-      classes: 'w-full md:w-1/2 flex ',
+      classes: 'w-full lg:w-1/2 flex ',
     },
     {
       on: [options.reverse, true],
-      classes: 'justify-end items-end md:justify-end',
+      classes: 'justify-end items-end lg:justify-end',
     },
     {
       on: [options.reverse, false],
-      classes: 'justify-start md:justify-start',
+      classes: 'justify-start lg:justify-start',
     },
   ]
 }
@@ -37,7 +37,7 @@ export let left = options => {
 export let right = options => {
   return [
     {
-      classes: 'w-full md:w-1/2 p-6 md:px-20 flex flex-col',
+      classes: 'w-full lg:w-1/2 p-6 lg:px-20 flex flex-col',
     },
   ]
 }
