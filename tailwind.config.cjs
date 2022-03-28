@@ -10,7 +10,7 @@ module.exports = {
       },
       fontFamily: {
         cursive: ['Lobster', 'cursive'],
-        body: ['Josefin Slab', 'serif'],
+        body: ['Helvetica', 'sans-serif'],
         mono: ['Inconsolata', 'monospace'],
         yes: ['Montagu Slab', 'serif'],
       },

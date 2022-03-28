@@ -1,8 +1,8 @@
 <script>
-  export let className
+  export let className = ''
 
-  export let innerCircle
-  export let outerCircle
+  export let innerCircle = ''
+  export let outerCircle = ''
 
 </script>
 

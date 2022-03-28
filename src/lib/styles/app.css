@@ -5,6 +5,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Helvetica";
+  src: url("./fonts/Helvetica.ttf");
+}
+
 @layer base {
   /* typography */
   h1 {
@@ -38,7 +43,7 @@
     @apply bg-secondary selection:bg-primary selection:text-secondary selection:font-bold;
   }
   body {
-    @apply overflow-x-hidden w-[100vw];
+    @apply overflow-x-hidden w-[100vw] font-body;
   }
 }
 
