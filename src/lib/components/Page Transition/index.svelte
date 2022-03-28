@@ -13,7 +13,6 @@
   onMount(() => {
     isPageLoaded = true
     start = false
-    console.log('page loaded')
   })
 
   let updating = false
