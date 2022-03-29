@@ -1,7 +1,7 @@
 <script>
   /* props */
   export let items = [] // *, array of carrousel items
-  export let currentStep = 0 // *, starting step
+  export let currentStep
   export let className = '' // *, custom wrapper classes
 
   import CarrouselItem from '$lib/components/Carrousel Item/index.svelte'
@@ -77,30 +77,32 @@
       />
     </div>
   </List>
-  <div class={classes.controls}>
-    <Stepper
-      direction="horizontal"
-      steps={items.length}
-      bind:active={currentStep}
-      className={classes.stepper}
-    />
-    <div class={classes.buttons}>
-      <Button
-        label="prev"
-        shape="ghost"
-        on:click={prev}
-        className={`${classes.button} ${
-          currentStep === 0 ? 'opacity-0' : 'opacity-100'
-        }`}
-      />
-      <Button
-        label="next"
-        shape="ghost"
-        on:click={next}
-        className={`${classes.button} ${
-          currentStep === items.length - 1 ? 'opacity-0' : 'opacity-100'
-        }`}
-      />
+  {#key currentStep }
+    <div class={classes.controls}>
+        <Stepper
+          direction="horizontal"
+          steps={items.length}
+          bind:active={currentStep}
+          className={classes.stepper}
+        />
+      <div class={classes.buttons}>
+        <Button
+          label="prev"
+          shape="ghost"
+          on:click={prev}
+          className={`${classes.button} ${
+            currentStep === 0 ? 'opacity-0' : 'opacity-100'
+          }`}
+        />
+        <Button
+          label="next"
+          shape="ghost"
+          on:click={next}
+          className={`${classes.button} ${
+            currentStep === items.length - 1 ? 'opacity-0' : 'opacity-100'
+          }`}
+        />
+      </div>
     </div>
-  </div>
+  {/key}
 </div>

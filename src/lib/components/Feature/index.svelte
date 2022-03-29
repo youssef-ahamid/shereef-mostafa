@@ -3,6 +3,7 @@
   export let title = ''
   export let images = []
   export let reverse = false // *, true
+  export let image = {}
   export let className = '' // *, custom wrapper classes
 
   /* styles */
@@ -11,7 +12,14 @@
 </script>
 
 <div class={`${classes.feature} ${className}`}>
-  <div class={classes.left}><slot name="preview" /></div>
+  {#if !!image.data.src }
+    <div class={classes.left}>
+      <svelte:component
+        this={image.component}
+        {...image.data}
+      />
+    </div>
+  {/if}
   <div class={classes.right}>
     {#if images.length > 0}
       <div>

@@ -2,7 +2,7 @@ export const imgWrapper = props => {
   return [
     {
       classes:
-        'relative group w-fit hover:scale-105 transition duration-300 ease-out',
+        'relative group w-fit hover:scale-105 transition duration-300 ease-out overflow-visible',
       on: true,
     },
     { classes: '', styles: '', on: props.type == 'custom' },
@@ -32,7 +32,7 @@ export const imgWrapper = props => {
 export const imgOverlay = props => {
   return [
     {
-      classes: 'transition ease-out duration-300 overflow-clip',
+      classes: 'transition ease-out duration-300 overflow-visible',
       on: true,
     },
     { classes: 'scale-75 max-w-[95%]', on: props.type == 'custom' },
@@ -43,7 +43,7 @@ export const imgOverlay = props => {
     },
     {
       classes:
-        'w-68 -translate-y-12 group-hover:-translate-y-20 translate-x-12 group-hover:translate-x-20',
+        'w-80 scale-75 -translate-y-12 group-hover:-translate-y-20 translate-x-12 group-hover:translate-x-20',
       on: props.type == 'custom' && props.size == 'md',
     },
     {
@@ -73,12 +73,12 @@ export const img = props => {
       on: props.size == 'lg' && props.type == 'custom',
     },
     {
-      classes: 'w-[90%] max-w-[320px]',
+      classes: 'w-[90%] max-w-[320px] md:max-w-[350px]',
       styles: '',
       on: props.size == 'md' && props.type == 'custom',
     },
     {
-      classes: 'max-w-[90%] mx-auto md:max-w-lg z-10',
+      classes: 'max-w-[90%] mx-auto md:max-w-lg z-10 max-h-[500px]',
       styles: '',
       on: props.type == 'card',
     },

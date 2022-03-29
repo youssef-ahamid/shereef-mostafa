@@ -1,6 +1,7 @@
 <script>
   /* props */
   export let fullHeight = false // *, true
+  export let reverse = false // *, true
   export let className = '' // *, custom wrapper classes
 
   import Go from '$lib/components/Go/index.svelte'
@@ -8,7 +9,7 @@
 
   /* styles */
   import { config } from './styles'
-  $: classes = config({ fullHeight })
+  $: classes = config({ fullHeight, reverse })
 </script>
 
 <Go to="/" className={classes.logoWrapper}>

@@ -11,9 +11,9 @@
         preview: {
           component: Image,
           data: {
-            type: 'custom',
+            type: 'card',
             alt: `${bio.title} | Shereef Mostafa`,
-            src: bio.image.url,
+            src: bio.image? bio.image.url: null,
             clip: true,
           },
         },
@@ -88,8 +88,12 @@
 >
 <PageTransition />
 <Section id="home">
-  <Hero fullHeight>
+  <Hero fullHeight reverse>
     <svelte:fragment slot="left">
+      <Image type="overlay" {...main.preview.data} />
+    </svelte:fragment>
+
+    <div slot="right" class="min-w-[50%] md:max-w-[80%]">
       <h1 class="text-6xl md:text-7xl md:whitespace-nowrap">
         {main.title}
       </h1>
@@ -97,20 +101,14 @@
       <Go to="/projects">
         <Button label="explore" icon={Arrow} shape="ghost" />
       </Go>
-    </svelte:fragment>
-
+    </div>
+    
     <svelte:fragment slot="cta">
       <Go to="/contact">
         <Button label="contact" type="secondary" shape="round" />
       </Go>
     </svelte:fragment>
 
-    <svelte:fragment slot="right">
-      <svelte:component
-        this={main.preview.component}
-        {...main.preview.data}
-      />
-    </svelte:fragment>
   </Hero>
 </Section>
 

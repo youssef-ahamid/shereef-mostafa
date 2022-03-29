@@ -12,7 +12,7 @@ export let content = options => {
   return [
     {
       on: [options.noContain, false],
-      classes: 'md:max-w-[80%] mx-auto',
+      classes: 'md:max-w-[80%] mx-auto overflow-visible',
     },
   ]
 }

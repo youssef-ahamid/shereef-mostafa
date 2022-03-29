@@ -30,13 +30,8 @@
       className={classes.feature}
       images={feature.images}
       title={feature.title}
+      image={feature.preview}
     >
-      <span slot="preview"
-        ><svelte:component
-          this={feature.preview.component}
-          {...feature.preview.data}
-        /></span
-      >
       {#if feature.body}
         <p>{feature.body}</p>
       {/if}
