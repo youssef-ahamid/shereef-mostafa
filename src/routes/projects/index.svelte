@@ -41,7 +41,7 @@
 
 <SEO 
   title="Projects {currentStep > 0? `| ${projects[currentStep].title}`: ''}"
-  description="{currentStep > 0?  `View Shereef's work on ${projects[currentStep].title}. ${projects[currentStep].text}`:`Browse Shereef's diverse portfolio.`}"
+  description="Browse Shereef's diverse portfolio. {currentStep > 0?  `View Shereef's work on ${projects[currentStep].title}. ${projects[currentStep].text}`:``}"
   img={currentStep > 0? projects[currentStep].thumbnail.src: null}
 />
 
