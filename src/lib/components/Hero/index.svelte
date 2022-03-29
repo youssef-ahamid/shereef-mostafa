@@ -6,6 +6,7 @@
 
   import Go from '$lib/components/Go/index.svelte'
   import Logo from '$lib/logo.svelte'
+import Animateonenterview from '../Animate On Enter View/animate on enter view.svelte'
 
   /* styles */
   import { config } from './styles'

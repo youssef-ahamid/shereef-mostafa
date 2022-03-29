@@ -35,7 +35,7 @@
   import PageTransition from '$lib/components/Page Transition/index.svelte'
   import Footer from '$lib/components/Footer/index.svelte'
   import SEO from '$lib/components/SEO/index.svelte'
-  
+
   import Arrow from '$lib/icons/arrow.svelte'
 
   import { contact } from '$lib/presets'
@@ -48,6 +48,7 @@
   
 
   import zaagel from 'zaagel'
+import Animateonenterview from '$lib/components/Animate On Enter View/animate on enter view.svelte'
   zaagel.configure($contactConfig)
 
   let thankyouRedirect
@@ -96,25 +97,32 @@
 <Section id="home">
   <Hero fullHeight reverse>
     <svelte:fragment slot="left">
-      <Image type="overlay" {...main.preview.data} />
+      <Animateonenterview>
+        <Image type="overlay" {...main.preview.data} />
+      </Animateonenterview>
     </svelte:fragment>
 
-    <div slot="right" class="min-w-[50%] md:max-w-[80%]">
-      <h1 class="text-6xl md:text-7xl md:whitespace-nowrap">
-        {main.title}
-      </h1>
-      <p class="body-lg">{main.body}</p>
-      <Go to="/projects">
-        <Button label="explore" icon={Arrow} shape="ghost" />
-      </Go>
-    </div>
-    
+    <svelte:fragment slot="right">
+      <Animateonenterview type="flyLeft">
+        <div class="min-w-[50%] md:max-w-[80%] mx-auto py-6">
+          <h1 class="text-6xl md:text-7xl md:whitespace-nowrap pb-1">
+            {main.title}
+          </h1>
+          <p class="body-lg max-w-[64ch]">{main.body}</p>
+          <Go to="/projects">
+            <Button label="explore" icon={Arrow} shape="ghost" />
+          </Go>
+        </div>
+      </Animateonenterview>
+    </svelte:fragment>
+
     <svelte:fragment slot="cta">
-      <Go to="/contact">
-        <Button label="contact" type="secondary" shape="round" />
-      </Go>
+      <Animateonenterview type="flyRight">
+        <Go to="/contact">
+          <Button label="contact" type="secondary" shape="round" />
+        </Go>
+      </Animateonenterview>
     </svelte:fragment>
-
   </Hero>
 </Section>
 

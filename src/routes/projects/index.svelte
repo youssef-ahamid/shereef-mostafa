@@ -50,7 +50,7 @@
 </PageTransition>
 
 <Animateonenterview>
-  <h1 class="pl-8 pt-9 md:pt-12">Projects</h1>
+  <h1 class="absolute left-[4%] top-[5%] z-[950] shadow-secondary/40">Projects</h1>
   <Carrousel
     bind:currentStep
     items={projects}

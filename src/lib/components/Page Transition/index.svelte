@@ -14,17 +14,9 @@
     isPageLoaded = true
     start = false
   })
-
-  let updating = false
-  beforeUpdate(() => {
-    if (!isPageLoaded) updating = true
-  })
-  afterUpdate(() => {
-    updating = false
-  })
 </script>
 
-{#if !isPageLoaded || updating || start}
+{#if !isPageLoaded || start}
   <div
     class="fixed w-screen h-screen inset-0 z-[9999] bg-primary flex flex-col items-center justify-center"
     in:slide={{ duration: 300 }}

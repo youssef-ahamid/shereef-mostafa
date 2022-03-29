@@ -54,7 +54,7 @@ export let links = options => {
   return [
     {
       classes:
-        'before:absolute before:top-16 before:-translate-y-1/2 before:left-0 before:w-80 md:before:w-96 before:h-0.5 md:before:h-1 before:bg-primary before:rounded-r-full pt-16 md:pl-16',
+        'before:absolute before:top-16 before:-translate-y-1/2 before:left-0 before:w-[80%] md:before:w-96 before:h-0.5 md:before:h-1 before:bg-primary before:rounded-r-full pt-16 md:pl-16',
     },
   ]
 }

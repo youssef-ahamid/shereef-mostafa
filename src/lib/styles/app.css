@@ -40,7 +40,7 @@
 
   /* base */
   html {
-    @apply bg-secondary selection:bg-primary selection:text-secondary selection:font-bold;
+    @apply bg-secondary selection:bg-primary selection:text-secondary selection:font-bold scroll-smooth;
   }
   body {
     @apply overflow-x-hidden w-[100vw] font-body;
