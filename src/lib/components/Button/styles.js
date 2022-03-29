@@ -4,7 +4,7 @@ export let button = options => {
   return [
     {
       classes:
-        'transition duration-300 ease-out flex justify-center items-center group hover:scale-105 active:scale-95',
+        'transition duration-300 ease-out flex justify-center items-center group active:scale-95',
     },
     {
       on: [options.type, 'primary'],
@@ -18,16 +18,16 @@ export let button = options => {
     },
     {
       on: [options.shape, 'default'],
-      classes: ' border-[3px] px-5 py-3 rounded-xl ',
+      classes: 'hover:scale-105 border-[3px] px-5 py-3 rounded-xl hover:border-accent',
     },
     {
       on: [options.shape, 'ghost'],
       classes:
-        'bg-transparent hover:bg-transparent hover:text-accent underline underline-offset-4 py-3',
+        'bg-transparent hover:bg-transparent hover:text-accent border-b-2 border-transparent hover:border-accent py-3',
     },
     {
       on: [options.shape, 'round'],
-      classes: 'border-[3px] px-5 py-3 clip-rounded bg-clip-padding',
+      classes: 'hover:scale-105 border-[3px] px-5 py-3 clip-rounded bg-clip-padding',
     },
   ]
 }
