@@ -8,6 +8,7 @@
   import Mappin from '$lib/icons/social/map pin.svelte'
   import Footer from '$lib/components/Footer/index.svelte'
   import Form from '$lib/components/Form/index.svelte'
+  import SEO from '$lib/components/SEO/index.svelte'
   import Animateonenterview from '$lib/components/Animate On Enter View/animate on enter view.svelte'
   import PageTransition from '$lib/components/Page Transition/index.svelte'
 
@@ -50,6 +51,11 @@
 <a href="/thankyou" class="hidden" bind:this={thankyouRedirect}
   >redirect</a
 >
+
+<SEO 
+  title="Contact"
+  description="Get in touch with Shereef Mostafa"
+/>
 
 <PageTransition>
   get in touch

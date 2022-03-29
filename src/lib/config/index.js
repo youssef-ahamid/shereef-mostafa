@@ -1,4 +1,4 @@
-export const siteUrl = 'https://www.ahmedmitry.com/'
+export const siteUrl = 'https://shereef-mostafa.vercel.app/'
 export const siteLanguage = 'en'
 export const siteTitle =
-  'Ahmed Mitry | Music Producer | Sound Designer'
+  'Shereef Mostafa'

@@ -27,6 +27,7 @@
 
 <script>
   import Carrousel from '$lib/components/Carrousel/index.svelte'
+  import SEO from '$lib/components/SEO/index.svelte'
   import Animateonenterview from '$lib/components/Animate On Enter View/animate on enter view.svelte'
   import PageTransition from '$lib/components/Page Transition/index.svelte'
 
@@ -37,6 +38,12 @@
 </script>
 
 <a href="/contact" bind:this={contactRedirect} class="hidden">redirect</a>
+
+<SEO 
+  title="Projects {currentStep > 0? `| ${projects[currentStep].title}`: ''}"
+  description="{currentStep > 0?  `View Shereef's work on ${projects[currentStep].title}. ${projects[currentStep].text}`:`Browse Shereef's diverse portfolio.`}"
+  img={currentStep > 0? projects[currentStep].thumbnail.src: null}
+/>
 
 <PageTransition>
   {currentStep > 0? projects[currentStep].title: 'projects'}

@@ -34,6 +34,8 @@
   import FeatureList from '$lib/components/Feature List/index.svelte'
   import PageTransition from '$lib/components/Page Transition/index.svelte'
   import Footer from '$lib/components/Footer/index.svelte'
+  import SEO from '$lib/components/SEO/index.svelte'
+  
   import Arrow from '$lib/icons/arrow.svelte'
 
   import { contact } from '$lib/presets'
@@ -86,6 +88,10 @@
 <a href="/thankyou" class="hidden" bind:this={thankyouRedirect}
   >redirect</a
 >
+<SEO 
+  title="Home"
+  description={main.body}
+/>
 <PageTransition />
 <Section id="home">
   <Hero fullHeight reverse>

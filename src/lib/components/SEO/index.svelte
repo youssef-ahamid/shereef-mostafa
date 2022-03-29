@@ -3,7 +3,7 @@
 
   export let description = ''
   export let title = ''
-  export let img = 'https://media.graphcms.com/C4wQ9i8vQiW5T6aWweJH'
+  export let img = 'https://media.graphcms.com/resize=fit:crop,height:600,width:1200/rSUb6JSQNukmtOdh2BSF'
 
   const pageTitle = `${siteTitle} | ${title.toUpperCase()}`
 </script>
