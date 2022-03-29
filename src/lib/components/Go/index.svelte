@@ -15,6 +15,7 @@
     href={to}
     target={redirect ? '_blank' : '_self'}
     class={`${classes.link} ${className}`}
+    sveltekit:prefetch
   >
     <slot />
   </a>
