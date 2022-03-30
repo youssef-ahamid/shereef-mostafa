@@ -54,7 +54,9 @@
     </div>
 
     <h2>{title}</h2>
-    <p>{text}</p>
+    {#if !!text }
+      <p>{text}</p>
+    {/if}
 
     {#if videoUrl}
       <Go to={videoUrl} redirect>

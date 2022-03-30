@@ -26,7 +26,7 @@ export async function getBios() {
 export async function getProjects(limit = 15) {
   const query = gql`
     {
-      projects(orderBy: id_DESC, first: ${limit}) {
+      projects(first: ${limit}) {
         thumbnail {
           url(
             transformation: { document: { output: { format: jpg } } }

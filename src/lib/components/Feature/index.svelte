@@ -32,7 +32,7 @@
         {/each}
       </div>
     {/if}
-    <div class="my-6">
+    <div class="mb-6 mt-1">
       <h2>{title}</h2>
       <slot />
     </div>

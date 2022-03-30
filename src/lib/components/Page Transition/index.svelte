@@ -31,7 +31,7 @@
         <Logo innerCircle="animate-pulse" />
       </span>
       <h1
-        class="text-secondary text-center py-4"
+        class="text-secondary text-center py-4 text-3xl md:text-6xl"
         in:slide={{ duration: 200, delay: 400 }}
         out:fade={{ duration: 300, delay: 500 }}
       >

@@ -21,7 +21,7 @@ export let infoContainer = options => {
   return [
     {
       classes:
-        'overflow-hidden -mt-80 md:mt-0 transition origin-bottom-left space-y-4 delay-200 duration-400 z-50 ease-out flex flex-col w-[80%] md:pl-[10%] justify-center md:w-1/3 pl-3',
+        'overflow-hidden -mt-80 md:mt-0 transition origin-bottom-left space-y-2 delay-200 duration-400 z-50 ease-out flex flex-col w-[80%] md:pl-[10%] justify-center md:w-1/2 pl-3',
     },
     {
       on: [options.previewed, true],
@@ -38,7 +38,7 @@ export let thumbnail = options => {
   return [
     {
       classes:
-        'w-full md:w-1/2 transition duration-300 z-50 ease-out',
+        'w-full md:w-1/3 transition duration-300 z-50 ease-out',
     },
     {
       on: [options.previewed, true],
