@@ -86,7 +86,7 @@ import Animateonenterview from '$lib/components/Animate On Enter View/animate on
   bios = bios.filter(bio => !bio.main)
 </script>
 
-<a href="/thankyou" class="hidden" bind:this={thankyouRedirect}
+<a href="/thankyou" class="hidden" target="_self" bind:this={thankyouRedirect}
   >redirect</a
 >
 <SEO 
