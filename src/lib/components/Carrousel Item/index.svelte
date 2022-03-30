@@ -59,7 +59,7 @@
     {/if}
 
     {#if videoUrl}
-      <Go to={videoUrl} redirect>
+      <Go to={videoUrl} redirect className="mx-2.5">
         <Button
           shape="round"
           icon={Arrow}
