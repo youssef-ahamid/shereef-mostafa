@@ -36,6 +36,6 @@
       <h2>{title}</h2>
       <slot />
     </div>
-    <div><slot name="cta" /></div>
+    <div class="ml-1"><slot name="cta" /></div>
   </div>
 </div>
