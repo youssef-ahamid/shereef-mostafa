@@ -92,7 +92,7 @@ import Animateonenterview from '$lib/components/Animate On Enter View/animate on
   description={main.body}
 />
 <PageTransition />
-<Section id="home">
+<Section id="home" noContain>
   <Hero fullHeight reverse>
     <svelte:fragment slot="left">
       <Animateonenterview>

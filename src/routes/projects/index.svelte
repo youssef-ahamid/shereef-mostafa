@@ -50,9 +50,11 @@
 </PageTransition>
 
 <Animateonenterview>
-  <h1 class="absolute left-[4%] top-[5%] z-[950] shadow-secondary/40">Projects</h1>
-  <Carrousel
-    bind:currentStep
-    items={projects}
-  />
+  <div class="min-h-screen relative">
+    <h1 class="absolute left-[4%] top-[5%] z-[950] shadow-secondary/40">Projects</h1>
+    <Carrousel
+      bind:currentStep
+      items={projects}
+    />
+  </div>
 </Animateonenterview>

@@ -3,7 +3,7 @@ import { resolve } from '$lib/helpers'
 export let label = options => {
   return [
     {
-      classes: ' py-1 ',
+      classes: 'font-montserrat py-1 ',
     },
   ]
 }
@@ -16,7 +16,7 @@ export let input = options => {
     },
     {
       on: [options.clean, false],
-      classes: 'border-error bg-opacity-[15%]',
+      classes: 'border-error bg-opacity-[15%] animate-wiggle',
     },
     {
       on: [options.clean, true],

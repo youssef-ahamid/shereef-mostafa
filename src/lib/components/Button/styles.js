@@ -23,7 +23,7 @@ export let button = options => {
     {
       on: [options.shape, 'ghost'],
       classes:
-        'bg-transparent hover:bg-transparent hover:text-accent border-b-2 border-transparent hover:border-accent py-3',
+        'bg-transparent hover:bg-transparent hover:translate-x-1 hover:text-accent py-3',
     },
     {
       on: [options.shape, 'round'],
@@ -35,7 +35,7 @@ export let button = options => {
 export let label = options => {
   return [
     {
-      classes: 'leading-5 font-bold font-mono',
+      classes: 'leading-5',
     },
     {
       on: [options.shape, 'round'],

@@ -9,10 +9,8 @@ module.exports = {
         error: '#e86f68',
       },
       fontFamily: {
-        cursive: ['Lobster', 'cursive'],
+        montserrat: ['Montserrat', 'sans-serif'],
         body: ['Helvetica', 'sans-serif'],
-        mono: ['Inconsolata', 'monospace'],
-        yes: ['Montagu Slab', 'serif'],
       },
       keyframes: {
         wiggle: {
