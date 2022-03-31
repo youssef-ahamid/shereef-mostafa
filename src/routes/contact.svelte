@@ -1,12 +1,11 @@
 <script>
-  import { navlinks, contactConfig, user } from '$lib/stores'
+  import { contactConfig, user } from '$lib/stores'
 
   import Button from '$lib/components/Button/index.svelte'
   import Go from '$lib/components/Go/index.svelte'
   import Copy from '$lib/components/Copy/index.svelte'
   import Emailattachment from '$lib/icons/social/email attachment.svelte'
   import Mappin from '$lib/icons/social/map pin.svelte'
-  import Footer from '$lib/components/Footer/index.svelte'
   import Form from '$lib/components/Form/index.svelte'
   import SEO from '$lib/components/SEO/index.svelte'
   import Animateonenterview from '$lib/components/Animate On Enter View/animate on enter view.svelte'
@@ -91,4 +90,3 @@
     />
   </div>
 </Animateonenterview>
-<Footer links={$navlinks} copyright={$contactConfig.copyright} />

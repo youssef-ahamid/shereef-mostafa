@@ -33,7 +33,6 @@
   import Hero from '$lib/components/Hero/index.svelte'
   import FeatureList from '$lib/components/Feature List/index.svelte'
   import PageTransition from '$lib/components/Page Transition/index.svelte'
-  import Footer from '$lib/components/Footer/index.svelte'
   import SEO from '$lib/components/SEO/index.svelte'
 
   import Arrow from '$lib/icons/arrow.svelte'
@@ -41,7 +40,6 @@
   import { contact } from '$lib/presets'
   import {
     featuredProjects,
-    navlinks,
     contactConfig,
     user,
   } from '$lib/stores'
@@ -148,5 +146,3 @@ import Animateonenterview from '$lib/components/Animate On Enter View/animate on
     className="max-w-[90%] md:max-w-[600px] mx-auto"
   />
 </Section>
-
-<Footer links={$navlinks} copyright={$contactConfig.copyright} />

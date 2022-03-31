@@ -53,6 +53,7 @@
   import '$lib/styles/app.css'
 
   import Nav from '$lib/components/Nav/index.svelte'
+  import Footer from '$lib/components/Footer/index.svelte'
   import {
     navlinks,
     featuredProjects,
@@ -107,3 +108,4 @@
 
 <Nav links={$navlinks} {activeLink} {activeSub} />
 <slot />
+<Footer links={$navlinks} copyright={$contactConfig.copyright} />
