@@ -31,6 +31,7 @@
   import Button from '$lib/components/Button/index.svelte'
   import Section from '$lib/components/Section/index.svelte'
   import Hero from '$lib/components/Hero/index.svelte'
+  import List from '$lib/components/List/index.svelte'
   import FeatureList from '$lib/components/Feature List/index.svelte'
   import PageTransition from '$lib/components/Page Transition/index.svelte'
   import SEO from '$lib/components/SEO/index.svelte'
@@ -43,10 +44,14 @@
     contactConfig,
     user,
   } from '$lib/stores'
-  
+
+  import { socialLinks } from '$lib/stores';
+  let socials = $socialLinks.filter(link => !!link.to)
+
+  import { socialLink } from '$lib/components/Footer/styles';
 
   import zaagel from 'zaagel'
-import Animateonenterview from '$lib/components/Animate On Enter View/animate on enter view.svelte'
+  import Animateonenterview from '$lib/components/Animate On Enter View/animate on enter view.svelte'
   zaagel.configure($contactConfig)
 
   let thankyouRedirect
@@ -99,6 +104,12 @@ import Animateonenterview from '$lib/components/Animate On Enter View/animate on
         <Image type="overlay" {...main.preview.data} />
       </Animateonenterview>
     </svelte:fragment>
+
+    <List items={socials} let:prop={link} className="absolute right-5 md:-right-20 flex flex-col space-y-2">
+      <Go to={link.to} redirect={link.redirect} className={socialLink}>
+        <svelte:component this={link.component} />
+      </Go>
+    </List>
 
     <svelte:fragment slot="right">
       <Animateonenterview type="flyLeft">
