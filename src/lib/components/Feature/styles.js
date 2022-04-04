@@ -4,7 +4,7 @@ export let feature = options => {
   return [
     {
       classes:
-        'flex flex-nowrap w-full max-w-6xl mx-auto my-12 lg:my-28',
+        'flex flex-nowrap w-full max-w-6xl mx-auto my-6 lg:my-12',
     },
     {
       on: [options.reverse, true],

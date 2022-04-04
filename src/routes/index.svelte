@@ -105,7 +105,7 @@
       </Animateonenterview>
     </svelte:fragment>
 
-    <List items={socials} let:prop={link} className="absolute right-5 md:-right-20 flex flex-col space-y-2">
+    <List items={socials} let:prop={link} className="absolute px-3 py-7 shadow-2xl shadow-secondary/50 bg-secondary rounded-full right-5 md:-right-20 top-1/2 -translate-y-1/2 flex flex-col space-y-2">
       <Go to={link.to} redirect={link.redirect} className={socialLink}>
         <svelte:component this={link.component} />
       </Go>
