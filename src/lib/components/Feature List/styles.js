@@ -3,7 +3,7 @@ import { resolve } from '$lib/helpers'
 export let list = options => {
   return [
     {
-      classes: 'w-full py-12',
+      classes: 'w-full py-8',
     },
   ]
 }

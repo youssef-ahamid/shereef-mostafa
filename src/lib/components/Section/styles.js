@@ -3,7 +3,7 @@ import { resolve } from '$lib/helpers'
 export let section = options => {
   return [
     {
-      classes: 'py-12 md:py-20',
+      classes: 'py-4 md:py-8',
     },
   ]
 }
