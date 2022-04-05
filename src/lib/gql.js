@@ -57,6 +57,7 @@ export async function getContact() {
         facebook
         instagram
         linkedin
+        twitter
         location
         siteOwner
         siteName

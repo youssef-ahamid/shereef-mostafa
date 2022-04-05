@@ -24,6 +24,7 @@ export const contactConfig = writable({
   soundcloud: '',
   spotify: '',
   anghami: '',
+  twitter: '',
   instagram: '',
   facebook: '',
   linkedin: '',
