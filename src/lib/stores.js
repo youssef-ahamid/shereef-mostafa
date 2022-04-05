@@ -6,6 +6,7 @@ import anghami from '$lib/icons/social/anghami.svelte'
 import facebook from '$lib/icons/social/facebook.svelte'
 import instagram from '$lib/icons/social/instagram.svelte'
 import linkedin from '$lib/icons/social/linkedin.svelte'
+import twitter from '$lib/icons/social/twitter.svelte'
 
 export const number = writable(0)
 export const scroll = writable(true)
@@ -27,8 +28,8 @@ export const contactConfig = writable({
   facebook: '',
   linkedin: '',
   siteOwner: 'Youssef Abdelhami',
-  siteName: 'shereefmostafa.site',
-  siteEmail: 'youssef@getbrewsy.com',
+  siteName: 'shereefmostafa.com',
+  siteEmail: 'shereefmostafa@gmail.com',
   thankYou: true,
   copyright: 'copyright forever by samurai software house',
 })
@@ -70,6 +71,12 @@ export const socialLinks = writable([
     name: 'linkedin',
     to: '',
     component: linkedin,
+    redirect: true,
+  },
+  {
+    name: 'twitter',
+    to: '',
+    component: twitter,
     redirect: true,
   },
 ])
