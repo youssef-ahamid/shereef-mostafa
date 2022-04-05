@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap');
-/* tailwind stuff */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&family=Poppins:wght@400;600&display=swap');/* tailwind stuff */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,13 +16,13 @@
 @layer base {
   /* typography */
   h1 {
-    @apply font-montserrat text-primary text-5xl md:text-[64px] capitalize;
+    @apply font-poppins font-semibold text-primary text-5xl md:text-[64px] capitalize;
   }
   h2 {
     @apply font-bold text-2xl text-white capitalize md:text-4xl leading-loose py-2;
   }
   h3 {
-    @apply font-montserrat font-normal capitalize text-lg md:text-2xl;
+    @apply font-poppins font-normal capitalize text-lg md:text-2xl;
   }
   h4 {
     @apply text-base capitalize text-white  md:text-lg;

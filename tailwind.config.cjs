@@ -11,6 +11,7 @@ module.exports = {
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
         body: ['Helvetica', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
       keyframes: {
         wiggle: {
