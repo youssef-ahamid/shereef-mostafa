@@ -16,7 +16,7 @@ export let cta = options => {
   return [
     {
       classes:
-        'absolute left-4 -top-2 md:left-auto md:right-0 md:translate-x-1/2',
+        'absolute left-4 top-4 md:-top-2 md:left-auto md:right-0 md:translate-x-1/2',
     },
   ]
 }

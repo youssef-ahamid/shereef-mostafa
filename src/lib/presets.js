@@ -1,22 +1,3 @@
-import facebook from '$lib/icons/social/facebook.svelte'
-import linkedin from '$lib/icons/social/linkedin.svelte'
-import instagram from '$lib/icons/social/instagram.svelte'
-
-export const socialLinks = [
-  {
-    link: 'https://www.facebook.com/ahmed.mitry',
-    icon: facebook,
-  },
-  {
-    link: 'https://eg.linkedin.com/in/ahmed-mitry-56b219143',
-    icon: linkedin,
-  },
-  {
-    link: 'https://www.instagram.com/ahmedmitry',
-    icon: instagram,
-  },
-]
-
 import TextInput from '$lib/components/Text Input/index.svelte'
 
 export const contact = {
