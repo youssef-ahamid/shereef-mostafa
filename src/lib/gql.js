@@ -23,10 +23,10 @@ export async function getBios() {
   return bios
 }
 
-export async function getProjects(limit = 15) {
+export async function getProjects(limit = 30) {
   const query = gql`
     {
-      projects(first: ${limit}) {
+      projects(orderBy: order_ASC, first: ${limit}) {
         thumbnail {
           url(
             transformation: { document: { output: { format: jpg } } }
