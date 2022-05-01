@@ -73,9 +73,6 @@
         icon={Emailattachment}
       />
     </Copy>
-    <Go to={$contactConfig.location} redirect>
-      <Button label="visit" shape="ghost" reverse icon={Mappin} />
-    </Go>
   </div>
 
   <div
