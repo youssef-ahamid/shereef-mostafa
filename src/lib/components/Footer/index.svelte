@@ -26,7 +26,7 @@
         <Logo className={classes.logo} innerCircle={classes.logoInner} outerCircle={classes.logoOuter}/>
       </Go>
       <List items={links} let:prop={link} className={classes.list}>
-        <NavLink {...link} className={classes.link} />
+        <NavLink {...link} className={classes.link} flex />
       </List>
       <slot />
     </nav>

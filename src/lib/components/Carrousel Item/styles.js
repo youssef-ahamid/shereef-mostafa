@@ -4,7 +4,7 @@ export let carrouselItemWrapper = options => {
   return [
     {
       classes:
-        'absolute overflow-hidden inset-0 flex flex-wrap md:flex-nowrap items-center justify-center transition duration-500 ease-out w-full',
+        'absolute overflow-hidden inset-0 flex flex-col md:flex-row items-start md:items-center justify-center transition duration-500 ease-out w-full',
     },
     {
       on: [options.previewed, true],
@@ -21,7 +21,7 @@ export let infoContainer = options => {
   return [
     {
       classes:
-        'overflow-hidden -mt-80 md:mt-0 transition origin-bottom-left space-y-2 delay-200 duration-400 z-50 ease-out flex flex-col w-[80%] md:pl-[10%] justify-center md:w-1/2 pl-3',
+        'overflow-hidden md:mt-0 transition origin-bottom-left delay-200 duration-400 z-50 ease-out flex flex-col md:pl-[10%] justify-center px-3',
     },
     {
       on: [options.previewed, true],

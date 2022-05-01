@@ -5,6 +5,7 @@
   export let redirect = false
   export let active = false
   export let activeSub = 0
+  export let flex = false
   export let links = []
 
   import Go from '$lib/components/Go/index.svelte'
@@ -14,7 +15,7 @@
 
   /* styles */
   import { config } from './styles'
-  $: classes = config({ active })
+  $: classes = config({ active, flex })
 </script>
 
 <Go {to} {redirect} on:click>

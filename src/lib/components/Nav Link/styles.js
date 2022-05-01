@@ -6,6 +6,10 @@ export let list = options => {
       classes:
         'flex flex-wrap justify-between w-[240px] ml-6 md:ml-10 md:w-80',
     },
+    {
+      on: [options.flex, true],
+      classes: "w-80 md:w-[700px]",
+    }
   ]
 }
 
@@ -31,7 +35,7 @@ export let sublink = options => {
   return [
     {
       classes:
-        'w-[120px] md:w-40 pb-1 underline truncate decoration-2 underline-offset-4 hover:text-primary hover:decoration-primary transition duration-300 ease-out',
+        'w-72 md:w-80 pb-1 underline truncate decoration-2 underline-offset-4 hover:text-primary hover:decoration-primary transition duration-300 ease-out',
     },
   ]
 }

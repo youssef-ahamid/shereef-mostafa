@@ -8,10 +8,11 @@
     let projects = await getProjects()
 
     projects = projects.map((project, i) => {
-      projectLinks.push({
-        to: `/projects?num=${i}`,
-        text: project.title,
-      })
+      if(i < 12)
+        projectLinks.push({
+          to: `/projects?num=${i}`,
+          text: project.title,
+        })
 
       return {
         title: project.title,
@@ -19,9 +20,10 @@
         preview: {
           component: Image,
           data: {
-            type: 'card',
+            type: 'overlay',
             alt: `${project.title} | Shereef Mostafa`,
             src: project.thumbnail.url,
+            className: "lg:mx-6"
           },
         },
         cta: {
@@ -70,7 +72,6 @@
 
   // load contact information
   $contactConfig = contactSettings
-  $navlinks[2].links[1].to = contactSettings.location
 
   // load social links
   for (const [key, value] of Object.entries(contactSettings)) {

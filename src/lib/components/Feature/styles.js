@@ -26,11 +26,11 @@ export let content = options => {
     {
       on: [options.reverse, true],
       classes:
-        'lg:absolute lg:bottom-4 lg:right-8 z-50',
+        'lg:absolute lg:bottom-4 lg:right-16 z-50',
     },
     {
       on: [options.reverse, false],
-      classes: 'lg:absolute lg:bottom-4 lg:left-4 z-50',
+      classes: 'lg:absolute lg:bottom-4 lg:left-10 z-50',
     },
   ]
 }
@@ -54,7 +54,7 @@ export let left = options => {
 export let right = options => {
   return [
     {
-      classes: 'w-full lg:min-w-[50%] lg:max-w-[60%] mx-auto p-6 flex flex-col',
+      classes: 'w-full lg:min-w-[50%] lg:max-w-[60%] mx-auto p-6 flex flex-col group',
     },
   ]
 }

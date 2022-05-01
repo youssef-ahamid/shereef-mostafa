@@ -2,7 +2,7 @@ export const imgWrapper = props => {
   return [
     {
       classes:
-        'relative group w-fit hover:scale-105 transition duration-300 ease-out overflow-visible',
+        'relative group w-fit group-hover:scale-105 group-focus-within:scale-105 focus-within:scale-105 hover:scale-105 transition duration-300 ease-out overflow-visible',
       on: true,
     },
     { classes: '', styles: '', on: props.type == 'custom' },
