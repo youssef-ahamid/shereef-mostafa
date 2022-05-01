@@ -3,6 +3,7 @@
   export let title = ''
   export let images = []
   export let reverse = false // *, true
+  export let collapse = false // *, true
   export let image = {}
   export let className = '' // *, custom wrapper classes
 
@@ -21,21 +22,23 @@
     </div>
   {/if}
   <div class={classes.right}>
-    {#if images.length > 0}
-      <div>
-        {#each images as image}
-          <img
-            class={classes.image}
-            src={image}
-            alt={`${title} | thumbnail image | Shereef Mostafa`}
-          />
-        {/each}
+    <div class={collapse? classes.content: ""}>
+      {#if images.length > 0}
+        <div>
+          {#each images as image}
+            <img
+              class={classes.image}
+              src={image}
+              alt={`${title} | thumbnail image | Shereef Mostafa`}
+            />
+          {/each}
+        </div>
+      {/if}
+      <div class="mb-6 mt-1 lg:mb-0 lg:mt-0">
+        <h2>{title}</h2>
+        <slot />
       </div>
-    {/if}
-    <div class="mb-6 mt-1">
-      <h2>{title}</h2>
-      <slot />
+      <div class="ml-1"><slot name="cta" /></div>
     </div>
-    <div class="ml-1"><slot name="cta" /></div>
   </div>
 </div>

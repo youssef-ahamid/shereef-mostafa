@@ -2,6 +2,7 @@
   /* props */
   export let features = []
   export let zigzag = false
+  export let grid = false
   export let className = '' // *, custom wrapper classes
 
   import List from '$lib/components/List/index.svelte'
@@ -12,7 +13,7 @@
   /* styles */
   import { config } from './styles'
   import Animateonenterview from '../Animate On Enter View/animate on enter view.svelte'
-  $: classes = config()
+  $: classes = config({ grid })
 </script>
 
 <List
@@ -21,7 +22,7 @@
   className={`${classes.list} ${className}`}
 >
   <Animateonenterview
-    type={features.indexOf(feature) % 2 === 1 && zigzag
+    type={features.indexOf(feature) % 2 === 0 && zigzag
       ? 'flyLeft'
       : 'flyRight'}
   >
@@ -31,6 +32,7 @@
       images={feature.images}
       title={feature.title}
       image={feature.preview}
+      collapse={feature.collapse}
     >
       {#if feature.body}
         <p>{feature.body}</p>

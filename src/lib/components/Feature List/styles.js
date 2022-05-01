@@ -5,13 +5,17 @@ export let list = options => {
     {
       classes: 'w-full py-8',
     },
+    {
+      on: [options.grid, true],
+      classes: 'lg:grid lg:grid-cols-2 lg:place-items-center'
+    }
   ]
 }
 
 export let feature = options => {
   return [
     {
-      classes: '',
+      classes: 'overflow-visible',
     },
   ]
 }

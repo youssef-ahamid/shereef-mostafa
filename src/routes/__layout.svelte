@@ -5,7 +5,7 @@
 
   export async function load({ url }) {
     let projectLinks = []
-    let projects = await getProjects(4)
+    let projects = await getProjects()
 
     projects = projects.map((project, i) => {
       projectLinks.push({
@@ -30,6 +30,7 @@
           icon: Arrow,
           label: 'view project',
         },
+        collapse: true,
         videoUrl: project.videoUrl,
         images: project.clientLogos.map(logo => logo.url),
       }
@@ -98,7 +99,7 @@
 
   // Developer note
   console.log(
-    `Like looking under the hood?\n\nWant to know how something on this site was created?\n\nPing me!\nmailto: youssef@getbrewsy.com\ntel: +201200525233`
+    `Like looking under the hood?\n\nWant to know how something on this site was created?\n\nPing me!\nmailto: youssef@tutoruu.com\ntel: +201200525233`
   )
 
   onMount(() => {

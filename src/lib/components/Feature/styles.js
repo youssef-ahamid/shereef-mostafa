@@ -4,7 +4,7 @@ export let feature = options => {
   return [
     {
       classes:
-        'flex flex-nowrap w-full max-w-6xl mx-auto my-6 lg:my-12',
+        'flex flex-nowrap w-full max-w-6xl mx-auto my-6 lg:my-12 relative lg:bg-gradient-to-t lg:from-secondary overflow-visible',
     },
     {
       on: [options.reverse, true],
@@ -18,10 +18,27 @@ export let feature = options => {
   ]
 }
 
+export let content = options => {
+  return [
+    {
+      classes: 'lg:w-[450px] flex flex-col items-start'
+    },
+    {
+      on: [options.reverse, true],
+      classes:
+        'lg:absolute lg:bottom-4 lg:right-8 z-50',
+    },
+    {
+      on: [options.reverse, false],
+      classes: 'lg:absolute lg:bottom-4 lg:left-4 z-50',
+    },
+  ]
+}
+
 export let left = options => {
   return [
     {
-      classes: 'w-full lg:w-1/2 flex',
+      classes: 'w-full lg:w-1/2 flex overflow-visible',
     },
     {
       on: [options.reverse, true],
@@ -58,5 +75,6 @@ export const config = props => {
     left: resolve(left(options)),
     right: resolve(right(options)),
     image: resolve(image(options)),
+    content: resolve(content(options)),
   }
 }
