@@ -28,7 +28,7 @@ export const contactConfig = writable({
   instagram: '',
   facebook: '',
   linkedin: '',
-  siteOwner: 'Youssef Abdelhami',
+  siteOwner: 'Shereef Mostafa',
   siteName: 'shereefmostafa.com',
   siteEmail: 'shereefmostafa@gmail.com',
   thankYou: true,

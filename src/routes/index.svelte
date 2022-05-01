@@ -139,15 +139,8 @@
   <FeatureList features={bios} zigzag />
 </Section>
 
-<Section
-  title="projects"
-  cta={{
-    link: 'projects',
-    label: 'view more projects',
-    shape: 'round',
-  }}
->
-  <FeatureList features={$featuredProjects} zigzag />
+<Section title="projects">
+  <FeatureList features={$featuredProjects} zigzag grid />
 </Section>
 
 <Section title="contact">
