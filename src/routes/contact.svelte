@@ -14,9 +14,6 @@
   import { contact } from '$lib/presets'
   import { fade } from 'svelte/transition'
 
-  import zaagel from 'zaagel'
-  zaagel.configure($contactConfig)
-
   let thankyouRedirect
 
   async function send(e) {
@@ -27,22 +24,34 @@
       to: $contactConfig.siteEmail,
       subject: `New Message Received from ${e.detail.name}`,
       template: 'message-received',
-      body: e.detail,
+      data: { ...e.detail, ...$contactConfig },
       replyTo: e.detail.email,
     }
 
-    zaagel.mail(message)
+    fetch(`https://zaagel.samuraisoftware.house/mail`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      mode: "cors",
+      body: JSON.stringify(message),
+    })
 
     if ($contactConfig.thankYou) {
       let confirmation = {
         to: e.detail.email,
         subject: `Message sent to ${$contactConfig.siteOwner}`,
         template: 'message-sent',
-        body: e.detail,
+        data: { ...e.detail, ...$contactConfig },
         replyTo: $contactConfig.siteEmail,
       }
 
-      zaagel.mail(confirmation)
+      $user.timeout = setTimeout(() => {
+        fetch(`https://zaagel.samuraisoftware.house/mail`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          mode: "cors",
+          body: JSON.stringify(confirmation),
+        })
+      }, 15000)
     }
   }
 </script>

@@ -16,6 +16,7 @@ export const user = writable({
   email: '',
   phone: '',
   company: '',
+  timeout: -1,
 })
 
 export const contactConfig = writable({
