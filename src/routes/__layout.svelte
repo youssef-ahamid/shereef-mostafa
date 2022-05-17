@@ -8,7 +8,7 @@
     let projects = await getProjects()
 
     projects = projects.map((project, i) => {
-      if(i < 12)
+      if(i < 8)
         projectLinks.push({
           to: `/projects?num=${i}`,
           text: project.title,
@@ -27,10 +27,11 @@
           },
         },
         cta: {
-          link: `/projects?num=${i}`,
+          link: project.videoUrl,
           shape: 'ghost',
           icon: Arrow,
-          label: 'view project',
+          label: 'view',
+          redirect: true
         },
         collapse: true,
         videoUrl: project.videoUrl,

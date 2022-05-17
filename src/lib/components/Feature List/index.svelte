@@ -38,7 +38,7 @@
         <p>{feature.body}</p>
       {/if}
       {#if !!feature.cta}
-        <Go to={feature.cta.link} slot="cta">
+        <Go to={feature.cta.link} redirect={feature.cta.redirect} slot="cta">
           <Button
             label={feature.cta.label}
             type={feature.cta.type}
