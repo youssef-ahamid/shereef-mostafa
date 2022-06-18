@@ -16,7 +16,7 @@
 
       return {
         title: project.title,
-        body: project.text,
+        body: project.text || project.description,
         preview: {
           component: Image,
           data: {

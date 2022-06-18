@@ -4,7 +4,7 @@ export let feature = options => {
   return [
     {
       classes:
-        'flex flex-nowrap w-full max-w-6xl mx-auto lg:my-12 relative lg:bg-gradient-to-t lg:from-secondary overflow-visible',
+        'flex flex-nowrap w-full max-w-6xl mx-auto relative lg:bg-gradient-to-t lg:from-secondary overflow-visible',
     },
     {
       on: [options.reverse, true],
@@ -21,13 +21,13 @@ export let feature = options => {
 export let content = options => {
   return [
     {
-      classes: 'lg:w-[450px] flex flex-col items-start'
+      classes: 'lg:max-w-[450px] flex flex-col items-start -space-y-2'
     },
-    {
-      on: [options.reverse, true],
-      classes:
-        'absolute bottom-4 lg:right-16 z-50',
-    },
+    // {
+    //   on: [options.reverse, true],
+    //   classes:
+    //     'absolute bottom-4 lg:right-16 z-50',
+    // },
     {
       on: [options.reverse, false],
       classes: 'absolute bottom-4 lg:left-10 z-50',

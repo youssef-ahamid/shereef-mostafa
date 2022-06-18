@@ -151,7 +151,7 @@
 </Section>
 
 <Section title="projects">
-  <FeatureList features={$featuredProjects} zigzag grid />
+  <FeatureList features={$featuredProjects} grid />
 </Section>
 
 <Section title="contact">

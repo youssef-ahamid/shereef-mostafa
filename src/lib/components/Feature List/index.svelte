@@ -35,7 +35,7 @@
       collapse={feature.collapse}
     >
       {#if feature.body}
-        <p>{feature.body}</p>
+        <p class="leading-none">{feature.body}</p>
       {/if}
       {#if !!feature.cta}
         <Go to={feature.cta.link} redirect={feature.cta.redirect} slot="cta">

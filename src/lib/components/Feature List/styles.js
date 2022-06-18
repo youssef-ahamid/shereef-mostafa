@@ -7,7 +7,7 @@ export let list = options => {
     },
     {
       on: [options.grid, true],
-      classes: 'lg:grid lg:grid-cols-2 lg:place-items-center'
+      classes: 'grid grid-cols-2 lg:grid-cols-3 place-items-center'
     }
   ]
 }
@@ -17,6 +17,10 @@ export let feature = options => {
     {
       classes: 'overflow-visible',
     },
+    {
+      on: [options.grid, true],
+      classes: 'md:scale-[60%]'
+    }
   ]
 }
 

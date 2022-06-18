@@ -19,10 +19,10 @@
     @apply font-poppins font-semibold text-primary text-5xl md:text-[64px] capitalize;
   }
   h2 {
-    @apply font-poppins text-2xl text-white capitalize md:text-4xl md:py-2;
+    @apply font-poppins text-lg text-white capitalize md:text-4xl md:py-2;
   }
   h3 {
-    @apply font-poppins font-normal capitalize text-lg md:text-2xl;
+    @apply font-poppins font-normal capitalize text-sm md:text-lg;
   }
   h4 {
     @apply text-base capitalize text-white  md:text-lg;

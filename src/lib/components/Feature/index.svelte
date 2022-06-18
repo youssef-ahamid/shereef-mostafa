@@ -34,8 +34,8 @@
           {/each}
         </div>
       {/if}
-      <div class="mb-6 mt-1 lg:mb-0 lg:mt-0">
-        <h2>{title}</h2>
+      <div class="my-1 lg:mb-0 lg:mt-0">
+        <h2 class="leading-none">{title}</h2>
         <slot />
       </div>
       <div class="ml-1"><slot name="cta" /></div>

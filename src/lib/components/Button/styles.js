@@ -48,7 +48,7 @@ export let icon = options => {
   return [
     {
       classes:
-        'w-7 ml-3 group-hover:translate-x-2 group-active:translate-x-0 group-active:scale-[85%] transition duration-500 ease-out',
+        'w-4 md:w-7 ml-3 group-hover:translate-x-2 group-active:translate-x-0 group-active:scale-[85%] transition duration-500 ease-out',
     },
   ]
 }
