@@ -1,4 +1,4 @@
-# Website for biggest star in Middle East and the Pacific Ocean
+# Website for Cairokee band member
 
 ## How to Use
 
